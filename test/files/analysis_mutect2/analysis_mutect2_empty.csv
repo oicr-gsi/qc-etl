@@ -1,0 +1,2 @@
+Workflow Run SWID,num_calls,num_PASS,num_SNPs,num_multi_SNPs,num_indels,titv_ratio,num_MNPs,Donor,Group ID,Library Design,Reference,Tissue Origin,Tissue Type,Merged Pinery Lims ID,pct_ti,pct_tv
+swid1,0,0,0,0,0,,0,TEST_0002,gid1,WG,hg38,Pa,P,"['lims_id1','lims_id2']",0,0

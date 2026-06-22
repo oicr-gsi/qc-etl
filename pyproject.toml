@@ -1,0 +1,62 @@
+[tool.black]
+line-length = 80
+target-version = ['py36']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | test/files
+  | examples
+  | docs
+)
+'''
+
+[tool.setuptools.packages.find]
+where = ["./"]
+exclude = ["test"]
+
+[tool.uv]
+package = true
+
+[project]
+# PEP 621 project metadata
+# See https://www.python.org/dev/peps/pep-0621/
+name = "qc-etl"
+version = "1.47"
+description = "Collect all QC data in one location"
+readme = "README.md"
+authors = [
+    { name = "Savo Lazic", email = "savo.lazic@oicr.on.ca" },
+]
+requires-python = ">=3.13.0"
+dependencies = [
+    "beautifulsoup4>=4.10.0,<5",
+    "crimson>=1.1.1,<2",
+    "html5lib>=1.1,<2",
+    "numpy>=2,<3",
+    "pandas>=2,<3",
+    "psycopg2-binary>=2.9.5,<3",
+    "pymongo>=4,<5",
+    "python-dotenv>=1,<2",
+    "sqlalchemy>=2,<3",
+]
+
+[project.scripts]
+qc-etl = "qcetl:main"
+qc-etl-mongodb = "pinery:main"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=1.18.3",
+    "pytest-runner>=5.2",
+    "pytest>=9.0.2",
+]

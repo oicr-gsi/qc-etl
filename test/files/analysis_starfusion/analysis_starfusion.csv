@@ -1,0 +1,2 @@
+Donor,Group ID,Library Design,Reference,Tissue Origin,Tissue Type,Merged Pinery Lims ID,Workflow Run SWID,num_records
+TEST_0001,gid1,WG,hg38,Pa,P,"['lims_id1', 'lims_id2']",swid1,6

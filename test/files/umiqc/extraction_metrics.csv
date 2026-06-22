@@ -1,0 +1,2 @@
+Barcodes,Lane Number,Run Alias,File SWID,total reads/pairs,reads/pairs with matching pattern,discarded reads/pairs,discarded reads/pairs due to unknown UMI,umi-list file,pattern1,pattern2
+CGTCTCATAT-TATAGTAGCT,1,181109_A00469_0016_AHGC37DMXX,SWID,100000,97937,1248,815,/scratch/umiQC/1de6d1d3-9669-467e-8b5a-2992b3dac354/call-extractUMIs/inputs/2016060835/IDT_true_barcodes.txt,(?P<umi_1>^[ACGT]{3}[ACG])(?P<discard_1>T)|(?P<umi_2>^[ACGT]{3})(?P<discard_2>T),(?P<umi_1>^[ACGT]{3}[ACG])(?P<discard_1>T)|(?P<umi_2>^[ACGT]{3})(?P<discard_2>T)

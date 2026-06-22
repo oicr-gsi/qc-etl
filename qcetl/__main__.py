@@ -1,0 +1,3 @@
+import qcetl
+
+qcetl.main()

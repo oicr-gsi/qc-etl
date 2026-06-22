@@ -1,0 +1,2 @@
+default_gamma,default_purity,default_ploidy,min_purity,min_ploidy,max_purity,max_ploidy,File SWID,donor,Group ID,Library Design,Merged Pinery Lims ID,Tissue Origin,Tissue Type
+400,0.24,2.2,0.16,3.1,0.43,2.1,SWID,DONOR,GROUP,MR,"['id1', 'id2']",NN,P

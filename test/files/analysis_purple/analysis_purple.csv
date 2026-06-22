@@ -1,0 +1,2 @@
+score,purity,minPurity,maxPurity,ploidy,minPloidy,maxPloidy,diploidProportion,minDiploidProportion,maxDiploidProportion,polyclonalProportion,status,wholeGenomeDuplication,msStatus,tml,tmlStatus,tmbPerMb,tmbStatus,PGA,QCStatus,CopyNumberSegments,Contamination,Workflow Run SWID,donor,Group ID,Library Design,Merged Pinery Lims ID,Reference,Tissue Origin,Tissue Type
+0.3479,0.17,0.14,0.18,3.15,2.7,3.35,0.0175,0.0092,0.0618,0.3682,NORMAL,True,MSS,0.0,LOW,4.1763,LOW,0,WARN_HIGH_COPY_NUMBER_NOISE,680,0.033,SWID,DONOR,GROUP,MR,"['id1', 'id2']",hg38,NN,P

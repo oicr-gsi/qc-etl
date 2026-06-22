@@ -1,0 +1,2 @@
+sampleName,sample_coverage,median_vaf,sample_candidate_SNPs,sites_detected,mean_noise,detection_rate,tumour_fraction_estimate,tumour_fraction_adjusted,zscore,pvalue,dataset_detection_cutoff,false_positive_rate,cancer_detected,Donor,Group ID,Library Design,Merged Pinery Lims ID,Reference,Tissue Origin,Tissue Type,Workflow Run SWID
+TEST_0001,111,0.0415880503144654,5246,1090,1187.77546007001,0.00336859541933,-0.00016637903499217,0.0,-0.51197974417475,0.695667406976708,1202.19767988637,0.00388195702333773,False,Test_01,gid1,WG,"['id1', 'id2']",hg38,NN,P,swid1

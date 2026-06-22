@@ -1,0 +1,2 @@
+Barcodes,Lane Number,Pinery Lims ID,Run Alias,Reference,File SWID,ChrX median log ratio,ChrY coverage fraction,Coverage,Fraction CNA Subclonal,Fraction Genome Subclonal,GC-Map correction MAD,Gamma Rate Init,Gender,Ploidy,Subclone Fraction,Tumor Fraction
+AAATTT,1,ID1,181109_A00469_0016_AHGC37DMXX,Unknown,SWIDunique,0.09438,0.0002261,,0.6202,0.2576,0.06318,0.0077,female,2.077,0.1881,0.3507

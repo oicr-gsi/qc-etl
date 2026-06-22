@@ -1,0 +1,1031 @@
+value,count,name,Donor,Group ID,Library Design,Project,Tissue Origin,Tissue Type,Reference,File SWID
+151,64452714.0,read 1 length histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+151,65984552.0,read 2 length histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+0,0.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1,0.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2,216021.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3,0.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4,426437.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5,5307145.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6,1017350.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7,8124219.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8,9702326.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+9,2426443.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+10,21499800.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+11,32073250.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+12,46756085.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+13,20414393.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+14,11816018.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+15,10693442.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+16,3489564.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+17,10701805.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+18,19987607.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+19,39798024.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+20,63481751.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+21,38196313.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+22,70207377.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+23,146609682.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+24,821596145.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+25,1718881273.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+26,2276235502.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+27,1852665652.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+28,1588320475.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+29,911715715.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+30,0.0,read 1 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+0,0.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1,0.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2,216030.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3,0.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4,420314.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5,5446399.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6,1117246.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7,14995639.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8,11502428.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+9,2863557.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+10,34059945.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+11,98306098.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+12,94523071.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+13,19863588.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+14,14468122.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+15,15852662.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+16,10571798.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+17,13966821.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+18,82326149.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+19,29714579.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+20,79702341.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+21,234913396.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+22,425902955.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+23,600571968.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+24,1802622704.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+25,2227827828.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+26,1252691819.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+27,1211874315.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+28,1157053016.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+29,520292564.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+30,0.0,read 2 quality histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+0,0.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1,12505.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2,1085.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3,1293.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4,1576.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5,2045.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6,4000.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7,11011.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8,24601.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+9,26729.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+10,26723.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+11,28404.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+12,19375.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+13,7956.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+14,6165.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+15,5607.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+16,5900.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+17,7355.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+18,13081.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+19,23680.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+20,27985.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+21,31545.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+22,30624.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+23,37655.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+24,110824.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+25,5711.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+26,2261.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+27,1286.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+28,1020.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+29,1064.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+30,924.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+31,2595.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+32,778.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+33,956.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+34,1458.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+35,2218.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+36,3531.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+37,5847.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+38,7802.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+39,10265.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+40,10255.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+41,15707.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+42,22727.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+43,24946.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+44,26815.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+45,28880.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+46,31214.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+47,32795.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+48,35068.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+49,36955.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+50,37573.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+51,39661.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+52,42503.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+53,45846.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+54,48807.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+55,50548.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+56,53332.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+57,56113.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+58,58380.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+59,60617.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+60,63843.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+61,66239.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+62,69107.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+63,71841.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+64,76124.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+65,78649.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+66,81558.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+67,84551.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+68,86132.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+69,90201.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+70,94258.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+71,96249.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+72,100311.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+73,103385.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+74,106830.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+75,110814.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+76,115106.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+77,118780.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+78,123979.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+79,127420.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+80,131389.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+81,135859.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+82,139359.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+83,143220.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+84,147803.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+85,152854.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+86,155882.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+87,161270.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+88,167082.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+89,171158.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+90,175663.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+91,180816.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+92,183402.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+93,188910.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+94,193264.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+95,197530.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+96,204157.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+97,209558.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+98,214641.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+99,220415.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+100,227353.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+101,229841.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+102,235545.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+103,239145.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+104,245520.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+105,251956.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+106,256985.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+107,262616.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+108,267146.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+109,272645.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+110,277187.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+111,284109.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+112,291639.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+113,294276.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+114,303059.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+115,306702.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+116,311120.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+117,315676.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+118,322791.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+119,326886.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+120,333975.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+121,337603.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+122,342720.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+123,349336.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+124,355587.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+125,360481.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+126,365994.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+127,369645.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+128,375278.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+129,382360.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+130,388189.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+131,394792.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+132,399895.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+133,404705.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+134,409141.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+135,414720.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+136,418491.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+137,422818.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+138,426446.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+139,428539.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+140,433009.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+141,435856.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+142,441455.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+143,443166.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+144,445012.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+145,450084.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+146,450341.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+147,454948.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+148,455930.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+149,455963.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+150,463418.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+151,467765.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+152,476307.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+153,551670.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+154,543874.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+155,477522.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+156,479418.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+157,470812.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+158,467367.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+159,462647.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+160,475719.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+161,465837.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+162,468391.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+163,462885.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+164,461656.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+165,460572.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+166,458278.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+167,450743.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+168,460834.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+169,450227.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+170,448177.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+171,442347.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+172,440293.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+173,435066.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+174,433689.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+175,429946.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+176,424654.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+177,421580.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+178,417656.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+179,411928.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+180,412004.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+181,405944.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+182,402794.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+183,400793.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+184,395056.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+185,405189.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+186,391210.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+187,381927.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+188,375911.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+189,371385.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+190,369760.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+191,362592.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+192,358635.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+193,352613.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+194,348909.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+195,343566.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+196,339956.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+197,333708.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+198,327351.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+199,323357.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+200,319528.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+201,314036.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+202,309993.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+203,304350.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+204,300404.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+205,295711.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+206,291957.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+207,287720.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+208,283294.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+209,277610.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+210,273596.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+211,269433.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+212,264811.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+213,260124.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+214,257288.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+215,252940.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+216,248152.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+217,244570.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+218,239830.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+219,236016.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+220,231637.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+221,227741.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+222,224611.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+223,220148.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+224,215801.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+225,212798.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+226,208616.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+227,205507.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+228,200830.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+229,197901.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+230,194411.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+231,191258.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+232,187770.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+233,183843.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+234,181051.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+235,177373.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+236,173756.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+237,170060.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+238,167796.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+239,164876.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+240,160039.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+241,159011.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+242,155027.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+243,152572.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+244,149409.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+245,147521.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+246,144706.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+247,141676.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+248,138971.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+249,135973.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+250,133056.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+251,130219.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+252,127961.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+253,125226.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+254,121920.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+255,120787.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+256,118122.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+257,115396.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+258,112726.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+259,111540.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+260,108299.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+261,106443.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+262,105141.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+263,102499.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+264,99881.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+265,97378.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+266,95046.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+267,93770.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+268,92376.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+269,90287.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+270,88595.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+271,86535.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+272,83978.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+273,83078.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+274,81066.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+275,78903.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+276,77627.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+277,75594.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+278,74399.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+279,72233.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+280,71187.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+281,68756.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+282,67246.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+283,66044.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+284,65203.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+285,63105.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+286,61691.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+287,60300.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+288,59164.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+289,57593.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+290,56404.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+291,55207.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+292,53559.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+293,52579.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+294,51464.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+295,49817.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+296,49065.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+297,48013.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+298,47016.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+299,45441.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+300,44950.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+301,43680.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+302,42679.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+303,42355.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+304,40960.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+305,39802.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+306,39084.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+307,37520.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+308,36837.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+309,36258.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+310,35290.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+311,34224.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+312,33656.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+313,32679.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+314,32042.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+315,31030.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+316,30207.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+317,29797.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+318,28630.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+319,28304.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+320,27558.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+321,26237.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+322,25855.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+323,24656.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+324,24769.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+325,23946.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+326,23471.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+327,22675.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+328,21536.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+329,21280.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+330,20897.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+331,20211.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+332,19539.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+333,19232.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+334,19412.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+335,17944.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+336,17679.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+337,17442.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+338,16803.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+339,16303.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+340,15548.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+341,15159.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+342,14826.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+343,14574.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+344,13580.0,insert size histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+0,3166374507.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1,38894715.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2,50063096.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3,1108880.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4,806377.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5,36411.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6,22054.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7,6040.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8,5211.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+9,3709.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+10,2629.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+11,2147.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+12,2254.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+13,1706.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+14,1639.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+15,963.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+16,1078.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+17,793.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+18,742.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+19,533.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+20,545.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+21,503.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+22,517.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+23,470.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+24,420.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+25,332.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+26,358.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+27,363.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+28,388.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+29,351.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+30,398.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+31,380.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+32,271.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+33,248.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+34,283.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+35,285.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+36,286.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+37,277.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+38,261.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+39,121.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+40,214.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+41,132.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+42,115.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+43,90.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+44,78.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+45,76.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+46,97.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+47,56.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+48,70.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+49,63.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+50,67.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+51,95.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+52,69.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+53,112.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+54,48.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+55,83.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+56,70.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+57,52.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+58,63.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+59,45.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+60,36.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+61,39.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+62,26.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+63,32.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+64,24.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+65,23.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+66,14.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+67,34.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+68,33.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+69,28.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+70,33.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+71,20.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+72,41.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+73,61.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+74,13.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+75,30.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+76,15.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+77,15.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+78,18.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+79,23.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+80,16.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+81,30.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+82,25.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+83,14.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+84,26.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+85,14.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+86,31.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+87,15.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+88,33.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+89,32.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+90,33.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+91,47.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+92,35.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+93,41.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+94,36.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+95,37.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+96,35.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+97,15.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+98,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+99,8.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+100,17.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+101,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+102,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+103,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+104,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+105,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+106,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+107,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+108,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+109,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+110,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+111,9.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+112,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+113,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+115,9.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+116,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+117,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+118,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+119,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+120,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+121,11.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+122,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+123,26.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+124,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+125,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+126,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+127,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+128,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+129,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+130,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+131,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+132,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+133,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+134,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+135,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+136,8.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+137,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+138,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+139,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+140,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+142,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+143,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+144,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+145,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+146,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+148,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+149,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+150,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+151,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+152,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+153,13.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+154,14.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+155,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+156,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+157,23.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+158,23.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+159,17.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+160,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+161,19.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+164,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+167,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+168,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+169,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+170,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+171,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+173,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+174,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+175,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+176,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+177,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+178,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+179,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+180,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+181,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+183,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+184,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+185,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+186,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+187,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+188,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+189,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+190,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+191,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+192,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+193,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+194,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+195,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+196,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+197,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+198,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+200,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+202,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+204,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+206,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+208,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+209,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+210,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+211,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+212,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+214,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+215,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+217,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+219,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+220,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+221,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+224,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+225,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+227,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+228,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+229,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+231,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+232,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+233,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+234,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+235,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+236,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+237,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+239,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+240,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+241,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+243,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+244,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+245,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+246,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+247,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+249,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+250,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+251,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+252,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+253,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+254,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+255,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+257,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+258,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+259,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+260,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+261,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+262,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+263,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+265,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+266,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+267,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+268,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+269,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+270,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+271,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+272,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+273,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+274,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+276,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+277,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+278,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+279,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+280,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+282,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+283,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+284,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+285,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+288,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+290,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+291,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+292,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+294,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+296,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+297,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+298,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+299,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+300,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+301,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+302,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+303,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+304,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+305,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+306,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+307,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+308,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+311,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+312,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+313,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+314,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+315,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+316,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+317,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+318,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+320,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+321,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+323,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+324,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+325,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+326,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+327,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+328,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+329,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+330,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+331,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+333,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+334,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+335,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+336,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+337,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+338,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+339,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+340,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+341,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+342,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+343,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+344,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+345,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+346,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+347,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+348,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+349,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+350,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+351,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+352,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+353,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+354,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+355,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+357,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+359,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+360,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+361,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+362,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+363,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+364,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+365,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+366,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+367,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+368,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+369,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+370,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+371,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+372,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+373,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+374,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+375,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+376,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+377,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+378,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+379,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+380,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+382,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+384,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+386,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+387,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+388,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+389,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+390,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+391,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+392,8.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+393,8.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+394,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+395,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+397,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+398,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+399,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+400,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+401,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+402,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+403,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+404,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+405,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+406,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+407,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+408,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+409,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+410,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+411,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+412,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+413,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+414,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+415,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+416,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+417,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+419,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+420,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+421,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+422,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+423,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+424,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+425,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+426,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+427,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+428,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+429,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+430,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+431,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+432,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+433,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+434,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+435,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+436,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+437,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+439,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+440,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+441,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+443,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+447,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+450,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+464,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+465,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+481,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+483,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+486,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+487,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+488,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+490,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+493,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+497,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+506,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+508,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+512,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+513,12.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+515,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+524,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+525,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+526,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+530,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+531,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+536,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+552,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+554,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+559,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+583,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+605,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+607,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+609,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+611,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+614,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+616,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+617,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+618,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+619,77.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+622,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+631,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+635,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+639,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+644,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+650,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+676,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+689,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+715,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+735,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+800,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+831,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+879,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+929,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+993,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+995,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1037,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1109,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1216,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1320,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1433,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+1597,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2017,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2195,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2274,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2822,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+2841,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3370,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3435,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3635,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3914,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+3916,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4134,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4223,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4275,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4319,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4369,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4396,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4416,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4516,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4650,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4691,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4703,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4765,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4892,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4896,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4931,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+4941,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5002,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5079,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5085,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5147,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5154,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5260,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5276,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5314,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5386,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5546,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5586,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5596,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5617,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5685,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5718,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5748,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5756,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5789,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5796,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5805,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5813,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5825,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5830,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5834,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5837,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5839,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5850,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5855,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5863,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5865,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5884,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5899,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5919,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5920,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5934,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5942,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5950,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5951,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5961,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+5972,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6114,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6196,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6199,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6204,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6208,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6214,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6215,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6222,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6235,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6261,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6292,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6299,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6338,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6365,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6374,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6391,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6392,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6407,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6420,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6426,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6431,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6432,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6433,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6434,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6435,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6436,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6437,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6438,10.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6439,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6440,29.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6441,23.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6442,7.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6443,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6444,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6445,5.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6446,6.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6447,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6464,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6709,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+6877,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7316,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7332,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7511,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7649,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7732,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7755,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7782,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7819,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7844,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7846,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7847,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7848,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7855,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7859,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7862,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7864,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7866,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7871,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7876,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7880,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7886,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7895,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7903,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7906,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7909,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7922,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7935,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7948,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7961,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7968,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7980,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7988,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+7998,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8010,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8018,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8026,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8038,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8048,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8058,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8068,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8076,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8085,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8088,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8094,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8096,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8104,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8124,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8144,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8161,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8165,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8177,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8191,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8196,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8200,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8204,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8206,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8209,1.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8211,2.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8212,4.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID
+8213,3.0,coverage histogram,TEST_0001,NO,WG,PROJ,Co,P,Unknown,SWID

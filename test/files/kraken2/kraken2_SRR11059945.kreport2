@@ -1,0 +1,51 @@
+ 99.97	5245112	1	R	1	root
+ 99.93	5242829	0	D	10239	  Viruses
+ 99.92	5242325	0	D1	2559587	    Riboviria
+ 99.92	5242325	0	O	76804	      Nidovirales
+ 99.92	5242325	0	O1	2499399	        Cornidovirineae
+ 99.92	5242325	99	F	11118	          Coronaviridae
+ 99.92	5242225	1	F1	2501931	            Orthocoronavirinae
+ 99.92	5242224	1	G	694002	              Betacoronavirus
+ 99.92	5242222	0	G1	2509511	                Sarbecovirus
+ 99.92	5242222	417	S	694009	                  Severe acute respiratory syndrome-related coronavirus
+ 99.91	5241805	5241805	S1	2697049	                    Severe acute respiratory syndrome coronavirus 2
+  0.00	1	0	G1	2509481	                Embecovirus
+  0.00	1	1	S	694005	                  Murine coronavirus
+  0.00	1	0	F1	693995	            Coronavirinae
+  0.00	1	0	F2	2664420	              unclassified Coronavirinae
+  0.00	1	1	S	864596	                Bat coronavirus BM48-31/BGR/2008
+  0.01	504	0	F	10841	    Microviridae
+  0.01	504	0	F1	1910950	      Bullavirinae
+  0.01	504	0	G	1910954	        Sinsheimervirus
+  0.01	504	504	S	10847	          Escherichia virus phiX174
+  0.04	2282	0	R1	131567	  cellular organisms
+  0.04	2282	0	D	2759	    Eukaryota
+  0.04	2282	0	D1	33154	      Opisthokonta
+  0.04	2282	0	K	33208	        Metazoa
+  0.04	2282	0	K1	6072	          Eumetazoa
+  0.04	2282	0	K2	33213	            Bilateria
+  0.04	2282	0	K3	33511	              Deuterostomia
+  0.04	2282	0	P	7711	                Chordata
+  0.04	2282	0	P1	89593	                  Craniata
+  0.04	2282	0	P2	7742	                    Vertebrata
+  0.04	2282	0	P3	7776	                      Gnathostomata
+  0.04	2282	0	P4	117570	                        Teleostomi
+  0.04	2282	0	P5	117571	                          Euteleostomi
+  0.04	2282	0	P6	8287	                            Sarcopterygii
+  0.04	2282	0	P7	1338369	                              Dipnotetrapodomorpha
+  0.04	2282	0	P8	32523	                                Tetrapoda
+  0.04	2282	0	P9	32524	                                  Amniota
+  0.04	2282	0	C	40674	                                    Mammalia
+  0.04	2282	0	C1	32525	                                      Theria
+  0.04	2282	0	C2	9347	                                        Eutheria
+  0.04	2282	0	C3	1437010	                                          Boreoeutheria
+  0.04	2282	0	C4	314146	                                            Euarchontoglires
+  0.04	2282	0	O	9443	                                              Primates
+  0.04	2282	0	O1	376913	                                                Haplorrhini
+  0.04	2282	0	O2	314293	                                                  Simiiformes
+  0.04	2282	0	O3	9526	                                                    Catarrhini
+  0.04	2282	0	O4	314295	                                                      Hominoidea
+  0.04	2282	0	F	9604	                                                        Hominidae
+  0.04	2282	0	F1	207598	                                                          Homininae
+  0.04	2282	0	G	9605	                                                            Homo
+  0.04	2282	2282	S	9606	                                                              Homo sapiens

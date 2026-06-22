@@ -1,0 +1,18 @@
+This is a cutadapt summary from 1 fastq chunks
+
+Total read pairs processed:	27153893
+  Read 1 with adapter:	1064767 (3.9%)
+  Read 2 with adapter:	1054626 (3.9%)
+Pairs that were too short:	9 (0.0%)
+Pairs written (passing filters):	27153884 (100.0%)
+
+
+Total basepairs processed:	4073083950 bp
+  Read 1:	2036541975 bp
+  Read 2:	2036541975 bp
+Quality-trimmed:	0 bp (0.0%)
+  Read 1:	0 bp
+  Read 2:	0 bp
+Total written (filtered):	4032479474 bp (99.0%)
+  Read 1:	2016125048 bp
+  Read 2:	2016354426 bp

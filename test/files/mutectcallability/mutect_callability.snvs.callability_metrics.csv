@@ -1,0 +1,2 @@
+callability,Donor,fail,File SWID,Group ID,Library Design,normal_min_coverage,pass,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,tumor_min_coverage
+0.992236,TEST_0001,21745807,SWID,G,NN,8.0,2778975947,"['ID1', 'ID2']",PROJ,Unknown,nn,P,14.0

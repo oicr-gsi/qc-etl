@@ -1,0 +1,2 @@
+Donor,Barcodes,Lane Number,Run Alias,Pinery Lims ID,Reference,File SWID,contamination,error,sample
+TEST_0002,GTTTA,2,vanilla,ID21,hg19,SWIDwild,0.008551000000000001,0.0026758000000000003,TEST_0002

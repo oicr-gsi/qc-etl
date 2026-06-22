@@ -1,0 +1,2 @@
+Barcodes,Lane Number,Run Alias,File SWID,PreDedup total reads,PreDedup mapped reads,PostDedup total reads,PostDedup mapped reads,PreDedup mean depth,PostDedup mean depth,PreDedup depth standard deviation,PostDedup depth standard deviation,total families,total umi count
+CGTCTCATAT-TATAGTAGCT,1,181109_A00469_0016_AHGC37DMXX,SWID,169531,169531,169531,169531,0.002549,0.002549,0.18934071186991738,0.18934071186991738,3,96761

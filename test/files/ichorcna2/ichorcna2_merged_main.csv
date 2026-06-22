@@ -1,0 +1,2 @@
+Donor,Group ID,Library Design,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,File SWID,ChrX median log ratio,ChrY coverage fraction,Coverage,Fraction CNA Subclonal,Fraction Genome Subclonal,GC-Map correction MAD,Gamma Rate Init,Gender,Ploidy,Subclone Fraction,Tumor Fraction
+TEST_0001,G,NN,"['ID1', 'ID2']",PROJ,Unknown,nn,R,SWIDD,0.09438,0.0002261,,0.6202,0.2576,0.06318,0.0077,female,2.077,0.1881,0.3507
