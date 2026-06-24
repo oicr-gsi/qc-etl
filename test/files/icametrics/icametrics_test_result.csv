@@ -1,0 +1,9 @@
+Pinery Lims ID,Run Alias,Project,de_id,mean_coverage_genome,mean_coverage_full,mean_coverage_sub,failed_region,pct_genome,uniformity_coverage,sex,observed_sex,pct_mapped,pct_unique,mean_insert_length,median_insert_length,ti_tv_ratio,pct_autosome_callability,coverage_uniformity,dup_del_ratio
+2_1_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_2_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_3_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_4_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_5_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_6_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_7_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
+2_8_LDI10,P26-0991,PRO1,smug-safe-03266ea713,30.9,29.74,28.28,1.35,87.31,94.65,Unknown,XY,96.73,93.07,,542.0,1.94,99.2665,0.12,0.33
