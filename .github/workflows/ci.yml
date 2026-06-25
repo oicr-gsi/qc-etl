@@ -22,11 +22,8 @@ jobs:
       - name: Sync environment
         run: uv sync --frozen
 
-      - name: Format check
-        run: uv run black --check .
-
-      - name: Type check (mypy)
-        run: uv run mypy .
+      - name: Run pre-commit checks
+        run: uv run pre-commit run --all-files
 
       - name: Run tests
         run: uv run pytest -q
