@@ -10,7 +10,5 @@ def tests_ica_metrics():
     test.cachechecker.check(
         gsiqcetl.icametrics.ICAMetricsCache(),
         data,
-        {
-            "icametrics": "test/files/test_result.csv"
-        },
+        {"icametrics": "test/files/test_result.csv"},
     )

@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 
 __all__ = [
-    "calculate_mean_cov", "calculate_dup_del_ratio",
+    "calculate_mean_cov",
+    "calculate_dup_del_ratio",
 ]
 
 
@@ -27,15 +28,17 @@ def calculate_dup_del_ratio(data: dict) -> None:
         None. The input dictionary is modified in-place.
     """
     try:
-        amps = float(data.pop('Number of amplifications', None))
-        dels = float(data.pop('Number of deletions', None))
-        dupdelratio = str(round(amps/dels, 2))
+        amps = float(data.pop("Number of amplifications", None))
+        dels = float(data.pop("Number of deletions", None))
+        dupdelratio = str(round(amps / dels, 2))
     except Exception:
-        dupdelratio = '0'
-    data['dupdelratio'] = dupdelratio
+        dupdelratio = "0"
+    data["dupdelratio"] = dupdelratio
 
 
-def calculate_mean_cov(root_dir: str, p_num: str, name: str, val_type="sub", fail=False):
+def calculate_mean_cov(
+    root_dir: str, p_num: str, name: str, val_type="sub", fail=False
+):
     """
     Calculate the average coverage depth or failing interval percentage
     from a metrics file for a given sample.
@@ -60,13 +63,28 @@ def calculate_mean_cov(root_dir: str, p_num: str, name: str, val_type="sub", fai
             - mean depth coverage when `fail=False`
             - failing interval percentage when `fail=True`
     """
-    file_locs = glob.glob(os.path.join(root_dir, "*{}*".format(p_num), "metrics_*", "*{}*.{}".format(name, "failing_intervals" if fail else "per_base")))
-    file_loc = [loc for loc in file_locs if ("NM_filtered" in loc) == (val_type == "full")][0]
+    file_locs = glob.glob(
+        os.path.join(
+            root_dir,
+            "*{}*".format(p_num),
+            "metrics_*",
+            "*{}*.{}".format(name, "failing_intervals" if fail else "per_base"),
+        )
+    )
+    file_loc = [
+        loc
+        for loc in file_locs
+        if ("NM_filtered" in loc) == (val_type == "full")
+    ][0]
 
     if fail:
-        lines = open(file_loc, 'r').readlines()
-        avg_val = float(re.sub('Failing intervals represent (.*)%.*', r'\1', lines[-1].rstrip()))
+        lines = open(file_loc, "r").readlines()
+        avg_val = float(
+            re.sub(
+                "Failing intervals represent (.*)%.*", r"\1", lines[-1].rstrip()
+            )
+        )
     else:
-        df = pd.read_csv(os.path.join(file_loc), delimiter='\t')
-        avg_val = np.mean(df['Depth'])
+        df = pd.read_csv(os.path.join(file_loc), delimiter="\t")
+        avg_val = np.mean(df["Depth"])
     return round(avg_val, 2)

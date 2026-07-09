@@ -1207,14 +1207,14 @@ class ICAMetricsColumn(BaseColumn):
     UniCov = "uniformity_coverage"
 
     # ploidy_estimation_metrics.csv
-    Sex = "sex" # Ploidy estimation - Epic
+    Sex = "sex"  # Ploidy estimation - Epic
     ObsSex = "observed_sex"
 
     # mapping_metrics.csv
     PctMapped = "pct_mapped"
     PctUnique = "pct_unique"
-    MedInsertLength = "median_insert_length" # Insert length: median (>450)
-    MeanInsertLength = "mean_insert_length" # Insert length: mean (>150)
+    MedInsertLength = "median_insert_length"  # Insert length: median (>450)
+    MeanInsertLength = "mean_insert_length"  # Insert length: mean (>150)
 
     # gvcf_metrics.csv
     TiTvRatio = "ti_tv_ratio"
@@ -1227,7 +1227,7 @@ class ICAMetricsColumn(BaseColumn):
     # others
     MeanCovFull = "mean_coverage_full"
     MeanCovSub = "mean_coverage_sub"
-    FailedRegion = 'failed_region'
+    FailedRegion = "failed_region"
 
 
 class InsertSizeMetricsColumn(BaseColumn):

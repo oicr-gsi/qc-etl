@@ -28,7 +28,7 @@ class ICAMetricsCache(gsiqcetl.common.Cache):
                     Column.TiTvRatio: "f",
                     Column.PctAutosome: "f",
                     Column.CovUni: "f",
-                    Column.DupDelRatio: "f"
+                    Column.DupDelRatio: "f",
                 }
             }
         }
@@ -45,15 +45,22 @@ class ICAMetricsCache(gsiqcetl.common.Cache):
         self.input_key = {1: ("pinery_lims_id", Column.PineryLimsID)}
 
     def parse_single_record(self, single_input, schema_version):
-        return {1: {"icametrics": parse_record(single_input["run"], single_input["de_id"], single_input["sex"], single_input["run_dir"])}}[
-            schema_version
-        ]
+        return {
+            1: {
+                "icametrics": parse_record(
+                    single_input["run"],
+                    single_input["de_id"],
+                    single_input["sex"],
+                    single_input["run_dir"],
+                )
+            }
+        }[schema_version]
 
     def add_shesmu_metadata(self, single_input, schema_version):
         return {
             "icametrics": {
                 Column.PineryLimsID: single_input["pinery_lims_id"],
                 Column.Run: single_input["run"],
-                Column.Project: single_input["project"]
+                Column.Project: single_input["project"],
             }
         }
