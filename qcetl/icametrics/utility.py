@@ -37,7 +37,7 @@ def calculate_dup_del_ratio(data: dict) -> None:
 
 
 def calculate_mean_cov(
-    root_dir: str, p_num: str, name: str, val_type="sub", fail=False
+    root_dir: str, name: str, val_type="sub", fail=False
 ):
     """
     Calculate the average coverage depth or failing interval percentage
