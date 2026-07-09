@@ -1,7 +1,4 @@
-__all__ = ["ICA_DIR", "row_in_csv"]
-
-
-ICA_DIR = "/mnt/seqdata/misoruns".replace("seqdata", "clinical/rawsequencedata")
+__all__ = ["row_in_csv"]
 
 row_in_csv = {
     "wgs_coverage_metrics": [

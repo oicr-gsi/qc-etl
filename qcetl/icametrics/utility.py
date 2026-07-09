@@ -66,7 +66,6 @@ def calculate_mean_cov(
     file_locs = glob.glob(
         os.path.join(
             root_dir,
-            "*{}*".format(p_num),
             "metrics_*",
             "*{}*.{}".format(name, "failing_intervals" if fail else "per_base"),
         )

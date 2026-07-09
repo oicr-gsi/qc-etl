@@ -74,7 +74,7 @@ def load_sample_data(run: str, de_id: str, ica_dir: str) -> Dict:
 
     The search includes:
     - DragenGermline output directories
-    - Sample-specific directories under `ICA_DIR`
+    - Sample-specific directories under `ica_dir`
 
     Returns:
         Dictionary containing raw metric values extracted from all
