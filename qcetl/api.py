@@ -81,7 +81,7 @@ formats = (
     qcetl.dnaseqqc.DnaSeqQcCache(),
     qcetl.emseqqc.EmSeqQcCache(),
     qcetl.fastqc.FastQcCache(),
-    qcetl.ichorcna.ICAMetricsCache(),
+    qcetl.icametrics.ICAMetricsCache(),
     qcetl.ichorcna.IchorCnaCache(),
     qcetl.ichorcna.IchorCnaMergedCache(),
     qcetl.ichorcna2.IchorCna2Cache(),
