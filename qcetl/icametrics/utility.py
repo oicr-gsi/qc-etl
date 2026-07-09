@@ -77,7 +77,8 @@ def calculate_mean_cov(
             for loc in file_locs
             if ("NM_filtered" in loc) == (val_type == "full")
         ][0]
-    except Exception: return np.nan
+    except Exception:
+        return np.nan
 
     if fail:
         lines = open(file_loc, "r").readlines()
