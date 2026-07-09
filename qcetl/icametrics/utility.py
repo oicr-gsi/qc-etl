@@ -30,7 +30,7 @@ def calculate_dup_del_ratio(data: dict) -> None:
         amps = float(data.pop('Number of amplifications', None))
         dels = float(data.pop('Number of deletions', None))
         dupdelratio = str(round(amps/dels, 2))
-    except:
+    except Exception:
         dupdelratio = '0'
     data['dupdelratio'] = dupdelratio
 
