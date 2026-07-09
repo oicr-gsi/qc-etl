@@ -36,9 +36,7 @@ def calculate_dup_del_ratio(data: dict) -> None:
     data["dupdelratio"] = dupdelratio
 
 
-def calculate_mean_cov(
-    root_dir: str, name: str, val_type="sub", fail=False
-):
+def calculate_mean_cov(root_dir: str, name: str, val_type="sub", fail=False):
     """
     Calculate the average coverage depth or failing interval percentage
     from a metrics file for a given sample.
