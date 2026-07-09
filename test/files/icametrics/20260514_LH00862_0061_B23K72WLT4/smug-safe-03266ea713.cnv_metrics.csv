@@ -1,0 +1,15 @@
+SEX GENOTYPER,,P26-0991-09-smug-safe-03266ea713,XY,0.9907
+CNV SUMMARY,,Bases in reference genome,3217346917
+CNV SUMMARY,,Average alignment coverage over genome,28.97
+CNV SUMMARY,,Number of alignment records,735356416
+CNV SUMMARY,,Number of filtered records (total),106006208,14.42
+CNV SUMMARY,,Number of filtered records (duplicates),55686207,7.57
+CNV SUMMARY,,Number of filtered records (MAPQ),35457511,4.82
+CNV SUMMARY,,Number of filtered records (unmapped),23980374,3.26
+CNV SUMMARY,,Coverage uniformity,0.12
+CNV SUMMARY,,Number of target intervals,2441312
+CNV SUMMARY,,Number of segments,1838
+CNV SUMMARY,,Number of amplifications,139
+CNV SUMMARY,,Number of deletions,427
+CNV SUMMARY,,Number of passing amplifications,66,47.48
+CNV SUMMARY,,Number of passing deletions,71,16.63
