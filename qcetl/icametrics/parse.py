@@ -6,7 +6,7 @@ import pandas as pd
 
 from qcetl.common import InvalidRecordError
 from qcetl.column import ICAMetricsColumn as Column
-from qcetl.icametrics.constants import ICA_DIR, row_in_csv
+from qcetl.icametrics.constants import row_in_csv
 from qcetl.icametrics.utility import (
     calculate_mean_cov,
     calculate_dup_del_ratio,
@@ -81,9 +81,9 @@ def load_sample_data(run: str, de_id: str, ica_dir: str) -> Dict:
     matching CSV files for the sample.
     """
     result_dict = {
-        Column.MeanCovFull: calculate_mean_cov(ICA_DIR, run, de_id, "full"),
-        Column.MeanCovSub: calculate_mean_cov(ICA_DIR, run, de_id),
-        Column.FailedRegion: calculate_mean_cov(ICA_DIR, run, de_id, fail=True),
+        Column.MeanCovFull: calculate_mean_cov(ica_dir, de_id, "full"),
+        Column.MeanCovSub: calculate_mean_cov(ica_dir, de_id),
+        Column.FailedRegion: calculate_mean_cov(ica_dir, de_id, fail=True),
     }
     for filetype in row_in_csv:
         filename = "{}.{}.csv".format(de_id, filetype)
