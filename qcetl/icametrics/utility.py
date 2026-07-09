@@ -71,11 +71,13 @@ def calculate_mean_cov(
             "*{}*.{}".format(name, "failing_intervals" if fail else "per_base"),
         )
     )
-    file_loc = [
-        loc
-        for loc in file_locs
-        if ("NM_filtered" in loc) == (val_type == "full")
-    ][0]
+    try:
+        file_loc = [
+            loc
+            for loc in file_locs
+            if ("NM_filtered" in loc) == (val_type == "full")
+        ][0]
+    except Exception: return np.nan
 
     if fail:
         lines = open(file_loc, "r").readlines()
