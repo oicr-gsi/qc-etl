@@ -1,9 +1,9 @@
-import gsiqcetl.common
-from gsiqcetl.column import ICAMetricsColumn as Column
-from gsiqcetl.icametrics.parse import parse_record
+import qcetl.common
+from qcetl.column import ICAMetricsColumn as Column
+from qcetl.icametrics.parse import parse_record
 
 
-class ICAMetricsCache(gsiqcetl.common.Cache):
+class ICAMetricsCache(qcetl.common.Cache):
     def __init__(self):
         self.name = "icametrics"
         self.schema_versions = {

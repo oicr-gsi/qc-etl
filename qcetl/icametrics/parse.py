@@ -4,10 +4,10 @@ import os
 import numpy as np
 import pandas as pd
 
-from gsiqcetl.common import InvalidRecordError
-from gsiqcetl.column import ICAMetricsColumn as Column
-from gsiqcetl.icametrics.constants import ICA_DIR, row_in_csv
-from gsiqcetl.icametrics.utility import (
+from qcetl.common import InvalidRecordError
+from qcetl.column import ICAMetricsColumn as Column
+from qcetl.icametrics.constants import ICA_DIR, row_in_csv
+from qcetl.icametrics.utility import (
     calculate_mean_cov,
     calculate_dup_del_ratio,
 )
