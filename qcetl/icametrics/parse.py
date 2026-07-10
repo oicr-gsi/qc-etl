@@ -149,12 +149,6 @@ def process_sample_data(data: Dict, de_id: str, sex: str) -> pd.DataFrame:
         Column.DupDelRatio: data.get("dupdelratio", np.nan),
     }
     row = pd.DataFrame.from_records([result])
-
-    if len(row) != 1:
-        raise InvalidRecordError(
-            "Expected 1 row for parsed DataFrame {}".format(result)
-        )
-
     return row
 
 

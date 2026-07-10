@@ -30,13 +30,13 @@ def calculate_dup_del_ratio(data: dict) -> None:
     try:
         amps = float(data.pop("Number of amplifications", None))
         dels = float(data.pop("Number of deletions", None))
-        dupdelratio = str(round(amps / dels, 2))
-    except Exception:
-        dupdelratio = "0"
+        dupdelratio = round(amps / dels, 2)
+    except (TypeError, ValueError, ZeroDivisionError):
+        dupdelratio = 0.0
     data["dupdelratio"] = dupdelratio
 
 
-def calculate_mean_cov(root_dir: str, name: str, val_type="sub", fail=False):
+def calculate_mean_cov(pp_dir: str, name: str, val_type="sub", fail=False):
     """
     Calculate the average coverage depth or failing interval percentage
     from a metrics file for a given sample.
@@ -46,8 +46,7 @@ def calculate_mean_cov(root_dir: str, name: str, val_type="sub", fail=False):
     metric name.
 
     Args:
-        root_dir: Root directory containing metrics subdirectories.
-        p_num: P# used to locate the metrics file.
+        pp_dir: Pipeline directory containing metrics subdirectories.
         name: Name pattern used to identify the target metrics file.
         val_type : Type of metrics file to use:
             - "sub" (default): use non-NM_filtered files
@@ -63,7 +62,7 @@ def calculate_mean_cov(root_dir: str, name: str, val_type="sub", fail=False):
     """
     file_locs = glob.glob(
         os.path.join(
-            root_dir,
+            pp_dir,
             "metrics_*",
             "*{}*.{}".format(name, "failing_intervals" if fail else "per_base"),
         )
