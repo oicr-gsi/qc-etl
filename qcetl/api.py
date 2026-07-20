@@ -30,6 +30,7 @@ import qcetl.picard.calculatecontamination
 import qcetl.picard.crosscheckfingerprints
 import qcetl.picard.hsmetrics
 import qcetl.picard.hsmetrics_consensus_cruncher
+import qcetl.icametrics
 import qcetl.ichorcna
 import qcetl.ichorcna2
 import qcetl.kraken2
@@ -80,6 +81,7 @@ formats = (
     qcetl.dnaseqqc.DnaSeqQcCache(),
     qcetl.emseqqc.EmSeqQcCache(),
     qcetl.fastqc.FastQcCache(),
+    qcetl.icametrics.ICAMetricsCache(),
     qcetl.ichorcna.IchorCnaCache(),
     qcetl.ichorcna.IchorCnaMergedCache(),
     qcetl.ichorcna2.IchorCna2Cache(),

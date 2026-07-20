@@ -1,0 +1,66 @@
+[
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_1_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_2_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_3_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_4_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_5_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_6_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_7_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    },
+    {
+        "project": "PRO1",
+        "run": "P26-0991",
+        "pinery_lims_id": "2_8_LDI10",
+        "de_id": "smug-safe-03266ea713",
+        "sex": "Unknown",
+        "run_dir": "test/files/icametrics/20260514_LH00862_0061_B23K72WLT4"
+    }
+]
