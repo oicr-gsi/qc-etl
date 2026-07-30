@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-* ultimamergeqc cache
+* `hmfbamtools` parser for hmftools bam-tools (BamMetrics) merged/call-ready BAM QC, with summary, coverage histogram, fragment-length histogram, and flagstat tables
 
 ## [1.50] - 2026-11-09
 ### Added
