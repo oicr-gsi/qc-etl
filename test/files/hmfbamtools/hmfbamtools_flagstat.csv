@@ -1,0 +1,17 @@
+Donor,File SWID,Group ID,Library Design,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,Category,QC Passed Reads,QC Failed Reads,Percentage
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,in total (QC-passed reads + QC-failed reads),74253,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,primary,74107,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,secondary,0,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,supplementary,146,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,duplicates,11209,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,primary duplicates,11192,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,mapped,74073,0,99.76
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,primary mapped,73927,0,99.76
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,paired in sequencing,74107,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,read1,37055,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,read2,37052,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,properly paired,73098,0,98.64
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,with itself and mate mapped,73747,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,singletons,180,0,0.24
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,with mate mapped to a different chr,185,0,
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,with mate mapped to a different chr (mapQ>=5),167,0,
