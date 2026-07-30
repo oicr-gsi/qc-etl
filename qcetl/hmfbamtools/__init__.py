@@ -34,7 +34,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
 
         self.schema_versions = {
             1: {
-                "hmfbamtools": {
+                "summary": {
                     **identifiers,
                     Summary.WorkflowVersion: "qs",
                     Summary.TotalRegionBases: "i",
@@ -88,7 +88,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
 
         self.columns = {
             1: {
-                "hmfbamtools": Summary,
+                "summary": Summary,
                 "coverage": Coverage,
                 "fragment_length": FragLength,
                 "flagstat": Flagstat,
@@ -111,7 +111,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
 
         self.primary_key = {
             1: {
-                "hmfbamtools": [Identifier.FileSWID],
+                "summary": [Identifier.FileSWID],
                 "coverage": [Identifier.FileSWID, Coverage.Coverage],
                 "fragment_length": [
                     Identifier.FileSWID,
@@ -146,7 +146,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
         )
 
         return {
-            "hmfbamtools": summary,
+            "summary": summary,
             "coverage": dict(identifiers),
             "fragment_length": dict(identifiers),
             "flagstat": dict(identifiers),
