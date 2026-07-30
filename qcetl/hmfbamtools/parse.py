@@ -193,10 +193,8 @@ def parse_record(summary_path: str) -> Dict[str, DataFrame]:
     Returns: A mapping of table name to parsed DataFrame
     """
     return {
-        "hmfbamtools": parse_summary(summary_path),
-        "coverage": parse_coverage(
-            sibling_path(summary_path, ".coverage.tsv")
-        ),
+        "summary": parse_summary(summary_path),
+        "coverage": parse_coverage(sibling_path(summary_path, ".coverage.tsv")),
         "fragment_length": parse_fragment_length(
             sibling_path(summary_path, ".frag_length.tsv")
         ),
