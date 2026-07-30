@@ -1914,3 +1914,85 @@ class XenoclassifyColumn(BaseColumn):
     Lane = ColumnNames.Lane
     NeitherReads = "neither_reads"
     Run = ColumnNames.Run
+
+
+class HmfBamToolsIdentifierColumn(BaseColumn):
+    """
+    Shared merged/call-ready identifiers for the hmftools bam-tools QC parser.
+    Added to every hmfbamtools table via ``add_shesmu_metadata``.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+
+
+class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
+    """
+    Per-sample summary metrics from ``*.bam_metric.summary.tsv``.
+    """
+
+    WorkflowVersion = "workflow version"
+    TotalRegionBases = "Total Region Bases"
+    TotalReads = "Total Reads"
+    DuplicateReads = "Duplicate Reads"
+    DualStrandReads = "Dual Strand Reads"
+    MeanCoverage = "Mean Coverage"
+    StdDevCoverage = "StdDev Coverage"
+    MedianCoverage = "Median Coverage"
+    MadCoverage = "MAD Coverage"
+    LowMapQualPercent = "Low MapQual Percent"
+    DuplicatePercent = "Duplicate Percent"
+    UnpairedPercent = "Unpaired Percent"
+    LowBaseQualPercent = "Low BaseQual Percent"
+    OverlappingReadPercent = "Overlapping Read Percent"
+    CappedCoverage = "Capped Coverage"
+    DepthCoverage1 = "Depth Coverage 1x"
+    DepthCoverage5 = "Depth Coverage 5x"
+    DepthCoverage10 = "Depth Coverage 10x"
+    DepthCoverage15 = "Depth Coverage 15x"
+    DepthCoverage20 = "Depth Coverage 20x"
+    DepthCoverage25 = "Depth Coverage 25x"
+    DepthCoverage30 = "Depth Coverage 30x"
+    DepthCoverage40 = "Depth Coverage 40x"
+    DepthCoverage50 = "Depth Coverage 50x"
+    DepthCoverage60 = "Depth Coverage 60x"
+    DepthCoverage70 = "Depth Coverage 70x"
+    DepthCoverage80 = "Depth Coverage 80x"
+    DepthCoverage90 = "Depth Coverage 90x"
+    DepthCoverage100 = "Depth Coverage 100x"
+
+
+class HmfBamToolsCoverageColumn(HmfBamToolsIdentifierColumn):
+    """
+    Coverage-depth histogram from ``*.bam_metric.coverage.tsv``.
+    """
+
+    Coverage = "Coverage"
+    Count = "Count"
+
+
+class HmfBamToolsFragmentLengthColumn(HmfBamToolsIdentifierColumn):
+    """
+    Fragment-length histogram from ``*.bam_metric.frag_length.tsv``.
+    """
+
+    FragmentLength = "Fragment Length"
+    Count = "Count"
+
+
+class HmfBamToolsFlagstatColumn(HmfBamToolsIdentifierColumn):
+    """
+    samtools-flagstat style counts from ``*.bam_metric.flag_counts.tsv``.
+    """
+
+    Category = "Category"
+    QcPassedReads = "QC Passed Reads"
+    QcFailedReads = "QC Failed Reads"
+    Percentage = "Percentage"
