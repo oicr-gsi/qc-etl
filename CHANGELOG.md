@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Added
+* `hmfbamtools` parser for hmftools bam-tools (BamMetrics) merged/call-ready BAM QC, with summary, coverage histogram, fragment-length histogram, and flagstat tables
+
 ### Changed
 * Update to `uv` as qc-etl's package manager
 * Move OICR internal release scripts to https://bitbucket.oicr.on.ca/projects/GSI/repos/infrastructure/browse/qc-etl
