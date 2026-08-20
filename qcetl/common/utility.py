@@ -13,25 +13,28 @@ import urllib.error
 from qcetl.common.exceptions import InvalidRecordError
 
 
-def load_json_from_url(url: str) -> Any:
+def load_json_from_url(url: str, headers: Dict[str, str] = None) -> Any:
     """
     Load JSON from a url
 
     Args:
         url: The URL.
+        headers: Optional HTTP headers to send with the request (e.g. for
+            authentication).
 
     Returns:
 
     Raises:
         InvalidRecordError: If URL cannot be accessed
     """
+    request = urllib.request.Request(url, headers=headers or {})
     try:
-        with urllib.request.urlopen(url) as j:
+        with urllib.request.urlopen(request) as j:
             if j.getcode() == 404:
                 return None
             else:
                 string = j.read().decode()
-    except urllib.error.URLError as e:
+    except (urllib.error.URLError, urllib.error.HTTPError) as e:
         raise InvalidRecordError(
             "Cannot access URL from {}: {}".format(url, e)
         ) from e
