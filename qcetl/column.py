@@ -1784,6 +1784,66 @@ class SequenzaColumn(BaseColumn):
     TissueType = ColumnNames.TissueType
 
 
+class UltimaLibraryMetricsColumn(BaseColumn):
+    Run = ColumnNames.Run
+    SampleName = "Sample"
+    Barcode = "Barcode"
+    PineryLimsID = ColumnNames.PineryLimsID
+    MeanCoverage = "mean coverage"
+    PercentDuplicates = "percent duplicates"
+    F80 = "f80"
+    F90 = "f90"
+    F95 = "f95"
+    PercentGte1x = "percent >=1x"
+    PercentGte10x = "percent >=10x"
+    PercentGte20x = "percent >=20x"
+    PercentGte50x = "percent >=50x"
+    PercentGte100x = "percent >=100x"
+    PercentGte500x = "percent >=500x"
+    PercentGte1000x = "percent >=1000x"
+    F80At30x = "f80 @30x"
+    F90At30x = "f90 @30x"
+    F95At30x = "f95 @30x"
+    MAPQGte1 = "mapq >=1"
+    MAPQGte10 = "mapq >=10"
+    MAPQGte20 = "mapq >=20"
+    MAPQGte30 = "mapq >=30"
+    MedianCoverage = "median coverage"
+    IndelRate = "indel rate"
+    MeanQuality = "mean quality"
+    PercentChimeras = "percent chimeras"
+    MismatchRate = "mismatch rate"
+    PercentPFAligned = "percent pf aligned"
+    FailedQCReads = "failed qc reads"
+    MeanReadLength = "mean read length"
+    PercentPFQ20Bases = "percent pf q20 bases"
+    PercentPFQ30Bases = "percent pf q30 bases"
+    PFBarcodeReads = "pf barcode reads"
+    PercentPFHQAligned = "percent pf hq aligned"
+    MedianReadLength = "median read length"
+    PercentFailedQCReads = "percent failed qc reads"
+    PercentPFReadsAligned = "percent pf reads aligned"
+    PercentSoftclippedBases = "percent softclipped bases"
+    MeanAlignedReadLength = "mean aligned read length"
+    PercentOpticalDuplicatesRingOverlap = (
+        "percent optical duplicates ring-overlap"
+    )
+    PercentOpticalDuplicatesFalseDetection = (
+        "percent optical duplicates false-detection"
+    )
+    PctPFQ20Flows = "PCT_PF_Q20_FLOWS"
+    PctPFQ30Flows = "PCT_PF_Q30_FLOWS"
+    PctPFQ20Snvq = "PCT_PF_Q20_SNVQ"
+    PctPFQ30Snvq = "PCT_PF_Q30_SNVQ"
+    PctPFQ40Snvq = "PCT_PF_Q40_SNVQ"
+    PpmseqPctReadEndUnreached = "ppmseq_PCT_read_end_unreached"
+    PpmseqMixedReadMeanCoverage = "ppmseq_MIXED_read_mean_coverage"
+    PpmseqPctFailedAdapterDimers = "ppmseq_PCT_failed_adapter_dimers"
+    PpmseqPctMixedBothTagsWhereEndreached = (
+        "ppmseq_PCT_MIXED_both_tags_where_endreached"
+    )
+
+
 class UmiQcColumn(BaseColumn):
     FileSWID = ColumnNames.FileSWID
     Run = ColumnNames.Run
