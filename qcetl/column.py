@@ -1784,6 +1784,17 @@ class SequenzaColumn(BaseColumn):
     TissueType = ColumnNames.TissueType
 
 
+class UltimaMethylControlColumn(BaseColumn):
+    Run = "run"
+    Metric = "metric"
+    Value = "value"
+    Barcode = "barcode"
+    Index = "index"
+    Detail = "detail"
+    Library = "library"
+    PineryLimsID = ColumnNames.PineryLimsID
+
+
 class UmiQcColumn(BaseColumn):
     FileSWID = ColumnNames.FileSWID
     Run = ColumnNames.Run
