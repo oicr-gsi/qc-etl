@@ -47,7 +47,7 @@ def parse_record(path: str) -> DataFrame:
     library = basename.split("-", 1)[1].rsplit("-", 2)[0]
     index = match.group(1)
 
-    df = df.assign(**{Column.Library: library, Column.Index: index})
+    df = df.assign(**{Column.Library: library, Column.BarcodeName: index})
 
     return df[
         [
@@ -55,6 +55,6 @@ def parse_record(path: str) -> DataFrame:
             Column.Value,
             Column.Detail,
             Column.Library,
-            Column.Index,
+            Column.BarcodeName,
         ]
     ]

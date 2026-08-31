@@ -1788,8 +1788,8 @@ class UltimaMethylControlColumn(BaseColumn):
     Run = "run"
     Metric = "metric"
     Value = "value"
-    Barcode = "barcode"
-    Index = "index"
+    BarcodeSequence = "barcode sequence"
+    BarcodeName = "barcode name"
     Detail = "detail"
     Library = "library"
     PineryLimsID = ColumnNames.PineryLimsID

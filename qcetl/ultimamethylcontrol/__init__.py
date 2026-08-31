@@ -12,8 +12,8 @@ class UltimaMethylControlCache(qcetl.common.Cache):
                     Column.Run: "s",
                     Column.Metric: "s",
                     Column.Value: "f",
-                    Column.Barcode: "s",
-                    Column.Index: "s",
+                    Column.BarcodeSequence: "s",
+                    Column.BarcodeName: "s",
                     Column.Detail: "s",
                     Column.Library: "s",
                     Column.PineryLimsID: "s",
@@ -41,7 +41,7 @@ class UltimaMethylControlCache(qcetl.common.Cache):
         return {
             "ultimamethylcontrol": {
                 Column.Run: single_input["run"],
-                Column.Barcode: single_input["barcode"],
+                Column.BarcodeSequence: single_input["barcode"],
                 Column.PineryLimsID: single_input["pinery_lims_id"],
             }
         }
