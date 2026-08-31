@@ -1786,8 +1786,7 @@ class SequenzaColumn(BaseColumn):
 
 class UltimaMethylControlColumn(BaseColumn):
     Run = "run"
-    Metric = "metric"
-    Value = "value"
+    PercentMethylationMean = "percent methylation mean"
     BarcodeSequence = "barcode sequence"
     BarcodeName = "barcode name"
     Detail = "detail"

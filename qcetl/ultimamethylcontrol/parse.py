@@ -30,7 +30,7 @@ def parse_record(path: str) -> DataFrame:
 
     """
     df = pandas.read_csv(path)
-    df = df[df[Column.Metric] == "PercentMethylation_mean"]
+    df = df[df["metric"] == "PercentMethylation_mean"]
 
     if df.empty:
         raise InvalidRecordError(
@@ -47,12 +47,12 @@ def parse_record(path: str) -> DataFrame:
     library = basename.split("-", 1)[1].rsplit("-", 2)[0]
     index = match.group(1)
 
+    df = df.rename(columns={"value": Column.PercentMethylationMean})
     df = df.assign(**{Column.Library: library, Column.BarcodeName: index})
 
     return df[
         [
-            Column.Metric,
-            Column.Value,
+            Column.PercentMethylationMean,
             Column.Detail,
             Column.Library,
             Column.BarcodeName,

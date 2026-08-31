@@ -10,8 +10,7 @@ class UltimaMethylControlCache(qcetl.common.Cache):
             1: {
                 "ultimamethylcontrol": {
                     Column.Run: "s",
-                    Column.Metric: "s",
-                    Column.Value: "f",
+                    Column.PercentMethylationMean: "f",
                     Column.BarcodeSequence: "s",
                     Column.BarcodeName: "s",
                     Column.Detail: "s",
