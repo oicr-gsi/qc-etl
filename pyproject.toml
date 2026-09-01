@@ -31,7 +31,7 @@ package = true
 # PEP 621 project metadata
 # See https://www.python.org/dev/peps/pep-0621/
 name = "qc-etl"
-version = "1.47"
+version = "1.48"
 description = "Collect all QC data in one location"
 readme = "README.md"
 authors = [

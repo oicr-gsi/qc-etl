@@ -37,9 +37,11 @@ sed -i "s/## \[Unreleased\]/## \[Unreleased\]\n\n## \[${NEW_VERSION}\] - ${DATE}
 git checkout -b "v${NEW_VERSION}_pr"
 
 uv version "$NEW_VERSION"
+uv lock
 
 git add pyproject.toml
 git add CHANGELOG.md
+git add uv.lock
 git commit -m "QC-ETL $NEW_VERSION release"
 git tag "v${NEW_VERSION}"
 
