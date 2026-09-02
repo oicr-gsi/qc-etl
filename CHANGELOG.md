@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Changed
+* ultimalibrarymetrics cache now takes `sample` as an input field and matches on the sample+run combo
 
 ## [1.48] - 2026-09-02
 ### Added

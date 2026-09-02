@@ -1,9 +1,12 @@
+import logging
 import os
 
 import qcetl.common
 from qcetl.column import UltimaLibraryMetricsColumn as Column
 from qcetl.common.utility import load_json_from_url
 from qcetl.ultimalibrarymetrics.parse import parse_records
+
+logger = logging.getLogger(__name__)
 
 
 class UltimaLibraryMetricsCache(qcetl.common.Cache):
@@ -76,11 +79,21 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
             }
         }
         self.columns = {1: {"ultimalibrarymetrics": Column}}
-        self.input_format = {"run": "s", "pinery_lims_id": "s"}
-        self.primary_key = {
-            1: {"ultimalibrarymetrics": [Column.Run, Column.SampleName]}
+        self.input_format = {
+            "run": "s",
+            "sample": "s",
+            "pinery_lims_id": "s",
         }
-        self.input_key = {1: ("run", Column.Run)}
+        self.primary_key = {
+            1: {
+                "ultimalibrarymetrics": [
+                    Column.Run,
+                    Column.SampleName,
+                    Column.PineryLimsID,
+                ]
+            }
+        }
+        self.input_key = {1: ("pinery_lims_id", Column.PineryLimsID)}
 
         self.host = host
         self.token_file = token_file
@@ -116,10 +129,14 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
 
     def parse_single_record(self, single_input, schema_version):
         run_id = single_input["run"]
+        sample = single_input["sample"]
         data = self.fetch(run_id)
-        return {1: {"ultimalibrarymetrics": parse_records(data)}}[
-            schema_version
-        ]
+        table = parse_records(data, sample)
+        if table.empty:
+            logger.warning(
+                "No entry for sample {} found in run {}".format(sample, run_id)
+            )
+        return {1: {"ultimalibrarymetrics": table}}[schema_version]
 
     def add_shesmu_metadata(self, single_input, schema_version):
         return {

@@ -64,14 +64,16 @@ def _optional_float(qtable, key):
     return None if value is None else float(value)
 
 
-def parse_records(data):
+def parse_records(data, sample):
     """
     Turn the Nexus allbarcodes/metrics response into a DataFrame, keeping
-    only entries with a non-blank Sample name.
+    only the entry whose Sample name matches the requested sample.
 
     Args:
         data: List of {"barcode": ..., "qtable": {...}} dicts, as returned
             by the Nexus API.
+        sample: The sample name to match against each entry's qtable
+            "Sample" field.
 
     Returns:
 
@@ -79,8 +81,8 @@ def parse_records(data):
     rows = []
     for entry in data:
         qtable = entry.get("qtable", {})
-        sample = (qtable.get("Sample") or "").strip()
-        if not sample:
+        entry_sample = (qtable.get("Sample") or "").strip()
+        if not entry_sample or entry_sample != sample:
             continue
         rows.append(
             {
