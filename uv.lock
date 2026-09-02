@@ -477,7 +477,7 @@ wheels = [
 
 [[package]]
 name = "qc-etl"
-version = "1.47"
+version = "1.48"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
