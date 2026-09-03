@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Changed
+* ultimalibrarymetrics input records now require a `barcode`, and the cache is keyed by run and barcode name
 
 ## [1.48] - 2026-09-02
 ### Added
