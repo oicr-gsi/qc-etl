@@ -22,17 +22,17 @@ def tests_ultimalibrarymetrics():
         [
             {
                 "run": "RUN0001",
-                "sample": "TEST_SAMPLE_1",
+                "geo_group_id": "TEST_SAMPLE_1",
                 "pinery_lims_id": "ID1",
             },
             {
                 "run": "RUN0001",
-                "sample": "TEST_SAMPLE_2",
+                "geo_group_id": "TEST_SAMPLE_2",
                 "pinery_lims_id": "ID2",
             },
             {
                 "run": "RUN0001",
-                "sample": "TEST_SAMPLE_3",
+                "geo_group_id": "TEST_SAMPLE_3",
                 "pinery_lims_id": "ID3",
             },
         ],

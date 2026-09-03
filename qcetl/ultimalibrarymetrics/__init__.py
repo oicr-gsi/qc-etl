@@ -25,7 +25,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
             1: {
                 "ultimalibrarymetrics": {
                     Column.Run: "s",
-                    Column.SampleName: "s",
+                    Column.GeoGroupID: "s",
                     Column.Barcode: "s",
                     Column.PineryLimsID: "s",
                     Column.MeanCoverage: "f",
@@ -81,14 +81,14 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         self.columns = {1: {"ultimalibrarymetrics": Column}}
         self.input_format = {
             "run": "s",
-            "sample": "s",
+            "geo_group_id": "s",
             "pinery_lims_id": "s",
         }
         self.primary_key = {
             1: {
                 "ultimalibrarymetrics": [
                     Column.Run,
-                    Column.SampleName,
+                    Column.GeoGroupID,
                     Column.PineryLimsID,
                 ]
             }
@@ -129,12 +129,14 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
 
     def parse_single_record(self, single_input, schema_version):
         run_id = single_input["run"]
-        sample = single_input["sample"]
+        geo_group_id = single_input["geo_group_id"]
         data = self.fetch(run_id)
-        table = parse_records(data, sample)
+        table = parse_records(data, geo_group_id)
         if table.empty:
             logger.warning(
-                "No entry for sample {} found in run {}".format(sample, run_id)
+                "No entry for geo_group_id {} found in run {}".format(
+                    geo_group_id, run_id
+                )
             )
         return {1: {"ultimalibrarymetrics": table}}[schema_version]
 

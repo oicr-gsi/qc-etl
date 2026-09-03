@@ -1786,7 +1786,7 @@ class SequenzaColumn(BaseColumn):
 
 class UltimaLibraryMetricsColumn(BaseColumn):
     Run = ColumnNames.Run
-    SampleName = "Sample"
+    GeoGroupID = "Geo Group ID"
     Barcode = "Barcode"
     PineryLimsID = ColumnNames.PineryLimsID
     MeanCoverage = "mean coverage"

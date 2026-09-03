@@ -3,7 +3,7 @@ import pandas
 from qcetl.column import UltimaLibraryMetricsColumn as Column
 
 _COLUMNS = [
-    Column.SampleName,
+    Column.GeoGroupID,
     Column.Barcode,
     Column.MeanCoverage,
     Column.PercentDuplicates,
@@ -64,16 +64,17 @@ def _optional_float(qtable, key):
     return None if value is None else float(value)
 
 
-def parse_records(data, sample):
+def parse_records(data, geo_group_id):
     """
     Turn the Nexus allbarcodes/metrics response into a DataFrame, keeping
-    only the entry whose Sample name matches the requested sample.
+    only the entry whose qtable "Sample" field matches the requested
+    geo_group_id.
 
     Args:
         data: List of {"barcode": ..., "qtable": {...}} dicts, as returned
             by the Nexus API.
-        sample: The sample name to match against each entry's qtable
-            "Sample" field.
+        geo_group_id: The geo group ID to match against each entry's
+            qtable "Sample" field.
 
     Returns:
 
@@ -81,12 +82,12 @@ def parse_records(data, sample):
     rows = []
     for entry in data:
         qtable = entry.get("qtable", {})
-        entry_sample = (qtable.get("Sample") or "").strip()
-        if not entry_sample or entry_sample != sample:
+        entry_geo_group_id = (qtable.get("Sample") or "").strip()
+        if not entry_geo_group_id or entry_geo_group_id != geo_group_id:
             continue
         rows.append(
             {
-                Column.SampleName: sample,
+                Column.GeoGroupID: geo_group_id,
                 Column.Barcode: entry.get("barcode"),
                 Column.MeanCoverage: float(qtable.get("Mean_cvg")),
                 Column.PercentDuplicates: float(qtable.get("% duplicates")),
