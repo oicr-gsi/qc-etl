@@ -26,6 +26,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
                 "ultimalibrarymetrics": {
                     Column.Run: "s",
                     Column.GeoGroupID: "s",
+                    Column.SampleName: "s",
                     Column.Barcode: "s",
                     Column.PineryLimsID: "s",
                     Column.MeanCoverage: "f",
@@ -82,6 +83,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         self.input_format = {
             "run": "s",
             "geo_group_id": "s",
+            "sample": "s",
             "pinery_lims_id": "s",
         }
         self.primary_key = {
@@ -144,6 +146,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         return {
             "ultimalibrarymetrics": {
                 Column.Run: single_input["run"],
+                Column.SampleName: single_input["sample"],
                 Column.PineryLimsID: single_input["pinery_lims_id"],
             }
         }
