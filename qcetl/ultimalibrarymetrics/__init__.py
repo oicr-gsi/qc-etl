@@ -25,8 +25,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
             1: {
                 "ultimalibrarymetrics": {
                     Column.Run: "s",
-                    Column.GeoGroupID: "s",
-                    Column.SampleName: "s",
+                    Column.UltimaLibraryID: "s",
                     Column.Barcode: "s",
                     Column.PineryLimsID: "s",
                     Column.MeanCoverage: "f",
@@ -82,15 +81,14 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         self.columns = {1: {"ultimalibrarymetrics": Column}}
         self.input_format = {
             "run": "s",
-            "geo_group_id": "s",
-            "sample": "s",
+            "ultima_library_id": "s",
             "pinery_lims_id": "s",
         }
         self.primary_key = {
             1: {
                 "ultimalibrarymetrics": [
                     Column.Run,
-                    Column.GeoGroupID,
+                    Column.UltimaLibraryID,
                     Column.PineryLimsID,
                 ]
             }
@@ -131,13 +129,13 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
 
     def parse_single_record(self, single_input, schema_version):
         run_id = single_input["run"]
-        geo_group_id = single_input["geo_group_id"]
+        ultima_library_id = single_input["ultima_library_id"]
         data = self.fetch(run_id)
-        table = parse_records(data, geo_group_id)
+        table = parse_records(data, ultima_library_id)
         if table.empty:
             logger.warning(
-                "No entry for geo_group_id {} found in run {}".format(
-                    geo_group_id, run_id
+                "No entry for ultima_library_id {} found in run {}".format(
+                    ultima_library_id, run_id
                 )
             )
         return {1: {"ultimalibrarymetrics": table}}[schema_version]
@@ -146,7 +144,6 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         return {
             "ultimalibrarymetrics": {
                 Column.Run: single_input["run"],
-                Column.SampleName: single_input["sample"],
                 Column.PineryLimsID: single_input["pinery_lims_id"],
             }
         }
