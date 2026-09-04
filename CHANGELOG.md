@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Fixed
+* ultimalibrarymetrics parser strips parentheses from Nexus qtable values (e.g. `"(1.26)"` -> `1.26`), which previously raised a `ValueError` and failed the whole record
 
 ## [1.48] - 2026-09-02
 ### Added

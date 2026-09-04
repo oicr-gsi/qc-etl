@@ -55,13 +55,25 @@ _COLUMNS = [
 ]
 
 
+def _to_float(value):
+    """
+    Nexus sometimes wraps values in parentheses, e.g. "(1.26)", which
+    `float()` cannot parse directly.
+    """
+    if isinstance(value, str):
+        value = value.strip()
+        if value.startswith("(") and value.endswith(")"):
+            value = value[1:-1]
+    return float(value)
+
+
 def _optional_float(qtable, key):
     """
     Some qtable fields are only present for certain runs. Missing fields
     are stored as null rather than failing the parse.
     """
     value = qtable.get(key)
-    return None if value is None else float(value)
+    return None if value is None else _to_float(value)
 
 
 def parse_records(data):
@@ -86,58 +98,68 @@ def parse_records(data):
             {
                 Column.SampleName: sample,
                 Column.Barcode: entry.get("barcode"),
-                Column.MeanCoverage: float(qtable.get("Mean_cvg")),
-                Column.PercentDuplicates: float(qtable.get("% duplicates")),
-                Column.F80: float(qtable.get("F80")),
-                Column.F90: float(qtable.get("F90")),
-                Column.F95: float(qtable.get("F95")),
-                Column.PercentGte1x: float(qtable.get("%>=1x")),
-                Column.PercentGte10x: float(qtable.get("%>=10x")),
-                Column.PercentGte20x: float(qtable.get("%>=20x")),
-                Column.PercentGte50x: float(qtable.get("%>=50x")),
-                Column.PercentGte100x: float(qtable.get("%>=100x")),
-                Column.PercentGte500x: float(qtable.get("%>=500x")),
-                Column.PercentGte1000x: float(qtable.get("%>=1000x")),
-                Column.F80At30x: float(qtable.get("F80@30x")),
-                Column.F90At30x: float(qtable.get("F90@30x")),
-                Column.F95At30x: float(qtable.get("F95@30x")),
-                Column.MAPQGte1: float(qtable.get("MAPQ >= 1")),
-                Column.MAPQGte10: float(qtable.get("MAPQ >= 10")),
-                Column.MAPQGte20: float(qtable.get("MAPQ >= 20")),
-                Column.MAPQGte30: float(qtable.get("MAPQ >= 30")),
-                Column.MedianCoverage: float(qtable.get("median_cvg")),
-                Column.IndelRate: float(qtable.get("Indel_Rate")),
-                Column.MeanQuality: float(qtable.get("Mean_quality")),
-                Column.PercentChimeras: float(qtable.get("PCT_Chimeras")),
-                Column.MismatchRate: float(qtable.get("Mismatch_Rate")),
-                Column.PercentPFAligned: float(qtable.get("PCT_PF_aligned")),
-                Column.FailedQCReads: float(qtable.get("Failed_QC_reads")),
-                Column.MeanReadLength: float(qtable.get("Mean_Read_Length")),
-                Column.PercentPFQ20Bases: float(qtable.get("PCT_PF_Q20_bases")),
-                Column.PercentPFQ30Bases: float(qtable.get("PCT_PF_Q30_bases")),
-                Column.PFBarcodeReads: float(qtable.get("PF_Barcode_reads")),
-                Column.PercentPFHQAligned: float(
+                Column.MeanCoverage: _to_float(qtable.get("Mean_cvg")),
+                Column.PercentDuplicates: _to_float(qtable.get("% duplicates")),
+                Column.F80: _to_float(qtable.get("F80")),
+                Column.F90: _to_float(qtable.get("F90")),
+                Column.F95: _to_float(qtable.get("F95")),
+                Column.PercentGte1x: _to_float(qtable.get("%>=1x")),
+                Column.PercentGte10x: _to_float(qtable.get("%>=10x")),
+                Column.PercentGte20x: _to_float(qtable.get("%>=20x")),
+                Column.PercentGte50x: _to_float(qtable.get("%>=50x")),
+                Column.PercentGte100x: _to_float(qtable.get("%>=100x")),
+                Column.PercentGte500x: _to_float(qtable.get("%>=500x")),
+                Column.PercentGte1000x: _to_float(qtable.get("%>=1000x")),
+                Column.F80At30x: _to_float(qtable.get("F80@30x")),
+                Column.F90At30x: _to_float(qtable.get("F90@30x")),
+                Column.F95At30x: _to_float(qtable.get("F95@30x")),
+                Column.MAPQGte1: _to_float(qtable.get("MAPQ >= 1")),
+                Column.MAPQGte10: _to_float(qtable.get("MAPQ >= 10")),
+                Column.MAPQGte20: _to_float(qtable.get("MAPQ >= 20")),
+                Column.MAPQGte30: _to_float(qtable.get("MAPQ >= 30")),
+                Column.MedianCoverage: _to_float(qtable.get("median_cvg")),
+                Column.IndelRate: _to_float(qtable.get("Indel_Rate")),
+                Column.MeanQuality: _to_float(qtable.get("Mean_quality")),
+                Column.PercentChimeras: _to_float(qtable.get("PCT_Chimeras")),
+                Column.MismatchRate: _to_float(qtable.get("Mismatch_Rate")),
+                Column.PercentPFAligned: _to_float(
+                    qtable.get("PCT_PF_aligned")
+                ),
+                Column.FailedQCReads: _to_float(qtable.get("Failed_QC_reads")),
+                Column.MeanReadLength: _to_float(
+                    qtable.get("Mean_Read_Length")
+                ),
+                Column.PercentPFQ20Bases: _to_float(
+                    qtable.get("PCT_PF_Q20_bases")
+                ),
+                Column.PercentPFQ30Bases: _to_float(
+                    qtable.get("PCT_PF_Q30_bases")
+                ),
+                Column.PFBarcodeReads: _to_float(
+                    qtable.get("PF_Barcode_reads")
+                ),
+                Column.PercentPFHQAligned: _to_float(
                     qtable.get("PCT_PF_HQ_aligned")
                 ),
-                Column.MedianReadLength: float(
+                Column.MedianReadLength: _to_float(
                     qtable.get("Median_Read_Length")
                 ),
-                Column.PercentFailedQCReads: float(
+                Column.PercentFailedQCReads: _to_float(
                     qtable.get("PCT_Failed_QC_reads")
                 ),
-                Column.PercentPFReadsAligned: float(
+                Column.PercentPFReadsAligned: _to_float(
                     qtable.get("PCT_PF_Reads_aligned")
                 ),
-                Column.PercentSoftclippedBases: float(
+                Column.PercentSoftclippedBases: _to_float(
                     qtable.get("PCT_SOFTCLIPPED_bases")
                 ),
-                Column.MeanAlignedReadLength: float(
+                Column.MeanAlignedReadLength: _to_float(
                     qtable.get("Mean_Aligned_Read_Length")
                 ),
-                Column.PercentOpticalDuplicatesRingOverlap: float(
+                Column.PercentOpticalDuplicatesRingOverlap: _to_float(
                     qtable.get("% optical duplicates ring-overlap")
                 ),
-                Column.PercentOpticalDuplicatesFalseDetection: float(
+                Column.PercentOpticalDuplicatesFalseDetection: _to_float(
                     qtable.get("% optical duplicates false-detection")
                 ),
                 Column.PctPFQ20Flows: _optional_float(
