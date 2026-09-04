@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Changed
+* ultimalibrarymetrics cache now takes `ultima_library_id` as an input field and matches on the ultima_library_id+run combo
 
 ## [1.48] - 2026-09-02
 ### Added
