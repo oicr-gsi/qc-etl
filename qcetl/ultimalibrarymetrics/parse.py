@@ -125,7 +125,7 @@ def parse_records(data):
                 Column.PercentPFAligned: _to_float(
                     qtable.get("PCT_PF_aligned")
                 ),
-                Column.FailedQCReads: _to_float(qtable.get("Failed_QC_reads")),
+                Column.FailedQCReads: int(qtable.get("Failed_QC_reads")),
                 Column.MeanReadLength: _to_float(
                     qtable.get("Mean_Read_Length")
                 ),

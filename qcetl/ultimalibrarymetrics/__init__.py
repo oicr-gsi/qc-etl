@@ -50,7 +50,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
                     Column.PercentChimeras: "f",
                     Column.MismatchRate: "f",
                     Column.PercentPFAligned: "f",
-                    Column.FailedQCReads: "f",
+                    Column.FailedQCReads: "i",
                     Column.MeanReadLength: "f",
                     Column.PercentPFQ20Bases: "f",
                     Column.PercentPFQ30Bases: "f",
