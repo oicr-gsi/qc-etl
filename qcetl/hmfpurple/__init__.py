@@ -5,7 +5,7 @@ from qcetl.hmfpurple.parse import parse_record
 
 class HmfPurpleCache(qcetl.common.Cache):
     """
-    Tumour purity/ploidy QC from hmftools PURPLE, run on a merged/call-ready
+    Tumour purity QC from hmftools PURPLE, run on a merged/call-ready
     tumour. One build record points at the ``*.purple.purity.tsv`` file.
     """
 

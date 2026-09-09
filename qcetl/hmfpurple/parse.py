@@ -2,8 +2,7 @@
 hmftools PURPLE purity parsing module.
 
 Parses the single-row PURPLE purity file (``*.purple.purity.tsv``) for a
-merged/call-ready tumour. ``Purity`` is the inferred tumour purity; the min/max
-purity and ploidy fields support review of alternate PURPLE solutions.
+merged/call-ready tumour, keeping the inferred tumour ``Purity``.
 """
 
 import logging

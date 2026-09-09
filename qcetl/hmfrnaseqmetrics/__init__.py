@@ -8,7 +8,7 @@ class HmfRnaSeqMetricsCache(qcetl.common.Cache):
     RNA QC from Picard ``CollectRnaSeqMetrics``, run on a merged/call-ready RNA
     BAM in the hmftools pipeline. One build record points at the
     ``*.rna_seq_metrics.txt`` file. ``PCT_CODING_BASES`` is the "mapped to
-    coding" metric.
+    coding" metric and ``PCT_RIBOSOMAL_BASES`` the rRNA fraction.
     """
 
     def __init__(self):

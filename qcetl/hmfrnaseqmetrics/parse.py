@@ -52,7 +52,7 @@ def parse_record(path: str) -> DataFrame:
                 metrics += line
 
     df = pandas.read_csv(io.StringIO(metrics), sep="\t").replace("?", numpy.nan)
-    # Keep only the declared metric columns (drops SAMPLE/LIBRARY/READ_GROUP)
+    # Keep only the declared metric columns
     df = df[METRIC_COLUMNS]
     with pandas.option_context("future.no_silent_downcasting", True):
         df = df.fillna(value=numpy.nan)
