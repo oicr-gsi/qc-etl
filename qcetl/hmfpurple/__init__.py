@@ -31,18 +31,6 @@ class HmfPurpleCache(qcetl.common.Cache):
                     **identifiers,
                     Column.WorkflowVersion: "qs",
                     Column.Purity: "f",
-                    Column.Ploidy: "f",
-                    Column.NormFactor: "f",
-                    Column.Score: "f",
-                    Column.DiploidProportion: "f",
-                    Column.PolyclonalProportion: "f",
-                    Column.MinPurity: "f",
-                    Column.MaxPurity: "f",
-                    Column.MinPloidy: "f",
-                    Column.MaxPloidy: "f",
-                    Column.MinDiploidProportion: "f",
-                    Column.MaxDiploidProportion: "f",
-                    Column.SomaticPenalty: "f",
                 },
             }
         }
