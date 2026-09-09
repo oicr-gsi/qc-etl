@@ -10,10 +10,11 @@ class UltimaMethylControlCache(qcetl.common.Cache):
             1: {
                 "ultimamethylcontrol": {
                     Column.Run: "s",
-                    Column.PercentMethylationMean: "f",
+                    Column.PercentMethylationMeanLambda: "qf",
+                    Column.PercentMethylationMeanPuc19: "qf",
+                    Column.PercentMethylationMeanHg: "qf",
                     Column.BarcodeSequence: "s",
                     Column.BarcodeName: "s",
-                    Column.Detail: "s",
                     Column.Library: "s",
                     Column.PineryLimsID: "s",
                 }
@@ -26,9 +27,7 @@ class UltimaMethylControlCache(qcetl.common.Cache):
             "run": "s",
             "pinery_lims_id": "s",
         }
-        self.primary_key = {
-            1: {"ultimamethylcontrol": [Column.PineryLimsID, Column.Detail]}
-        }
+        self.primary_key = {1: {"ultimamethylcontrol": [Column.PineryLimsID]}}
         self.input_key = {1: ("pinery_lims_id", Column.PineryLimsID)}
 
     def parse_single_record(self, single_input, schema_version):

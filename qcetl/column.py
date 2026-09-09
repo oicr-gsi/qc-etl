@@ -1786,10 +1786,11 @@ class SequenzaColumn(BaseColumn):
 
 class UltimaMethylControlColumn(BaseColumn):
     Run = "run"
-    PercentMethylationMean = "percent methylation mean"
+    PercentMethylationMeanLambda = "percent methylation mean lambda"
+    PercentMethylationMeanPuc19 = "percent methylation mean puc19"
+    PercentMethylationMeanHg = "percent methylation mean hg"
     BarcodeSequence = "barcode sequence"
     BarcodeName = "barcode name"
-    Detail = "detail"
     Library = "library"
     PineryLimsID = ColumnNames.PineryLimsID
 

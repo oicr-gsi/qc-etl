@@ -9,11 +9,18 @@ from qcetl.column import UltimaMethylControlColumn as Column
 
 BARCODE_INDEX_PATTERN = re.compile(r"-(Z\d+)-")
 
+DETAIL_TO_COLUMN = {
+    "Lambda": Column.PercentMethylationMeanLambda,
+    "pUC19": Column.PercentMethylationMeanPuc19,
+    "hg": Column.PercentMethylationMeanHg,
+}
+
 
 def parse_record(path: str) -> DataFrame:
     """
-    Parses a single Ultima EM-seq `_mergeContext.csv` file into the mean
-    percent-methylation rows for each control (e.g. Lambda, pUC19, hg).
+    Parses a single Ultima EM-seq `_mergeContext.csv` file into a single row
+    with the mean percent-methylation of each control (Lambda, pUC19, hg) as
+    its own column.
 
     `library` and `index` are derived from the filename, following the same
     convention as `Examples/ultima_methyl_control.py`:
@@ -22,7 +29,7 @@ def parse_record(path: str) -> DataFrame:
     Args:
         path: File path of the `_mergeContext.csv` file
 
-    Returns: DataFrame with one row per control
+    Returns: DataFrame with a single row
 
     Raises:
         InvalidRecordError: If the file has no PercentMethylation_mean rows,
@@ -47,14 +54,9 @@ def parse_record(path: str) -> DataFrame:
     library = basename.split("-", 1)[1].rsplit("-", 2)[0]
     index = match.group(1)
 
-    df = df.rename(columns={"value": Column.PercentMethylationMean})
-    df = df.assign(**{Column.Library: library, Column.BarcodeName: index})
+    row = {Column.Library: library, Column.BarcodeName: index}
+    for detail, value in zip(df["detail"], df["value"]):
+        if detail in DETAIL_TO_COLUMN:
+            row[DETAIL_TO_COLUMN[detail]] = value
 
-    return df[
-        [
-            Column.PercentMethylationMean,
-            Column.Detail,
-            Column.Library,
-            Column.BarcodeName,
-        ]
-    ]
+    return DataFrame([row])
