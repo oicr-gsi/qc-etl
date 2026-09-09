@@ -1950,12 +1950,10 @@ class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
 
 class HmfIsofoxSummaryColumn(BaseColumn):
     """
-    Per-sample RNA QC metrics from the hmftools Isofox summary
-    (``*.isf.summary.csv``).
-
-    ``TotalFragments`` provides the pipeline filtered cluster count. rRNA
-    contamination comes from Picard ``PCT_RIBOSOMAL_BASES`` (see
-    ``hmfrnaseqmetrics``), not from Isofox's ``EnrichedGenePercent``.
+    Per-sample RNA QC from the hmftools Isofox summary (``*.isf.summary.csv``),
+    pared to the metric the QC report needs. ``TotalFragments`` is the pipeline
+    filtered cluster count. rRNA contamination comes from Picard
+    ``PCT_RIBOSOMAL_BASES`` (see ``hmfrnaseqmetrics``), not from Isofox.
     """
 
     Donor = ColumnNames.Donor
@@ -1968,29 +1966,13 @@ class HmfIsofoxSummaryColumn(BaseColumn):
     TissueOrigin = ColumnNames.TissueOrigin
     TissueType = ColumnNames.TissueType
     WorkflowVersion = "workflow version"
-    Sample = "Sample"
-    QcStatus = "QC Status"
     TotalFragments = "Total Fragments"
-    DuplicateFragments = "Duplicate Fragments"
-    SplicedFragmentPercent = "Spliced Fragment Percent"
-    UnsplicedFragmentPercent = "Unspliced Fragment Percent"
-    AltFragmentPercent = "Alt Fragment Percent"
-    ChimericFragmentPercent = "Chimeric Fragment Percent"
-    SplicedGeneCount = "Spliced Gene Count"
-    ReadLength = "Read Length"
-    FragmentLength5th = "Fragment Length 5th Percentile"
-    FragmentLength50th = "Fragment Length Median"
-    FragmentLength95th = "Fragment Length 95th Percentile"
-    EnrichedGenePercent = "Enriched Gene Percent"
-    MedianGCRatio = "Median GC Ratio"
-    ForwardStrandPercent = "Forward Strand Percent"
 
 
 class HmfPurpleColumn(BaseColumn):
     """
-    Tumour purity/ploidy QC from the hmftools PURPLE purity file
-    (``*.purple.purity.tsv``). ``Purity`` is the inferred tumour purity; the
-    min/max purity and ploidy fields support alternate-solution review.
+    Tumour purity QC from the hmftools PURPLE purity file
+    (``*.purple.purity.tsv``), pared to the inferred tumour purity.
     """
 
     Donor = ColumnNames.Donor
@@ -2004,18 +1986,6 @@ class HmfPurpleColumn(BaseColumn):
     TissueType = ColumnNames.TissueType
     WorkflowVersion = "workflow version"
     Purity = "Purity"
-    Ploidy = "Ploidy"
-    NormFactor = "Norm Factor"
-    Score = "Score"
-    DiploidProportion = "Diploid Proportion"
-    PolyclonalProportion = "Polyclonal Proportion"
-    MinPurity = "Min Purity"
-    MaxPurity = "Max Purity"
-    MinPloidy = "Min Ploidy"
-    MaxPloidy = "Max Ploidy"
-    MinDiploidProportion = "Min Diploid Proportion"
-    MaxDiploidProportion = "Max Diploid Proportion"
-    SomaticPenalty = "Somatic Penalty"
 
 
 class HmfRnaSeqMetricsColumn(BaseColumn):
@@ -2037,30 +2007,5 @@ class HmfRnaSeqMetricsColumn(BaseColumn):
     TissueOrigin = ColumnNames.TissueOrigin
     TissueType = ColumnNames.TissueType
     WorkflowVersion = "workflow version"
-    PfBases = "PF_BASES"
-    PfAlignedBases = "PF_ALIGNED_BASES"
-    RibosomalBases = "RIBOSOMAL_BASES"
-    CodingBases = "CODING_BASES"
-    UtrBases = "UTR_BASES"
-    IntronicBases = "INTRONIC_BASES"
-    IntergenicBases = "INTERGENIC_BASES"
-    IgnoredReads = "IGNORED_READS"
-    CorrectStrandReads = "CORRECT_STRAND_READS"
-    IncorrectStrandReads = "INCORRECT_STRAND_READS"
-    NumR1TranscriptStrandReads = "NUM_R1_TRANSCRIPT_STRAND_READS"
-    NumR2TranscriptStrandReads = "NUM_R2_TRANSCRIPT_STRAND_READS"
-    NumUnexplainedReads = "NUM_UNEXPLAINED_READS"
-    PctR1TranscriptStrandReads = "PCT_R1_TRANSCRIPT_STRAND_READS"
-    PctR2TranscriptStrandReads = "PCT_R2_TRANSCRIPT_STRAND_READS"
-    PctRibosomalBases = "PCT_RIBOSOMAL_BASES"
     PctCodingBases = "PCT_CODING_BASES"
-    PctUtrBases = "PCT_UTR_BASES"
-    PctIntronicBases = "PCT_INTRONIC_BASES"
-    PctIntergenicBases = "PCT_INTERGENIC_BASES"
-    PctMrnaBases = "PCT_MRNA_BASES"
-    PctUsableBases = "PCT_USABLE_BASES"
-    PctCorrectStrandReads = "PCT_CORRECT_STRAND_READS"
-    MedianCvCoverage = "MEDIAN_CV_COVERAGE"
-    Median5PrimeBias = "MEDIAN_5PRIME_BIAS"
-    Median3PrimeBias = "MEDIAN_3PRIME_BIAS"
-    Median5PrimeTo3PrimeBias = "MEDIAN_5PRIME_TO_3PRIME_BIAS"
+    PctRibosomalBases = "PCT_RIBOSOMAL_BASES"

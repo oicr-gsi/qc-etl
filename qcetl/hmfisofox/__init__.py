@@ -30,22 +30,7 @@ class HmfIsofoxCache(qcetl.common.Cache):
                 "summary": {
                     **identifiers,
                     Column.WorkflowVersion: "qs",
-                    Column.Sample: "s",
-                    Column.QcStatus: "s",
                     Column.TotalFragments: "i",
-                    Column.DuplicateFragments: "i",
-                    Column.SplicedFragmentPercent: "f",
-                    Column.UnsplicedFragmentPercent: "f",
-                    Column.AltFragmentPercent: "f",
-                    Column.ChimericFragmentPercent: "f",
-                    Column.SplicedGeneCount: "i",
-                    Column.ReadLength: "i",
-                    Column.FragmentLength5th: "i",
-                    Column.FragmentLength50th: "i",
-                    Column.FragmentLength95th: "i",
-                    Column.EnrichedGenePercent: "f",
-                    Column.MedianGCRatio: "f",
-                    Column.ForwardStrandPercent: "f",
                 },
             }
         }

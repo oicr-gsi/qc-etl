@@ -18,35 +18,11 @@ from qcetl.column import HmfRnaSeqMetricsColumn as Column
 
 logger = logging.getLogger(__name__)
 
-# The metric columns kept from the Picard metrics section (raw Picard names).
+# The metric columns kept from the Picard metrics section (raw Picard names),
+# pared to the metrics the QC report needs: mapped-to-coding and rRNA fractions.
 METRIC_COLUMNS = [
-    Column.PfBases,
-    Column.PfAlignedBases,
-    Column.RibosomalBases,
-    Column.CodingBases,
-    Column.UtrBases,
-    Column.IntronicBases,
-    Column.IntergenicBases,
-    Column.IgnoredReads,
-    Column.CorrectStrandReads,
-    Column.IncorrectStrandReads,
-    Column.NumR1TranscriptStrandReads,
-    Column.NumR2TranscriptStrandReads,
-    Column.NumUnexplainedReads,
-    Column.PctR1TranscriptStrandReads,
-    Column.PctR2TranscriptStrandReads,
-    Column.PctRibosomalBases,
     Column.PctCodingBases,
-    Column.PctUtrBases,
-    Column.PctIntronicBases,
-    Column.PctIntergenicBases,
-    Column.PctMrnaBases,
-    Column.PctUsableBases,
-    Column.PctCorrectStrandReads,
-    Column.MedianCvCoverage,
-    Column.Median5PrimeBias,
-    Column.Median3PrimeBias,
-    Column.Median5PrimeTo3PrimeBias,
+    Column.PctRibosomalBases,
 ]
 
 

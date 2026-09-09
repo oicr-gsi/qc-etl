@@ -19,18 +19,6 @@ logger = logging.getLogger(__name__)
 # Map the raw purity.tsv header to the declared DataFrame column name.
 PURITY_COLUMN_MAP = {
     "purity": Column.Purity,
-    "ploidy": Column.Ploidy,
-    "normFactor": Column.NormFactor,
-    "score": Column.Score,
-    "diploidProportion": Column.DiploidProportion,
-    "polyclonalProportion": Column.PolyclonalProportion,
-    "minPurity": Column.MinPurity,
-    "maxPurity": Column.MaxPurity,
-    "minPloidy": Column.MinPloidy,
-    "maxPloidy": Column.MaxPloidy,
-    "minDiploidProportion": Column.MinDiploidProportion,
-    "maxDiploidProportion": Column.MaxDiploidProportion,
-    "somaticPenalty": Column.SomaticPenalty,
 }
 
 

@@ -19,22 +19,7 @@ logger = logging.getLogger(__name__)
 
 # Map the raw isf.summary.csv header to the declared DataFrame column name.
 SUMMARY_COLUMN_MAP = {
-    "SampleId": Column.Sample,
-    "QcStatus": Column.QcStatus,
     "TotalFragments": Column.TotalFragments,
-    "DuplicateFragments": Column.DuplicateFragments,
-    "SplicedFragmentPerc": Column.SplicedFragmentPercent,
-    "UnsplicedFragmentPerc": Column.UnsplicedFragmentPercent,
-    "AltFragmentPerc": Column.AltFragmentPercent,
-    "ChimericFragmentPerc": Column.ChimericFragmentPercent,
-    "SplicedGeneCount": Column.SplicedGeneCount,
-    "ReadLength": Column.ReadLength,
-    "FragLength5th": Column.FragmentLength5th,
-    "FragLength50th": Column.FragmentLength50th,
-    "FragLength95th": Column.FragmentLength95th,
-    "EnrichedGenePercent": Column.EnrichedGenePercent,
-    "MedianGCRatio": Column.MedianGCRatio,
-    "ForwardStrandPercent": Column.ForwardStrandPercent,
 }
 
 
