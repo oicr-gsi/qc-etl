@@ -28,6 +28,9 @@ import qcetl.emseqqc
 import qcetl.fastqc
 import qcetl.germlinecoverageuniformity
 import qcetl.hmfbamtools
+import qcetl.hmfisofox
+import qcetl.hmfpurple
+import qcetl.hmfrnaseqmetrics
 import qcetl.picard.calculatecontamination
 import qcetl.picard.crosscheckfingerprints
 import qcetl.picard.hsmetrics
@@ -88,6 +91,9 @@ formats = (
     qcetl.fastqc.FastQcCache(),
     qcetl.germlinecoverageuniformity.GermlineCoverageUniformityCache(),
     qcetl.hmfbamtools.HmfBamToolsCache(),
+    qcetl.hmfisofox.HmfIsofoxCache(),
+    qcetl.hmfpurple.HmfPurpleCache(),
+    qcetl.hmfrnaseqmetrics.HmfRnaSeqMetricsCache(),
     qcetl.icametrics.ICAMetricsCache(),
     qcetl.ichorcna.IchorCnaCache(),
     qcetl.ichorcna.IchorCnaMergedCache(),

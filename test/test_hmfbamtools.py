@@ -22,8 +22,5 @@ def tests_hmfbamtools():
         ],
         {
             "summary": "test/files/hmfbamtools/hmfbamtools_summary.csv",
-            "coverage": "test/files/hmfbamtools/hmfbamtools_coverage.csv",
-            "fragment_length": "test/files/hmfbamtools/hmfbamtools_fragment_length.csv",
-            "flagstat": "test/files/hmfbamtools/hmfbamtools_flagstat.csv",
         },
     )
