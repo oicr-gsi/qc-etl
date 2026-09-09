@@ -135,9 +135,7 @@ def parse_records(data):
                 Column.PercentPFQ30Bases: _to_float(
                     qtable.get("PCT_PF_Q30_bases")
                 ),
-                Column.PFBarcodeReads: _to_float(
-                    qtable.get("PF_Barcode_reads")
-                ),
+                Column.PFBarcodeReads: int(qtable.get("PF_Barcode_reads")),
                 Column.PercentPFHQAligned: _to_float(
                     qtable.get("PCT_PF_HQ_aligned")
                 ),
