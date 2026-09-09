@@ -13,9 +13,11 @@ class UltimaMethylControlCache(qcetl.common.Cache):
                     Column.PercentMethylationMeanLambda: "qf",
                     Column.PercentMethylationMeanPuc19: "qf",
                     Column.PercentMethylationMeanHg: "qf",
+                    Column.CoverageMeanLambda: "qf",
+                    Column.CoverageMeanPuc19: "qf",
+                    Column.CoverageMeanHg: "qf",
                     Column.BarcodeSequence: "s",
-                    Column.BarcodeName: "s",
-                    Column.Library: "s",
+                    Column.BarcodeName: "qs",
                     Column.PineryLimsID: "s",
                 }
             }
@@ -24,6 +26,7 @@ class UltimaMethylControlCache(qcetl.common.Cache):
         self.input_format = {
             "path": "p",
             "barcode": "s",
+            "barcode_name": "qs",
             "run": "s",
             "pinery_lims_id": "s",
         }
@@ -40,6 +43,7 @@ class UltimaMethylControlCache(qcetl.common.Cache):
             "ultimamethylcontrol": {
                 Column.Run: single_input["run"],
                 Column.BarcodeSequence: single_input["barcode"],
+                Column.BarcodeName: single_input.get("barcode_name"),
                 Column.PineryLimsID: single_input["pinery_lims_id"],
             }
         }

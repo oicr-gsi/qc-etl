@@ -1789,9 +1789,11 @@ class UltimaMethylControlColumn(BaseColumn):
     PercentMethylationMeanLambda = "percent methylation mean lambda"
     PercentMethylationMeanPuc19 = "percent methylation mean puc19"
     PercentMethylationMeanHg = "percent methylation mean hg"
+    CoverageMeanLambda = "coverage mean lambda"
+    CoverageMeanPuc19 = "coverage mean puc19"
+    CoverageMeanHg = "coverage mean hg"
     BarcodeSequence = "barcode sequence"
     BarcodeName = "barcode name"
-    Library = "library"
     PineryLimsID = ColumnNames.PineryLimsID
 
 

@@ -9,6 +9,7 @@ def tests_ultimamethylcontrol():
             {
                 "path": "test/files/ultimamethylcontrol/446499-Example1_Pl_T_nn_1-1_LB04-01-Z0012-CTGCCATAGCACGAT_mergeContext.csv",
                 "barcode": "CTGCCATAGCACGAT",
+                "barcode_name": "Z0012",
                 "run": "446499-20260727_1147",
                 "pinery_lims_id": "ID1",
             },
