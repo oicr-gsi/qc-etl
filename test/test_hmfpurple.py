@@ -1,14 +1,14 @@
-import qcetl.hmfbamtools
+import qcetl.hmfpurple
 import test.cachechecker
 
 
-def tests_hmfbamtools():
+def tests_hmfpurple():
     test.cachechecker.check(
-        qcetl.hmfbamtools.HmfBamToolsCache(),
+        qcetl.hmfpurple.HmfPurpleCache(),
         [
             {
-                "path": "test/files/hmfbamtools/COLO829TESTT.bam_metric.summary.tsv",
-                "swid": "SWID",
+                "path": "test/files/hmfpurple/COLO829TESTT.purple.purity.tsv",
+                "swid": "SWID_T",
                 "project": "COLO829TEST",
                 "pinery_lims_ids": ["ID1", "ID2"],
                 "donor": "COLO829TESTT",
@@ -21,6 +21,6 @@ def tests_hmfbamtools():
             }
         ],
         {
-            "summary": "test/files/hmfbamtools/hmfbamtools_summary.csv",
+            "purity": "test/files/hmfpurple/hmfpurple_purity.csv",
         },
     )

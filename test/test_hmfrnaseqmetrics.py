@@ -1,19 +1,19 @@
-import qcetl.hmfbamtools
+import qcetl.hmfrnaseqmetrics
 import test.cachechecker
 
 
-def tests_hmfbamtools():
+def tests_hmfrnaseqmetrics():
     test.cachechecker.check(
-        qcetl.hmfbamtools.HmfBamToolsCache(),
+        qcetl.hmfrnaseqmetrics.HmfRnaSeqMetricsCache(),
         [
             {
-                "path": "test/files/hmfbamtools/COLO829TESTT.bam_metric.summary.tsv",
-                "swid": "SWID",
+                "path": "test/files/hmfrnaseqmetrics/COLO829TESTT.rna_seq_metrics.txt",
+                "swid": "SWID_RNA",
                 "project": "COLO829TEST",
-                "pinery_lims_ids": ["ID1", "ID2"],
+                "pinery_lims_ids": ["ID3"],
                 "donor": "COLO829TESTT",
                 "group_id": "NO",
-                "library_design": "WG",
+                "library_design": "WT",
                 "tissue_origin": "Sk",
                 "tissue_type": "M",
                 "reference": "hg38",
@@ -21,6 +21,6 @@ def tests_hmfbamtools():
             }
         ],
         {
-            "summary": "test/files/hmfbamtools/hmfbamtools_summary.csv",
+            "summary": "test/files/hmfrnaseqmetrics/hmfrnaseqmetrics_summary.csv",
         },
     )

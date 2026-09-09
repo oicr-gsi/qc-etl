@@ -1953,6 +1953,7 @@ class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
     LowBaseQualPercent = "Low BaseQual Percent"
     OverlappingReadPercent = "Overlapping Read Percent"
     CappedCoverage = "Capped Coverage"
+    MeanInsertSize = "Mean Insert Size"
     DepthCoverage1 = "Depth Coverage 1x"
     DepthCoverage5 = "Depth Coverage 5x"
     DepthCoverage10 = "Depth Coverage 10x"
@@ -1969,30 +1970,119 @@ class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
     DepthCoverage100 = "Depth Coverage 100x"
 
 
-class HmfBamToolsCoverageColumn(HmfBamToolsIdentifierColumn):
+class HmfIsofoxSummaryColumn(BaseColumn):
     """
-    Coverage-depth histogram from ``*.bam_metric.coverage.tsv``.
-    """
+    Per-sample RNA QC metrics from the hmftools Isofox summary
+    (``*.isf.summary.csv``).
 
-    Coverage = "Coverage"
-    Count = "Count"
-
-
-class HmfBamToolsFragmentLengthColumn(HmfBamToolsIdentifierColumn):
-    """
-    Fragment-length histogram from ``*.bam_metric.frag_length.tsv``.
+    ``TotalFragments`` provides the pipeline filtered cluster count. rRNA
+    contamination comes from Picard ``PCT_RIBOSOMAL_BASES`` (see
+    ``hmfrnaseqmetrics``), not from Isofox's ``EnrichedGenePercent``.
     """
 
-    FragmentLength = "Fragment Length"
-    Count = "Count"
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    Sample = "Sample"
+    QcStatus = "QC Status"
+    TotalFragments = "Total Fragments"
+    DuplicateFragments = "Duplicate Fragments"
+    SplicedFragmentPercent = "Spliced Fragment Percent"
+    UnsplicedFragmentPercent = "Unspliced Fragment Percent"
+    AltFragmentPercent = "Alt Fragment Percent"
+    ChimericFragmentPercent = "Chimeric Fragment Percent"
+    SplicedGeneCount = "Spliced Gene Count"
+    ReadLength = "Read Length"
+    FragmentLength5th = "Fragment Length 5th Percentile"
+    FragmentLength50th = "Fragment Length Median"
+    FragmentLength95th = "Fragment Length 95th Percentile"
+    EnrichedGenePercent = "Enriched Gene Percent"
+    MedianGCRatio = "Median GC Ratio"
+    ForwardStrandPercent = "Forward Strand Percent"
 
 
-class HmfBamToolsFlagstatColumn(HmfBamToolsIdentifierColumn):
+class HmfPurpleColumn(BaseColumn):
     """
-    samtools-flagstat style counts from ``*.bam_metric.flag_counts.tsv``.
+    Tumour purity/ploidy QC from the hmftools PURPLE purity file
+    (``*.purple.purity.tsv``). ``Purity`` is the inferred tumour purity; the
+    min/max purity and ploidy fields support alternate-solution review.
     """
 
-    Category = "Category"
-    QcPassedReads = "QC Passed Reads"
-    QcFailedReads = "QC Failed Reads"
-    Percentage = "Percentage"
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    Purity = "Purity"
+    Ploidy = "Ploidy"
+    NormFactor = "Norm Factor"
+    Score = "Score"
+    DiploidProportion = "Diploid Proportion"
+    PolyclonalProportion = "Polyclonal Proportion"
+    MinPurity = "Min Purity"
+    MaxPurity = "Max Purity"
+    MinPloidy = "Min Ploidy"
+    MaxPloidy = "Max Ploidy"
+    MinDiploidProportion = "Min Diploid Proportion"
+    MaxDiploidProportion = "Max Diploid Proportion"
+    SomaticPenalty = "Somatic Penalty"
+
+
+class HmfRnaSeqMetricsColumn(BaseColumn):
+    """
+    RNA QC from Picard ``CollectRnaSeqMetrics`` (``*.rna_seq_metrics.txt``), run
+    on a merged/call-ready RNA BAM in the hmftools pipeline. ``PCT_CODING_BASES``
+    is the fraction of aligned bases on coding exons ("mapped to coding"), and
+    ``PCT_RIBOSOMAL_BASES`` the rRNA fraction (populated when ribosomal
+    intervals are supplied). Picard's raw metric names are kept as-is.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    PfBases = "PF_BASES"
+    PfAlignedBases = "PF_ALIGNED_BASES"
+    RibosomalBases = "RIBOSOMAL_BASES"
+    CodingBases = "CODING_BASES"
+    UtrBases = "UTR_BASES"
+    IntronicBases = "INTRONIC_BASES"
+    IntergenicBases = "INTERGENIC_BASES"
+    IgnoredReads = "IGNORED_READS"
+    CorrectStrandReads = "CORRECT_STRAND_READS"
+    IncorrectStrandReads = "INCORRECT_STRAND_READS"
+    NumR1TranscriptStrandReads = "NUM_R1_TRANSCRIPT_STRAND_READS"
+    NumR2TranscriptStrandReads = "NUM_R2_TRANSCRIPT_STRAND_READS"
+    NumUnexplainedReads = "NUM_UNEXPLAINED_READS"
+    PctR1TranscriptStrandReads = "PCT_R1_TRANSCRIPT_STRAND_READS"
+    PctR2TranscriptStrandReads = "PCT_R2_TRANSCRIPT_STRAND_READS"
+    PctRibosomalBases = "PCT_RIBOSOMAL_BASES"
+    PctCodingBases = "PCT_CODING_BASES"
+    PctUtrBases = "PCT_UTR_BASES"
+    PctIntronicBases = "PCT_INTRONIC_BASES"
+    PctIntergenicBases = "PCT_INTERGENIC_BASES"
+    PctMrnaBases = "PCT_MRNA_BASES"
+    PctUsableBases = "PCT_USABLE_BASES"
+    PctCorrectStrandReads = "PCT_CORRECT_STRAND_READS"
+    MedianCvCoverage = "MEDIAN_CV_COVERAGE"
+    Median5PrimeBias = "MEDIAN_5PRIME_BIAS"
+    Median3PrimeBias = "MEDIAN_3PRIME_BIAS"
+    Median5PrimeTo3PrimeBias = "MEDIAN_5PRIME_TO_3PRIME_BIAS"

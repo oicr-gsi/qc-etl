@@ -2,9 +2,6 @@ import qcetl.common
 from qcetl.column import (
     HmfBamToolsIdentifierColumn as Identifier,
     HmfBamToolsSummaryColumn as Summary,
-    HmfBamToolsCoverageColumn as Coverage,
-    HmfBamToolsFragmentLengthColumn as FragLength,
-    HmfBamToolsFlagstatColumn as Flagstat,
 )
 from qcetl.hmfbamtools.parse import parse_record
 
@@ -12,14 +9,15 @@ from qcetl.hmfbamtools.parse import parse_record
 class HmfBamToolsCache(qcetl.common.Cache):
     """
     QC metrics from hmftools ``bam-tools`` (BamMetrics), run on a merged/
-    call-ready BAM. One build record points at ``*.bam_metric.summary.tsv``;
-    the sibling coverage, fragment-length and flag-count files are derived.
+    call-ready BAM. One build record points at ``*.bam_metric.summary.tsv``.
+    The mean insert size is derived from the sibling fragment-length
+    histogram.
     """
 
     def __init__(self):
         self.name = "hmfbamtools"
 
-        # Merged/call-ready identifiers shared by every table
+        # Merged/call-ready identifiers
         identifiers = {
             Identifier.Donor: "s",
             Identifier.FileSWID: "s",
@@ -51,6 +49,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
                     Summary.LowBaseQualPercent: "f",
                     Summary.OverlappingReadPercent: "f",
                     Summary.CappedCoverage: "f",
+                    Summary.MeanInsertSize: "f",
                     Summary.DepthCoverage1: "f",
                     Summary.DepthCoverage5: "f",
                     Summary.DepthCoverage10: "f",
@@ -66,34 +65,10 @@ class HmfBamToolsCache(qcetl.common.Cache):
                     Summary.DepthCoverage90: "f",
                     Summary.DepthCoverage100: "f",
                 },
-                "coverage": {
-                    **identifiers,
-                    Coverage.Coverage: "i",
-                    Coverage.Count: "i",
-                },
-                "fragment_length": {
-                    **identifiers,
-                    FragLength.FragmentLength: "i",
-                    FragLength.Count: "i",
-                },
-                "flagstat": {
-                    **identifiers,
-                    Flagstat.Category: "s",
-                    Flagstat.QcPassedReads: "i",
-                    Flagstat.QcFailedReads: "i",
-                    Flagstat.Percentage: "qf",
-                },
             }
         }
 
-        self.columns = {
-            1: {
-                "summary": Summary,
-                "coverage": Coverage,
-                "fragment_length": FragLength,
-                "flagstat": Flagstat,
-            }
-        }
+        self.columns = {1: {"summary": Summary}}
 
         self.input_format = {
             "project": "s",
@@ -109,17 +84,7 @@ class HmfBamToolsCache(qcetl.common.Cache):
             "workflow_version": ["i", "i", "i"],
         }
 
-        self.primary_key = {
-            1: {
-                "summary": [Identifier.FileSWID],
-                "coverage": [Identifier.FileSWID, Coverage.Coverage],
-                "fragment_length": [
-                    Identifier.FileSWID,
-                    FragLength.FragmentLength,
-                ],
-                "flagstat": [Identifier.FileSWID, Flagstat.Category],
-            }
-        }
+        self.primary_key = {1: {"summary": [Identifier.FileSWID]}}
 
         self.input_key = {1: ("swid", Identifier.FileSWID)}
 
@@ -128,26 +93,19 @@ class HmfBamToolsCache(qcetl.common.Cache):
         return {1: tables}[schema_version]
 
     def add_shesmu_metadata(self, single_input, schema_version):
-        identifiers = {
-            Identifier.MergedPineryLimsID: single_input["pinery_lims_ids"],
-            Identifier.Project: single_input["project"],
-            Identifier.Reference: single_input.get("reference", "Unknown"),
-            Identifier.FileSWID: single_input["swid"],
-            Identifier.Donor: single_input["donor"],
-            Identifier.GroupID: single_input["group_id"],
-            Identifier.LibraryDesign: single_input["library_design"],
-            Identifier.TissueOrigin: single_input["tissue_origin"],
-            Identifier.TissueType: single_input["tissue_type"],
-        }
-
-        summary = dict(identifiers)
-        summary[Summary.WorkflowVersion] = ".".join(
-            str(x) for x in single_input["workflow_version"]
-        )
-
         return {
-            "summary": summary,
-            "coverage": dict(identifiers),
-            "fragment_length": dict(identifiers),
-            "flagstat": dict(identifiers),
+            "summary": {
+                Identifier.MergedPineryLimsID: single_input["pinery_lims_ids"],
+                Identifier.Project: single_input["project"],
+                Identifier.Reference: single_input.get("reference", "Unknown"),
+                Identifier.FileSWID: single_input["swid"],
+                Identifier.Donor: single_input["donor"],
+                Identifier.GroupID: single_input["group_id"],
+                Identifier.LibraryDesign: single_input["library_design"],
+                Identifier.TissueOrigin: single_input["tissue_origin"],
+                Identifier.TissueType: single_input["tissue_type"],
+                Summary.WorkflowVersion: ".".join(
+                    str(x) for x in single_input["workflow_version"]
+                ),
+            }
         }

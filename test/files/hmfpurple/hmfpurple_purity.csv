@@ -1,0 +1,2 @@
+Donor,File SWID,Group ID,Library Design,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,workflow version,Purity,Ploidy,Norm Factor,Score,Diploid Proportion,Polyclonal Proportion,Min Purity,Max Purity,Min Ploidy,Max Ploidy,Min Diploid Proportion,Max Diploid Proportion,Somatic Penalty
+COLO829TESTT,SWID_T,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,6.2.0,0.3,2.02,1.0683,0.8081,0.0,0.5714,0.3,0.31,1.98,2.04,0.0,0.0,0.0
