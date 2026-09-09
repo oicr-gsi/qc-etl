@@ -22,35 +22,12 @@ logger = logging.getLogger(__name__)
 SUMMARY_SUFFIX = ".summary.tsv"
 
 # Map the raw summary.tsv header to the declared DataFrame column name.
+# Pared to the metrics the QC report needs; mean insert size is derived
+# separately from the fragment-length histogram.
 SUMMARY_COLUMN_MAP = {
-    "TotalRegionBases": Summary.TotalRegionBases,
-    "TotalReads": Summary.TotalReads,
-    "DuplicateReads": Summary.DuplicateReads,
-    "DualStrandReads": Summary.DualStrandReads,
     "MeanCoverage": Summary.MeanCoverage,
-    "StdDevCoverage": Summary.StdDevCoverage,
-    "MedianCoverage": Summary.MedianCoverage,
-    "MadCoverage": Summary.MadCoverage,
-    "LowMapQualPercent": Summary.LowMapQualPercent,
     "DuplicatePercent": Summary.DuplicatePercent,
-    "UnpairedPercent": Summary.UnpairedPercent,
-    "LowBaseQualPercent": Summary.LowBaseQualPercent,
-    "OverlappingReadPercent": Summary.OverlappingReadPercent,
-    "CappedCoverage": Summary.CappedCoverage,
-    "DepthCoverage_1": Summary.DepthCoverage1,
-    "DepthCoverage_5": Summary.DepthCoverage5,
-    "DepthCoverage_10": Summary.DepthCoverage10,
-    "DepthCoverage_15": Summary.DepthCoverage15,
-    "DepthCoverage_20": Summary.DepthCoverage20,
-    "DepthCoverage_25": Summary.DepthCoverage25,
     "DepthCoverage_30": Summary.DepthCoverage30,
-    "DepthCoverage_40": Summary.DepthCoverage40,
-    "DepthCoverage_50": Summary.DepthCoverage50,
-    "DepthCoverage_60": Summary.DepthCoverage60,
-    "DepthCoverage_70": Summary.DepthCoverage70,
-    "DepthCoverage_80": Summary.DepthCoverage80,
-    "DepthCoverage_90": Summary.DepthCoverage90,
-    "DepthCoverage_100": Summary.DepthCoverage100,
 }
 
 
