@@ -1935,39 +1935,17 @@ class HmfBamToolsIdentifierColumn(BaseColumn):
 
 class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
     """
-    Per-sample summary metrics from ``*.bam_metric.summary.tsv``.
+    Per-sample summary metrics from ``*.bam_metric.summary.tsv``, pared to the
+    metrics the QC report needs. ``MeanCoverage`` is bam-tools' deduplicated
+    mean coverage, ``DuplicatePercent`` the duplication rate, and
+    ``DepthCoverage30`` the fraction of the genome at >=30x (callability).
     """
 
     WorkflowVersion = "workflow version"
-    TotalRegionBases = "Total Region Bases"
-    TotalReads = "Total Reads"
-    DuplicateReads = "Duplicate Reads"
-    DualStrandReads = "Dual Strand Reads"
     MeanCoverage = "Mean Coverage"
-    StdDevCoverage = "StdDev Coverage"
-    MedianCoverage = "Median Coverage"
-    MadCoverage = "MAD Coverage"
-    LowMapQualPercent = "Low MapQual Percent"
     DuplicatePercent = "Duplicate Percent"
-    UnpairedPercent = "Unpaired Percent"
-    LowBaseQualPercent = "Low BaseQual Percent"
-    OverlappingReadPercent = "Overlapping Read Percent"
-    CappedCoverage = "Capped Coverage"
     MeanInsertSize = "Mean Insert Size"
-    DepthCoverage1 = "Depth Coverage 1x"
-    DepthCoverage5 = "Depth Coverage 5x"
-    DepthCoverage10 = "Depth Coverage 10x"
-    DepthCoverage15 = "Depth Coverage 15x"
-    DepthCoverage20 = "Depth Coverage 20x"
-    DepthCoverage25 = "Depth Coverage 25x"
     DepthCoverage30 = "Depth Coverage 30x"
-    DepthCoverage40 = "Depth Coverage 40x"
-    DepthCoverage50 = "Depth Coverage 50x"
-    DepthCoverage60 = "Depth Coverage 60x"
-    DepthCoverage70 = "Depth Coverage 70x"
-    DepthCoverage80 = "Depth Coverage 80x"
-    DepthCoverage90 = "Depth Coverage 90x"
-    DepthCoverage100 = "Depth Coverage 100x"
 
 
 class HmfIsofoxSummaryColumn(BaseColumn):

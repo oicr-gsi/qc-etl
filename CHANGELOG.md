@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-* `hmfbamtools` parser for hmftools bam-tools (BamMetrics) merged/call-ready BAM QC: a single summary table of per-sample metrics, including a mean insert size derived from the fragment-length histogram
+* `hmfbamtools` parser for hmftools bam-tools (BamMetrics) merged/call-ready BAM QC: a single summary table with deduplicated mean coverage, duplication rate, 30x depth coverage (callability), and a mean insert size derived from the fragment-length histogram
 * `hmfisofox` parser for hmftools Isofox RNA QC (`*.isf.summary.csv`), providing the pipeline filtered cluster count (total fragments) among the per-sample summary metrics
 * `hmfrnaseqmetrics` parser for Picard `CollectRnaSeqMetrics` RNA QC (`*.rna_seq_metrics.txt`), providing the mapped-to-coding fraction (`PCT_CODING_BASES`) and rRNA fraction (`PCT_RIBOSOMAL_BASES`) among the per-sample base-classification metrics
 * `hmfpurple` parser for hmftools PURPLE tumour purity/ploidy QC (`*.purple.purity.tsv`), including inferred purity and the min/max purity and ploidy ranges for alternate-solution review
