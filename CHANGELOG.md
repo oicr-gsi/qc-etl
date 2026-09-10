@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * ultimamethylcontrol cache
 
+## [1.48] - 2026-09-02
+### Added
+* ultimalibrarymetrics cache
+
 ### Changed
 * Update to `uv` as qc-etl's package manager
 * Move OICR internal release scripts to https://bitbucket.oicr.on.ca/projects/GSI/repos/infrastructure/browse/qc-etl

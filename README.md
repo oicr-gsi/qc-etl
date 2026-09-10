@@ -129,6 +129,8 @@ The following environment variables can be used in QC ETL. If they are not set, 
 | `QC_ETL_ROOT_DIRECTORY`    | No                            | Root directory of caches                                        |
 | `MONGO_URL`                | No                            | URL for MongoDB Pinery source                                   |
 | `PINERY_URL`               | No                            | URL for Pinery                                                  |
+| `QC_ETL_NEXUS_URL`        | For building ultimalibrarymetrics cache | Hostname of the Nexus server (allbarcodes/metrics API call) |
+| `QC_ETL_NEXUS_TOKEN_FILE`  | For building ultimalibrarymetrics cache | Path to a file containing the Nexus auth token          |
 
 ## Create Cache
 Use the `build` method for the desired data source.

@@ -11,6 +11,7 @@ if ! git diff-index --quiet HEAD; then
 fi
 git fetch origin
 git checkout origin/main
+git pull --ff-only -q
 OLD_VERSION="$(uv version --short)"
 
 read -e -p "Please enter the new version (current version is ${OLD_VERSION}): " -i "${OLD_VERSION}" NEW_VERSION
@@ -34,18 +35,16 @@ fi
 DATE=$(date +%Y-%m-%d)
 sed -i "s/## \[Unreleased\]/## \[Unreleased\]\n\n## \[${NEW_VERSION}\] - ${DATE}/g" CHANGELOG.md
 
-git checkout -b "v${NEW_VERSION}_pr"
-
 uv version "$NEW_VERSION"
+uv lock
 
 git add pyproject.toml
 git add CHANGELOG.md
+git add uv.lock
 git commit -m "QC-ETL $NEW_VERSION release"
 git tag "v${NEW_VERSION}"
 
-git push -u origin "v${NEW_VERSION}_pr"
-git push origin "v${NEW_VERSION}"
-echo "Release completed (after the PR has been merged). Copy this export into your shell before running the deploy scripts:"
+git push origin main --follow-tags
+echo "Release completed. Copy this export into your shell before running the deploy scripts:"
 echo "export QCETL_RELEASE_VERSION=${NEW_VERSION} QCETL_PREVIOUS_VERSION=${OLD_VERSION}"
-xdg-open "https://github.com/oicr-gsi/qc-etl/compare/main...v${NEW_VERSION}?quick_pull=1" &
 exit 0

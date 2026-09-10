@@ -44,6 +44,7 @@ import qcetl.samtools
 import qcetl.sequenza
 import qcetl.picard.umiconsensus
 import qcetl.ultimamethylcontrol
+import qcetl.ultimalibrarymetrics
 import qcetl.umiqc
 import qcetl.xenoclassify
 
@@ -104,6 +105,7 @@ formats = (
     qcetl.sequenza.SequenzaCache(),
     qcetl.picard.umiconsensus.HsMetricsUmiConsensusCache(),
     qcetl.ultimamethylcontrol.UltimaMethylControlCache(),
+    qcetl.ultimalibrarymetrics.UltimaLibraryMetricsCache(),
     qcetl.umiqc.umiQcCache(),
     qcetl.xenoclassify.XenoclassifyCache(),
 )
