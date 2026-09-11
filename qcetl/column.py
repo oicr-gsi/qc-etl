@@ -1784,6 +1784,18 @@ class SequenzaColumn(BaseColumn):
     TissueType = ColumnNames.TissueType
 
 
+class UltimaMethylControlColumn(BaseColumn):
+    Run = "run"
+    PercentMethylationMeanLambda = "percent methylation mean lambda"
+    PercentMethylationMeanPuc19 = "percent methylation mean puc19"
+    PercentMethylationMeanHg = "percent methylation mean hg"
+    CoverageMeanLambda = "coverage mean lambda"
+    CoverageMeanPuc19 = "coverage mean puc19"
+    CoverageMeanHg = "coverage mean hg"
+    BarcodeSequence = "barcode sequence"
+    BarcodeName = "barcode name"
+    PineryLimsID = ColumnNames.PineryLimsID
+    
 class UltimaLibraryMetricsColumn(BaseColumn):
     Run = ColumnNames.Run
     Barcode = "Barcode"
