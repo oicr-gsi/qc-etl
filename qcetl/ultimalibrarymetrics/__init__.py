@@ -56,7 +56,7 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
                     Column.MeanReadLength: "f",
                     Column.PercentPFQ20Bases: "f",
                     Column.PercentPFQ30Bases: "f",
-                    Column.PFBarcodeReads: "f",
+                    Column.PFBarcodeReads: "i",
                     Column.PercentPFHQAligned: "f",
                     Column.MedianReadLength: "f",
                     Column.PercentFailedQCReads: "f",
