@@ -1795,7 +1795,8 @@ class UltimaMethylControlColumn(BaseColumn):
     BarcodeSequence = "barcode sequence"
     BarcodeName = "barcode name"
     PineryLimsID = ColumnNames.PineryLimsID
-    
+
+
 class UltimaLibraryMetricsColumn(BaseColumn):
     Run = ColumnNames.Run
     Barcode = "Barcode"
