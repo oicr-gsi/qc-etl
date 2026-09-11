@@ -1,9 +1,12 @@
+import logging
 import os
 
 import qcetl.common
 from qcetl.column import UltimaLibraryMetricsColumn as Column
 from qcetl.common.utility import load_json_from_url
 from qcetl.ultimalibrarymetrics.parse import parse_records
+
+logger = logging.getLogger(__name__)
 
 
 class UltimaLibraryMetricsCache(qcetl.common.Cache):
@@ -22,7 +25,6 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
             1: {
                 "ultimalibrarymetrics": {
                     Column.Run: "s",
-                    Column.SampleName: "s",
                     Column.Barcode: "s",
                     Column.PineryLimsID: "s",
                     Column.MeanCoverage: "f",
@@ -50,11 +52,11 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
                     Column.PercentChimeras: "f",
                     Column.MismatchRate: "f",
                     Column.PercentPFAligned: "f",
-                    Column.FailedQCReads: "f",
+                    Column.FailedQCReads: "i",
                     Column.MeanReadLength: "f",
                     Column.PercentPFQ20Bases: "f",
                     Column.PercentPFQ30Bases: "f",
-                    Column.PFBarcodeReads: "f",
+                    Column.PFBarcodeReads: "i",
                     Column.PercentPFHQAligned: "f",
                     Column.MedianReadLength: "f",
                     Column.PercentFailedQCReads: "f",
@@ -76,18 +78,22 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
             }
         }
         self.columns = {1: {"ultimalibrarymetrics": Column}}
-        self.input_format = {"run": "s", "pinery_lims_id": "s"}
-        self.primary_key = {
-            1: {"ultimalibrarymetrics": [Column.Run, Column.SampleName]}
+        self.input_format = {
+            "run": "s",
+            "barcode": "s",
+            "pinery_lims_id": "s",
         }
-        self.input_key = {1: ("run", Column.Run)}
+        self.primary_key = {
+            1: {"ultimalibrarymetrics": [Column.Run, Column.Barcode]}
+        }
+        self.input_key = {1: ("pinery_lims_id", Column.PineryLimsID)}
 
         self.host = host
         self.token_file = token_file
 
-    def fetch(self, run_id):
+    def fetch(self, run_id, barcode):
         """
-        Loads JSON from the Nexus allbarcodes/metrics API for a single run.
+        Loads JSON from the Nexus metrics API for a single run/barcode.
         """
         host = self.host or os.getenv("QC_ETL_NEXUS_URL")
         if host is None:
@@ -106,20 +112,24 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         with open(token_file, "r") as f:
             token = f.readline().strip()
 
-        url = "https://{}/api/data/allbarcodes/metrics/{}".format(host, run_id)
+        url = "https://{}/api/data/metrics/{}/{}?purpose=qtable".format(
+            host, run_id, barcode
+        )
         data = load_json_from_url(url, headers={"Authorization": token})
-        if data is None:
-            raise qcetl.common.InvalidRecordError(
-                "No data returned from Nexus for run {}".format(run_id)
+        if not data:
+            logger.warning(
+                "No data returned from Nexus for run {} barcode {}".format(
+                    run_id, barcode
+                )
             )
         return data
 
     def parse_single_record(self, single_input, schema_version):
         run_id = single_input["run"]
-        data = self.fetch(run_id)
-        return {1: {"ultimalibrarymetrics": parse_records(data)}}[
-            schema_version
-        ]
+        barcode = single_input["barcode"]
+        data = self.fetch(run_id, barcode)
+        table = parse_records(data, barcode)
+        return {1: {"ultimalibrarymetrics": table}}[schema_version]
 
     def add_shesmu_metadata(self, single_input, schema_version):
         return {
