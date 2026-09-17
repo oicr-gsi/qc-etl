@@ -1,13 +1,5 @@
 [
     {
-        "barcode": "Z0009",
-        "qtable": {
-            "Sample": " ",
-            "Mean_cvg": "0",
-            "% duplicates": "0.0"
-        }
-    },
-    {
         "barcode": "Z1428",
         "qtable": {
             "F80": "18",
