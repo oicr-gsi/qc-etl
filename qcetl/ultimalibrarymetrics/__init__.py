@@ -90,11 +90,17 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
 
         self.host = host
         self.token_file = token_file
+        self._run_metrics_cache = {}
 
-    def fetch(self, run_id, barcode):
+    def fetch(self, run_id):
         """
-        Loads JSON from the Nexus metrics API for a single run/barcode.
+        Loads JSON from the Nexus metrics API listing every barcode's
+        metrics for a run. Multiple input records for the same run only trigger one HTTP
+        call per build.
         """
+        if run_id in self._run_metrics_cache:
+            return self._run_metrics_cache[run_id]
+
         host = self.host or os.getenv("QC_ETL_NEXUS_URL")
         if host is None:
             raise TypeError(
@@ -112,22 +118,19 @@ class UltimaLibraryMetricsCache(qcetl.common.Cache):
         with open(token_file, "r") as f:
             token = f.readline().strip()
 
-        url = "https://{}/api/data/metrics/{}/{}?purpose=qtable".format(
-            host, run_id, barcode
-        )
+        url = "https://{}/api/data/allbarcodes/metrics/{}".format(host, run_id)
         data = load_json_from_url(url, headers={"Authorization": token})
         if not data:
             logger.warning(
-                "No data returned from Nexus for run {} barcode {}".format(
-                    run_id, barcode
-                )
+                "No data returned from Nexus for run {}".format(run_id)
             )
+        self._run_metrics_cache[run_id] = data
         return data
 
     def parse_single_record(self, single_input, schema_version):
         run_id = single_input["run"]
         barcode = single_input["barcode"]
-        data = self.fetch(run_id, barcode)
+        data = self.fetch(run_id)
         table = parse_records(data, barcode)
         return {1: {"ultimalibrarymetrics": table}}[schema_version]
 

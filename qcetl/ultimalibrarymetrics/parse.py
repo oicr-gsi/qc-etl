@@ -1,6 +1,11 @@
+import logging
+import re
+
 import pandas
 
 from qcetl.column import UltimaLibraryMetricsColumn as Column
+
+logger = logging.getLogger(__name__)
 
 _COLUMNS = [
     Column.Barcode,
@@ -54,6 +59,19 @@ _COLUMNS = [
 ]
 
 
+def _normalize_barcode(barcode):
+    """
+    "ppm0044" and "ppm044" refer to the same barcode. Strip any zero
+    padding immediately after the "ppm" prefix so the two forms compare
+    equal.
+    """
+    match = re.match(r"^(ppm)(0*)(\d+)$", barcode, re.IGNORECASE)
+    if not match:
+        return barcode
+    prefix, _, digits = match.groups()
+    return "{}{}".format(prefix, int(digits))
+
+
 def _optional_float(qtable, key):
     """
     Some qtable fields are only present for certain runs. Missing fields
@@ -65,21 +83,32 @@ def _optional_float(qtable, key):
 
 def parse_records(data, barcode):
     """
-    Turn the Nexus per-run/barcode metrics response into a single-row
-    DataFrame.
+    Turn the Nexus all-barcodes-for-a-run metrics response into a
+    single-row DataFrame for the requested barcode.
 
     Args:
-        data: List containing a single {"barcode": ..., "qtable": {...}}
-            dict, as returned by the Nexus metrics API for one run and
-            barcode (`/api/data/metrics/{run}/{barcode}?purpose=qtable`).
-        barcode: The barcode this response was fetched for.
+        data: List of {"barcode": ..., "qtable": {...}} dicts, as
+            returned by the Nexus metrics API for an entire run
+            (`/api/data/allbarcodes/metrics/{run}`).
+        barcode: The barcode to extract from the response.
 
     Returns:
 
     """
     if not data:
         return pandas.DataFrame(columns=_COLUMNS)
-    qtable = data[0].get("qtable", {})
+    normalized_barcode = _normalize_barcode(barcode)
+    match = None
+    for entry in data:
+        if _normalize_barcode(entry.get("barcode", "")) == normalized_barcode:
+            match = entry
+            break
+    if match is None:
+        logger.warning(
+            "No metrics found for barcode {} in Nexus response".format(barcode)
+        )
+        return pandas.DataFrame(columns=_COLUMNS)
+    qtable = match.get("qtable", {})
     row = {
         Column.Barcode: barcode,
         Column.MeanCoverage: float(qtable["Mean_cvg"]),
