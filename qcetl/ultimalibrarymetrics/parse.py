@@ -1,9 +1,13 @@
+import logging
+import re
+
 import pandas
 
 from qcetl.column import UltimaLibraryMetricsColumn as Column
 
+logger = logging.getLogger(__name__)
+
 _COLUMNS = [
-    Column.SampleName,
     Column.Barcode,
     Column.MeanCoverage,
     Column.PercentDuplicates,
@@ -55,6 +59,19 @@ _COLUMNS = [
 ]
 
 
+def _normalize_barcode(barcode):
+    """
+    "ppm0044" and "ppm044" refer to the same barcode. Strip any zero
+    padding immediately after the "ppm" prefix so the two forms compare
+    equal.
+    """
+    match = re.match(r"^(ppm)(0*)(\d+)$", barcode, re.IGNORECASE)
+    if not match:
+        return barcode
+    prefix, _, digits = match.groups()
+    return "{}{}".format(prefix, int(digits))
+
+
 def _optional_float(qtable, key):
     """
     Some qtable fields are only present for certain runs. Missing fields
@@ -64,103 +81,94 @@ def _optional_float(qtable, key):
     return None if value is None else float(value)
 
 
-def parse_records(data):
+def parse_records(data, barcode):
     """
-    Turn the Nexus allbarcodes/metrics response into a DataFrame, keeping
-    only entries with a non-blank Sample name.
+    Turn the Nexus all-barcodes-for-a-run metrics response into a
+    single-row DataFrame for the requested barcode.
 
     Args:
-        data: List of {"barcode": ..., "qtable": {...}} dicts, as returned
-            by the Nexus API.
+        data: List of {"barcode": ..., "qtable": {...}} dicts, as
+            returned by the Nexus metrics API for an entire run
+            (`/api/data/allbarcodes/metrics/{run}`).
+        barcode: The barcode to extract from the response.
 
     Returns:
 
     """
-    rows = []
+    if not data:
+        return pandas.DataFrame(columns=_COLUMNS)
+    normalized_barcode = _normalize_barcode(barcode)
+    match = None
     for entry in data:
-        qtable = entry.get("qtable", {})
-        sample = (qtable.get("Sample") or "").strip()
-        if not sample:
-            continue
-        rows.append(
-            {
-                Column.SampleName: sample,
-                Column.Barcode: entry.get("barcode"),
-                Column.MeanCoverage: float(qtable.get("Mean_cvg")),
-                Column.PercentDuplicates: float(qtable.get("% duplicates")),
-                Column.F80: float(qtable.get("F80")),
-                Column.F90: float(qtable.get("F90")),
-                Column.F95: float(qtable.get("F95")),
-                Column.PercentGte1x: float(qtable.get("%>=1x")),
-                Column.PercentGte10x: float(qtable.get("%>=10x")),
-                Column.PercentGte20x: float(qtable.get("%>=20x")),
-                Column.PercentGte50x: float(qtable.get("%>=50x")),
-                Column.PercentGte100x: float(qtable.get("%>=100x")),
-                Column.PercentGte500x: float(qtable.get("%>=500x")),
-                Column.PercentGte1000x: float(qtable.get("%>=1000x")),
-                Column.F80At30x: float(qtable.get("F80@30x")),
-                Column.F90At30x: float(qtable.get("F90@30x")),
-                Column.F95At30x: float(qtable.get("F95@30x")),
-                Column.MAPQGte1: float(qtable.get("MAPQ >= 1")),
-                Column.MAPQGte10: float(qtable.get("MAPQ >= 10")),
-                Column.MAPQGte20: float(qtable.get("MAPQ >= 20")),
-                Column.MAPQGte30: float(qtable.get("MAPQ >= 30")),
-                Column.MedianCoverage: float(qtable.get("median_cvg")),
-                Column.IndelRate: float(qtable.get("Indel_Rate")),
-                Column.MeanQuality: float(qtable.get("Mean_quality")),
-                Column.PercentChimeras: float(qtable.get("PCT_Chimeras")),
-                Column.MismatchRate: float(qtable.get("Mismatch_Rate")),
-                Column.PercentPFAligned: float(qtable.get("PCT_PF_aligned")),
-                Column.FailedQCReads: float(qtable.get("Failed_QC_reads")),
-                Column.MeanReadLength: float(qtable.get("Mean_Read_Length")),
-                Column.PercentPFQ20Bases: float(qtable.get("PCT_PF_Q20_bases")),
-                Column.PercentPFQ30Bases: float(qtable.get("PCT_PF_Q30_bases")),
-                Column.PFBarcodeReads: float(qtable.get("PF_Barcode_reads")),
-                Column.PercentPFHQAligned: float(
-                    qtable.get("PCT_PF_HQ_aligned")
-                ),
-                Column.MedianReadLength: float(
-                    qtable.get("Median_Read_Length")
-                ),
-                Column.PercentFailedQCReads: float(
-                    qtable.get("PCT_Failed_QC_reads")
-                ),
-                Column.PercentPFReadsAligned: float(
-                    qtable.get("PCT_PF_Reads_aligned")
-                ),
-                Column.PercentSoftclippedBases: float(
-                    qtable.get("PCT_SOFTCLIPPED_bases")
-                ),
-                Column.MeanAlignedReadLength: float(
-                    qtable.get("Mean_Aligned_Read_Length")
-                ),
-                Column.PercentOpticalDuplicatesRingOverlap: float(
-                    qtable.get("% optical duplicates ring-overlap")
-                ),
-                Column.PercentOpticalDuplicatesFalseDetection: float(
-                    qtable.get("% optical duplicates false-detection")
-                ),
-                Column.PctPFQ20Flows: _optional_float(
-                    qtable, "PCT_PF_Q20_FLOWS"
-                ),
-                Column.PctPFQ30Flows: _optional_float(
-                    qtable, "PCT_PF_Q30_FLOWS"
-                ),
-                Column.PctPFQ20Snvq: _optional_float(qtable, "PCT_PF_Q20_SNVQ"),
-                Column.PctPFQ30Snvq: _optional_float(qtable, "PCT_PF_Q30_SNVQ"),
-                Column.PctPFQ40Snvq: _optional_float(qtable, "PCT_PF_Q40_SNVQ"),
-                Column.PpmseqPctReadEndUnreached: _optional_float(
-                    qtable, "PCT_read_end_unreached"
-                ),
-                Column.PpmseqMixedReadMeanCoverage: _optional_float(
-                    qtable, "MIXED_read_mean_coverage"
-                ),
-                Column.PpmseqPctFailedAdapterDimers: _optional_float(
-                    qtable, "PCT_failed_adapter_dimers"
-                ),
-                Column.PpmseqPctMixedBothTagsWhereEndreached: _optional_float(
-                    qtable, "PCT_MIXED_both_tags_where_endreached"
-                ),
-            }
+        if _normalize_barcode(entry.get("barcode", "")) == normalized_barcode:
+            match = entry
+            break
+    if match is None:
+        logger.warning(
+            "No metrics found for barcode {} in Nexus response".format(barcode)
         )
-    return pandas.DataFrame(rows, columns=_COLUMNS)
+        return pandas.DataFrame(columns=_COLUMNS)
+    qtable = match.get("qtable", {})
+    row = {
+        Column.Barcode: barcode,
+        Column.MeanCoverage: float(qtable["Mean_cvg"]),
+        Column.PercentDuplicates: float(qtable["% duplicates"]),
+        Column.F80: float(qtable["F80"]),
+        Column.F90: float(qtable["F90"]),
+        Column.F95: float(qtable["F95"]),
+        Column.PercentGte1x: float(qtable["%>=1x"]),
+        Column.PercentGte10x: float(qtable["%>=10x"]),
+        Column.PercentGte20x: float(qtable["%>=20x"]),
+        Column.PercentGte50x: float(qtable["%>=50x"]),
+        Column.PercentGte100x: float(qtable["%>=100x"]),
+        Column.PercentGte500x: float(qtable["%>=500x"]),
+        Column.PercentGte1000x: float(qtable["%>=1000x"]),
+        Column.F80At30x: float(qtable["F80@30x"]),
+        Column.F90At30x: float(qtable["F90@30x"]),
+        Column.F95At30x: float(qtable["F95@30x"]),
+        Column.MAPQGte1: float(qtable["MAPQ >= 1"]),
+        Column.MAPQGte10: float(qtable["MAPQ >= 10"]),
+        Column.MAPQGte20: float(qtable["MAPQ >= 20"]),
+        Column.MAPQGte30: float(qtable["MAPQ >= 30"]),
+        Column.MedianCoverage: float(qtable["median_cvg"]),
+        Column.IndelRate: float(qtable["Indel_Rate"]),
+        Column.MeanQuality: float(qtable["Mean_quality"]),
+        Column.PercentChimeras: float(qtable["PCT_Chimeras"]),
+        Column.MismatchRate: float(qtable["Mismatch_Rate"]),
+        Column.PercentPFAligned: float(qtable["PCT_PF_aligned"]),
+        Column.FailedQCReads: int(qtable["Failed_QC_reads"]),
+        Column.MeanReadLength: float(qtable["Mean_Read_Length"]),
+        Column.PercentPFQ20Bases: float(qtable["PCT_PF_Q20_bases"]),
+        Column.PercentPFQ30Bases: float(qtable["PCT_PF_Q30_bases"]),
+        Column.PFBarcodeReads: int(qtable["PF_Barcode_reads"]),
+        Column.PercentPFHQAligned: float(qtable["PCT_PF_HQ_aligned"]),
+        Column.MedianReadLength: float(qtable["Median_Read_Length"]),
+        Column.PercentFailedQCReads: float(qtable["PCT_Failed_QC_reads"]),
+        Column.PercentPFReadsAligned: float(qtable["PCT_PF_Reads_aligned"]),
+        Column.PercentSoftclippedBases: float(qtable["PCT_SOFTCLIPPED_bases"]),
+        Column.MeanAlignedReadLength: float(qtable["Mean_Aligned_Read_Length"]),
+        Column.PercentOpticalDuplicatesRingOverlap: float(
+            qtable["% optical duplicates ring-overlap"]
+        ),
+        Column.PercentOpticalDuplicatesFalseDetection: float(
+            qtable["% optical duplicates false-detection"]
+        ),
+        Column.PctPFQ20Flows: _optional_float(qtable, "PCT_PF_Q20_FLOWS"),
+        Column.PctPFQ30Flows: _optional_float(qtable, "PCT_PF_Q30_FLOWS"),
+        Column.PctPFQ20Snvq: _optional_float(qtable, "PCT_PF_Q20_SNVQ"),
+        Column.PctPFQ30Snvq: _optional_float(qtable, "PCT_PF_Q30_SNVQ"),
+        Column.PctPFQ40Snvq: _optional_float(qtable, "PCT_PF_Q40_SNVQ"),
+        Column.PpmseqPctReadEndUnreached: _optional_float(
+            qtable, "PCT_read_end_unreached"
+        ),
+        Column.PpmseqMixedReadMeanCoverage: _optional_float(
+            qtable, "MIXED_read_mean_coverage"
+        ),
+        Column.PpmseqPctFailedAdapterDimers: _optional_float(
+            qtable, "PCT_failed_adapter_dimers"
+        ),
+        Column.PpmseqPctMixedBothTagsWhereEndreached: _optional_float(
+            qtable, "PCT_MIXED_both_tags_where_endreached"
+        ),
+    }
+    return pandas.DataFrame([row], columns=_COLUMNS)
