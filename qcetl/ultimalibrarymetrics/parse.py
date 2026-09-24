@@ -81,6 +81,17 @@ def _optional_float(qtable, key):
     return None if value is None else float(value)
 
 
+def _unbracketed_float(qtable, key):
+    """
+    Nexus sometimes wraps values in parentheses, e.g. "(1.26)" to denote that F__@30x could
+    not be calculated and F__ is being used. We will not support this.
+    """
+    value = qtable[key].strip()
+    if value.startswith("(") or value.endswith(")"):
+        return None
+    return float(value)
+
+
 def parse_records(data, barcode):
     """
     Turn the Nexus all-barcodes-for-a-run metrics response into a
@@ -123,9 +134,9 @@ def parse_records(data, barcode):
         Column.PercentGte100x: float(qtable["%>=100x"]),
         Column.PercentGte500x: float(qtable["%>=500x"]),
         Column.PercentGte1000x: float(qtable["%>=1000x"]),
-        Column.F80At30x: float(qtable["F80@30x"]),
-        Column.F90At30x: float(qtable["F90@30x"]),
-        Column.F95At30x: float(qtable["F95@30x"]),
+        Column.F80At30x: _unbracketed_float(qtable, "F80@30x"),
+        Column.F90At30x: _unbracketed_float(qtable, "F90@30x"),
+        Column.F95At30x: _unbracketed_float(qtable, "F95@30x"),
         Column.MAPQGte1: float(qtable["MAPQ >= 1"]),
         Column.MAPQGte10: float(qtable["MAPQ >= 10"]),
         Column.MAPQGte20: float(qtable["MAPQ >= 20"]),

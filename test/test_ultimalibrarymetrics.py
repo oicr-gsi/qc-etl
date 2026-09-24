@@ -1,4 +1,5 @@
 import json
+import pandas
 import test.cachechecker
 from qcetl.column import UltimaLibraryMetricsColumn as Column
 from qcetl.ultimalibrarymetrics import UltimaLibraryMetricsCache
@@ -85,3 +86,17 @@ def tests_ppm_barcode_normalization():
     # A genuinely different barcode still shouldn't match.
     table = parse_records(data, "ppm045")
     assert len(table) == 0
+
+
+def tests_bracketed_f_at_30x_values_are_null():
+    qtable = dict(
+        _MINIMAL_QTABLE,
+        **{"F80@30x": "(1.26)", "F90@30x": "(2.5)", "F95@30x": "3.1"},
+    )
+    data = [{"barcode": "Z1428", "qtable": qtable}]
+
+    table = parse_records(data, "Z1428")
+    assert len(table) == 1
+    assert pandas.isna(table.iloc[0][Column.F80At30x])
+    assert pandas.isna(table.iloc[0][Column.F90At30x])
+    assert table.iloc[0][Column.F95At30x] == 3.1
