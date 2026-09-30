@@ -26,6 +26,10 @@ import qcetl.crosscheckfingerprint_caller
 import qcetl.dnaseqqc
 import qcetl.emseqqc
 import qcetl.fastqc
+import qcetl.hmfbamtools
+import qcetl.hmfisofox
+import qcetl.hmfpurple
+import qcetl.hmfrnaseqmetrics
 import qcetl.picard.calculatecontamination
 import qcetl.picard.crosscheckfingerprints
 import qcetl.picard.hsmetrics
@@ -83,6 +87,10 @@ formats = (
     qcetl.dnaseqqc.DnaSeqQcCache(),
     qcetl.emseqqc.EmSeqQcCache(),
     qcetl.fastqc.FastQcCache(),
+    qcetl.hmfbamtools.HmfBamToolsCache(),
+    qcetl.hmfisofox.HmfIsofoxCache(),
+    qcetl.hmfpurple.HmfPurpleCache(),
+    qcetl.hmfrnaseqmetrics.HmfRnaSeqMetricsCache(),
     qcetl.icametrics.ICAMetricsCache(),
     qcetl.ichorcna.IchorCnaCache(),
     qcetl.ichorcna.IchorCnaMergedCache(),

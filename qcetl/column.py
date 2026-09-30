@@ -1986,3 +1986,98 @@ class XenoclassifyColumn(BaseColumn):
     Lane = ColumnNames.Lane
     NeitherReads = "neither_reads"
     Run = ColumnNames.Run
+
+
+class HmfBamToolsIdentifierColumn(BaseColumn):
+    """
+    Shared merged/call-ready identifiers for the hmftools bam-tools QC parser.
+    Added to every hmfbamtools table via ``add_shesmu_metadata``.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+
+
+class HmfBamToolsSummaryColumn(HmfBamToolsIdentifierColumn):
+    """
+    Per-sample summary metrics from ``*.bam_metric.summary.tsv``, pared to the
+    metrics the QC report needs. ``MeanCoverage`` is bam-tools' deduplicated
+    mean coverage, ``DuplicatePercent`` the duplication rate, and
+    ``DepthCoverage30`` the fraction of the genome at >=30x (callability).
+    """
+
+    WorkflowVersion = "workflow version"
+    MeanCoverage = "Mean Coverage"
+    DuplicatePercent = "Duplicate Percent"
+    MeanInsertSize = "Mean Insert Size"
+    DepthCoverage30 = "Depth Coverage 30x"
+
+
+class HmfIsofoxSummaryColumn(BaseColumn):
+    """
+    Per-sample RNA QC from the hmftools Isofox summary (``*.isf.summary.csv``),
+    pared to the metric the QC report needs. ``TotalFragments`` is the pipeline
+    filtered cluster count. rRNA contamination comes from Picard
+    ``PCT_RIBOSOMAL_BASES`` (see ``hmfrnaseqmetrics``), not from Isofox.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    TotalFragments = "Total Fragments"
+
+
+class HmfPurpleColumn(BaseColumn):
+    """
+    Tumour purity QC from the hmftools PURPLE purity file
+    (``*.purple.purity.tsv``), pared to the inferred tumour purity.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    Purity = "Purity"
+
+
+class HmfRnaSeqMetricsColumn(BaseColumn):
+    """
+    RNA QC from Picard ``CollectRnaSeqMetrics`` (``*.rna_seq_metrics.txt``), run
+    on a merged/call-ready RNA BAM in the hmftools pipeline. ``PCT_CODING_BASES``
+    is the fraction of aligned bases on coding exons ("mapped to coding"), and
+    ``PCT_RIBOSOMAL_BASES`` the rRNA fraction (populated when ribosomal
+    intervals are supplied). Picard's raw metric names are kept as-is.
+    """
+
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    Project = ColumnNames.Project
+    Reference = ColumnNames.Reference
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    WorkflowVersion = "workflow version"
+    PctCodingBases = "PCT_CODING_BASES"
+    PctRibosomalBases = "PCT_RIBOSOMAL_BASES"

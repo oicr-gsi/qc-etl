@@ -1,0 +1,2 @@
+SampleId,QcStatus,TotalFragments,DuplicateFragments,SplicedFragmentPerc,UnsplicedFragmentPerc,AltFragmentPerc,ChimericFragmentPerc,SplicedGeneCount,ReadLength,FragLength5th,FragLength50th,FragLength95th,EnrichedGenePercent,MedianGCRatio,ForwardStrandPercent
+COLO829TESTR-RNA,FAIL_LOW_COVERAGE,318681,180550,0.647,0.152,0.044,0.021,106,101,66,158,343,0.000,0.465,0.523

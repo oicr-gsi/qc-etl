@@ -1,0 +1,2 @@
+Donor,File SWID,Group ID,Library Design,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,workflow version,Purity
+COLO829TESTT,SWID_T,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,6.2.0,0.3
