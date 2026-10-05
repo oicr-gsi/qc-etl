@@ -1,6 +1,6 @@
 import qcetl.common
 from qcetl.column import UltimaMergeQcColumn as Column
-from qcetl.ultima_merge_qc.parse import parse_record
+from qcetl.ultimamergeqc.parse import parse_record
 
 
 class UltimaMergeQcCache(qcetl.common.Cache):
@@ -9,6 +9,13 @@ class UltimaMergeQcCache(qcetl.common.Cache):
         self.schema_versions = {
             1: {
                 "ultimamergeqc": {
+                    # Shesmu metadata
+                    Column.Donor: "s",
+                    Column.GroupID: "s",
+                    Column.MergedPineryLimsID: "as",
+                    Column.TissueOrigin: "s",
+                    Column.TissueType: "s",
+                    Column.WorkflowRunSWID: "s",
                     # ALN: CollectAlignmentSummaryMetrics
                     Column.Category: "s",
                     Column.TotalReads: "i",
@@ -86,13 +93,6 @@ class UltimaMergeQcCache(qcetl.common.Cache):
                     Column.Fold95BasePenalty: "f",
                     Column.HetSnpSensitivity: "f",
                     Column.HetSnpQ: "f",
-                    # Shesmu metadata
-                    Column.Donor: "s",
-                    Column.GroupID: "s",
-                    Column.MergedPineryLimsID: "as",
-                    Column.TissueOrigin: "s",
-                    Column.TissueType: "s",
-                    Column.WorkflowRunSWID: "s",
                 }
             }
         }
