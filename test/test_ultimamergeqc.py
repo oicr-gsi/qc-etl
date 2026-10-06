@@ -7,11 +7,11 @@ def test_ultimamergeqc():
         qcetl.ultimamergeqc.UltimaMergeQcCache(),
         [
             {
-                "alignment_summary_file": "test/files/ultimamergeqc/LDI153108-ppm055-CAACTATCTGCAGAT.alignment_summary_metrics",
-                "duplicate_metrics_file": "test/files/ultimamergeqc/LDI153108-ppm055-CAACTATCTGCAGAT.duplicate_metrics",
-                "wgs_metrics_file": "test/files/ultimamergeqc/LDI153108-ppm055-CAACTATCTGCAGAT.wgs_metrics.txt",
-                "donor": "TRNWLS_0071",
-                "group_id": "TRNWLS_0071_Pl_T_PG_HMN1547603A00001",
+                "alignment_summary_file": "test/files/ultimamergeqc/Test_01.alignment_summary_metrics",
+                "duplicate_metrics_file": "test/files/ultimamergeqc/Test_01.duplicate_metrics",
+                "wgs_metrics_file": "test/files/ultimamergeqc/Test_01.wgs_metrics.txt",
+                "donor": "Test_01",
+                "group_id": "Test_01",
                 "pinery_lims_ids": ["9620_1_LDI153108"],
                 "tissue_origin": "Pl",
                 "tissue_type": "T",
