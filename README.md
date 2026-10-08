@@ -6,10 +6,10 @@ To parse and store data from QC workflows in a consistent, typed, and versioned 
 ## Usage
 ```
 qc-etl --help
-usage: qc-etl [-h] {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,input} ...
+usage: qc-etl [-h] {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,find,input} ...
 
 positional arguments:
-  {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,input}
+  {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,find,input}
                         sub-command help
     list                List all known formats
     versions            List all known versions for a format
@@ -20,6 +20,9 @@ positional arguments:
     build               Build a cache and store it in a SQLite backend
     build-postgres      Build a cache and store it in a Postgres backend
     count               Count records. Filter by run, lane, and barcode
+    find                Print the single record matching the run, lane, and/or
+                        barcode filters, or the external key filter. Fails if there
+                        are zero or multiple matches.
     input               Information on Shesmu input.
 
 options:
@@ -42,6 +45,16 @@ Each cache stores one or more tables. To list them:
 To get the columns and types of a table:
 
 `qc-etl schema bamqc4 bamqc4`
+
+To find and display the record in a table which matches the run, lane and/or barcode filters (if exists):
+
+`qcetl find -r "20260106_0038_BCDEFGXK" -l 1 -b "ACGTTGCA-TGCAACGT" bamqc4 bamqc4`
+
+(The exernal_key (-e) filter may be used instead.)
+
+To count the number of records in a table which match the external key filter:
+`qcetl count -e 1234_1_LDI2918 bamqc4 bamqc4`
+
 
 To download a SQLite cache, its location is specified with the -d flag or set via the QC_ETL_ROOT_DIRECTORY environmental variable. The below are equivalent:
 

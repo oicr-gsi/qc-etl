@@ -1,6 +1,7 @@
 import argparse
 import json
 import logging
+import pandas
 from logging.handlers import RotatingFileHandler
 import shutil
 import sqlalchemy
@@ -441,7 +442,12 @@ def rebuild(args):
     return len(rslt.failed)
 
 
-def count(args):
+def load_filtered_records(args):
+    """
+    Load the requested table from all cache directories and apply the
+    run/lane/barcode filters. Returns None (after reporting why on stderr) if
+    the data could not be loaded.
+    """
     form = args.format
     # With no -d flag, fall back to QC_ETL_ROOT_DIRECTORY, which may hold
     # several directories separated by os.pathsep
@@ -458,7 +464,7 @@ def count(args):
             "QC_ETL_ROOT_DIRECTORY env variable",
             file=sys.stderr,
         )
-        return 1
+        return None
     version = form.latest_version() if args.version is None else args.version
     caches = []
     for directory in directories:
@@ -480,7 +486,7 @@ def count(args):
             )
             cache.close()
     if not caches:
-        return 1
+        return None
 
     # Records present in more than one directory are counted once
     data = qcetl.common.MultiCacheFromVersion(
@@ -507,7 +513,89 @@ def count(args):
     if args.barcode is not None and check_filter_column(ColumnNames.Barcodes):
         data = data[data[ColumnNames.Barcodes] == args.barcode]
 
+    return data
+
+
+def count(args):
+    data = load_filtered_records(args)
+    if data is None:
+        return 1
+    if args.external_key is not None:
+        data = filter_by_external_key(data, args.external_key)
+        if data is None:
+            print(
+                "Table {} has no {} or {} column to search by external key".format(
+                    args.table,
+                    ColumnNames.PineryLimsID,
+                    ColumnNames.MergedPineryLimsID,
+                ),
+                file=sys.stderr,
+            )
+            return 1
     print(data.shape[0])
+    return 0
+
+
+def filter_by_external_key(data, key):
+    """
+    Keep rows where the Pinery Lims ID equals the key, or the key is a member
+    of the Merged Pinery Lims ID list. Returns None if the table has neither
+    column.
+    """
+    id_columns = [
+        c
+        for c in (ColumnNames.PineryLimsID, ColumnNames.MergedPineryLimsID)
+        if c in data
+    ]
+    if not id_columns:
+        return None
+    mask = pandas.Series(False, index=data.index)
+    if ColumnNames.PineryLimsID in data:
+        mask |= data[ColumnNames.PineryLimsID] == key
+    if ColumnNames.MergedPineryLimsID in data:
+        mask |= data[ColumnNames.MergedPineryLimsID].apply(
+            lambda ids: isinstance(ids, (list, tuple)) and key in ids
+        )
+    return data[mask]
+
+
+def find(args):
+    has_external_key = args.external_key is not None
+    has_run_lane_barcode = any(
+        x is not None for x in (args.run, args.lane, args.barcode)
+    )
+
+    if not (has_external_key ^ has_run_lane_barcode):
+        print(
+            "Either external key (-e) OR all 3 of run, lane, barcode (-r, -l, -b) must be provided",
+            file=sys.stderr,
+        )
+        return 1
+
+    data = load_filtered_records(args)
+    if data is None:
+        return 1
+    if args.external_key is not None:
+        data = filter_by_external_key(data, args.external_key)
+        if data is None:
+            print(
+                "Table {} has no {} or {} column to search by external key".format(
+                    args.table,
+                    ColumnNames.PineryLimsID,
+                    ColumnNames.MergedPineryLimsID,
+                ),
+                file=sys.stderr,
+            )
+            return 1
+    if data.shape[0] != 1:
+        print(
+            "Expected exactly one matching record, but found {}".format(
+                data.shape[0]
+            ),
+            file=sys.stderr,
+        )
+        return 1
+    print(json.dumps(json.loads(data.to_json(orient="records"))[0], indent=2))
     return 0
 
 
@@ -852,6 +940,12 @@ cat refiller.json | qcetl build bamqc4 -d /save/dir -c cache_file_name
         "-b", "--barcode", type=str, help="Count records for this barcode only."
     )
     parser_count.add_argument(
+        "-e",
+        "--external-key",
+        type=str,
+        help="Count records for this external key only.",
+    )
+    parser_count.add_argument(
         "-d",
         "--directory",
         dest="directory",
@@ -860,6 +954,46 @@ cat refiller.json | qcetl build bamqc4 -d /save/dir -c cache_file_name
         "multiple directories; records found in more than one are counted once.",
     )
     parser_count.set_defaults(func=count)
+    parser_find = subparsers.add_parser(
+        "find",
+        help="Print the single record matching the run, lane, and barcode "
+        "filters, or the external key. Fails if there are zero or multiple matches.",
+    )
+    parser_find.add_argument("format", help="The format")
+    parser_find.add_argument("table", help="The table")
+    parser_find.add_argument(
+        "-v",
+        "--version",
+        type=int,
+        help="The format version. Defaults to latest.",
+    )
+    parser_find.add_argument(
+        "-r", "--run", type=str, help="Match records for this run only."
+    )
+    parser_find.add_argument(
+        "-l", "--lane", type=int, help="Match records for this lane only."
+    )
+    parser_find.add_argument(
+        "-b", "--barcode", type=str, help="Match records for this barcode only."
+    )
+    parser_find.add_argument(
+        "-e",
+        "--external-key",
+        dest="external_key",
+        type=str,
+        help="Match the record whose Pinery Lims ID is this value, or whose "
+        "Merged Pinery Lims ID list contains it. Cannot be combined with "
+        "-r, -l, or -b.",
+    )
+    parser_find.add_argument(
+        "-d",
+        "--directory",
+        dest="directory",
+        action="append",
+        help="The root directory of the cache folders. Repeat to search across "
+        "multiple directories; records found in more than one are treated as one.",
+    )
+    parser_find.set_defaults(func=find)
     parser_input = subparsers.add_parser(
         "input", help="Information on Shesmu input."
     )
