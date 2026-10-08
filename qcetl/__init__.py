@@ -443,17 +443,51 @@ def rebuild(args):
 
 def count(args):
     form = args.format
-    etlapi = QCETLCache(args.directory)
+    # With no -d flag, fall back to QC_ETL_ROOT_DIRECTORY, which may hold
+    # several directories separated by os.pathsep
+    env_directories = os.getenv("QC_ETL_ROOT_DIRECTORY")
+    if args.directory:
+        directories = args.directory
+    elif env_directories:
+        directories = [d for d in env_directories.split(os.pathsep) if d]
+    else:
+        directories = []
+    if not directories:
+        print(
+            "No root directory provided. Use the -d flag or the "
+            "QC_ETL_ROOT_DIRECTORY env variable",
+            file=sys.stderr,
+        )
+        return 1
     version = form.latest_version() if args.version is None else args.version
-    cache = etlapi.load(
-        form.name,
-        version,
-        # Count all records in cache without any cleaning
-        qcetl.common.CleaningRules(False),
-        lambda x: None,
-    )
-    data = getattr(cache, args.table)
-    cache.close()
+    caches = []
+    for directory in directories:
+        cache = QCETLCache(directory).load(
+            form,
+            version,
+            # Count all records in cache without any cleaning
+            qcetl.common.CleaningRules(False),
+            lambda x: None,
+        )
+        if cache.exists(args.table):
+            caches.append(cache)
+        else:
+            print(
+                "Table {} (version {}) not found in {}".format(
+                    args.table, version, directory
+                ),
+                file=sys.stderr,
+            )
+            cache.close()
+    if not caches:
+        return 1
+
+    # Records present in more than one directory are counted once
+    data = qcetl.common.MultiCacheFromVersion(
+        caches, form.primary_key[version]
+    ).unique(args.table)
+    for cache in caches:
+        cache.close()
 
     def check_filter_column(col):
         if col not in data:
@@ -469,11 +503,12 @@ def count(args):
     if args.run is not None and check_filter_column(ColumnNames.Run):
         data = data[data[ColumnNames.Run] == args.run]
     if args.lane is not None and check_filter_column(ColumnNames.Lane):
-        data = data[data[ColumnNames.Lane] == str(args.lane)]
+        data = data[data[ColumnNames.Lane] == args.lane]
     if args.barcode is not None and check_filter_column(ColumnNames.Barcodes):
         data = data[data[ColumnNames.Barcodes] == args.barcode]
 
     print(data.shape[0])
+    return 0
 
 
 def shesmu_input(args):
@@ -820,7 +855,9 @@ cat refiller.json | qcetl build bamqc4 -d /save/dir -c cache_file_name
         "-d",
         "--directory",
         dest="directory",
-        help="The root directory of the cache folders",
+        action="append",
+        help="The root directory of the cache folders. Repeat to count across "
+        "multiple directories; records found in more than one are counted once.",
     )
     parser_count.set_defaults(func=count)
     parser_input = subparsers.add_parser(

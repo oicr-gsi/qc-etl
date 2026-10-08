@@ -42,7 +42,57 @@ class NumberTestCache(qcetl.common.Cache):
         }
 
 
+class IusColumn(qcetl.column.BaseColumn):
+    Index = "index"
+    Run = qcetl.column.ColumnNames.Run
+    Lane = qcetl.column.ColumnNames.Lane
+    Barcodes = qcetl.column.ColumnNames.Barcodes
+
+
+class IusTestCache(qcetl.common.Cache):
+    def __init__(self):
+        self.name = "test_ius_cache"
+        self.schema_versions = {
+            1: {
+                "test_ius_cache": {
+                    IusColumn.Index: "i",
+                    IusColumn.Run: "s",
+                    IusColumn.Lane: "i",
+                    IusColumn.Barcodes: "s",
+                }
+            }
+        }
+        self.columns = {1: {"test_ius_cache": IusColumn}}
+        self.input_format = {
+            "index": "i",
+            "run": "s",
+            "lane": "i",
+            "barcode": "s",
+        }
+        self.primary_key = {1: {"test_ius_cache": [IusColumn.Index]}}
+        self.input_key = {1: ("index", IusColumn.Index)}
+
+    def load(self, schema_version, path, cleaning_rules, log_creator):
+        return qcetl.common.SQLiteCacheFile(
+            path, self.name, schema_version, lambda df, name: df
+        )
+
+    def parse_single_record(self, single_input, schema_version):
+        df = pandas.DataFrame({IusColumn.Run: [single_input["run"]]})
+        return {1: {"test_ius_cache": df}}[schema_version]
+
+    def add_shesmu_metadata(self, single_input, schema_version):
+        return {
+            "test_ius_cache": {
+                IusColumn.Index: single_input["index"],
+                IusColumn.Lane: single_input["lane"],
+                IusColumn.Barcodes: single_input["barcode"],
+            }
+        }
+
+
 CACHES = (NumberTestCache(),)
+IUS_CACHES = (IusTestCache(),)
 
 
 def test_list(capsys):
@@ -272,3 +322,112 @@ def test_build_refiller(monkeypatch):
             monkeypatch.setattr("sys.stdin", io.StringIO(i))
             qcetl.main(["build", "test_number_cache"], CACHES)
         # assert e.value.code == 1 # TODO: This passes locally, but fails (is 0) on Jenkins. Figure out why.
+
+
+def build_ius_cache(monkeypatch, root_dir, records):
+    monkeypatch.setattr("sys.stdin", io.StringIO(json.dumps(records)))
+    with pytest.raises(SystemExit) as e:
+        qcetl.main(["build", "-d", root_dir, "test_ius_cache"], IUS_CACHES)
+    assert e.value.code == 0
+
+
+def run_count(capsys, args):
+    capsys.readouterr()
+    with pytest.raises(SystemExit) as e:
+        qcetl.main(
+            ["count"] + args + ["test_ius_cache", "test_ius_cache"],
+            IUS_CACHES,
+        )
+    out, err = capsys.readouterr()
+    return e.value.code, out.splitlines()[-1] if out else None, err
+
+
+IUS_RECORDS = [
+    {"index": 1, "run": "RUN_A", "lane": 1, "barcode": "AAAA-CCCC"},
+    {"index": 2, "run": "RUN_A", "lane": 2, "barcode": "AAAA-CCCC"},
+    {"index": 3, "run": "RUN_A", "lane": 2, "barcode": "GGGG-TTTT"},
+    {"index": 4, "run": "RUN_B", "lane": 1, "barcode": "AAAA-CCCC"},
+]
+
+
+def test_count_filters(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as test_dir:
+        build_ius_cache(monkeypatch, test_dir, IUS_RECORDS)
+        d = ["-d", test_dir]
+        assert run_count(capsys, d)[:2] == (0, "4")
+        assert run_count(capsys, d + ["-r", "RUN_A"])[:2] == (0, "3")
+        assert run_count(capsys, d + ["-l", "2"])[:2] == (0, "2")
+        assert run_count(capsys, d + ["-b", "AAAA-CCCC"])[:2] == (0, "3")
+        assert run_count(
+            capsys, d + ["-r", "RUN_A", "-l", "2", "-b", "AAAA-CCCC"]
+        )[:2] == (0, "1")
+        assert run_count(capsys, d + ["-l", "3"])[:2] == (0, "0")
+
+
+def test_count_env_directory(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as test_dir:
+        build_ius_cache(monkeypatch, test_dir, IUS_RECORDS)
+        monkeypatch.setenv("QC_ETL_ROOT_DIRECTORY", test_dir)
+        assert run_count(capsys, [])[:2] == (0, "4")
+
+
+def test_count_multiple_directories(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as dir_a, tempfile.TemporaryDirectory() as dir_b:
+        build_ius_cache(monkeypatch, dir_a, IUS_RECORDS[:2])
+        # Index 2 is in both directories and should only be counted once
+        build_ius_cache(monkeypatch, dir_b, IUS_RECORDS[1:])
+        both = ["-d", dir_a, "-d", dir_b]
+        assert run_count(capsys, ["-d", dir_a])[:2] == (0, "2")
+        assert run_count(capsys, ["-d", dir_b])[:2] == (0, "3")
+        assert run_count(capsys, both)[:2] == (0, "4")
+        assert run_count(capsys, both + ["-r", "RUN_B"])[:2] == (0, "1")
+        assert run_count(capsys, both + ["-l", "2"])[:2] == (0, "2")
+
+
+def test_count_env_multiple_directories(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as dir_a, tempfile.TemporaryDirectory() as dir_b:
+        build_ius_cache(monkeypatch, dir_a, IUS_RECORDS[:2])
+        build_ius_cache(monkeypatch, dir_b, IUS_RECORDS[1:])
+        monkeypatch.setenv("QC_ETL_ROOT_DIRECTORY", dir_a + os.pathsep + dir_b)
+        assert run_count(capsys, [])[:2] == (0, "4")
+        assert run_count(capsys, ["-l", "2"])[:2] == (0, "2")
+        # -d takes precedence over the environment
+        assert run_count(capsys, ["-d", dir_a])[:2] == (0, "2")
+
+
+@pytest.mark.parametrize("env", [None, "", os.pathsep])
+def test_count_no_directory(monkeypatch, capsys, env):
+    if env is None:
+        monkeypatch.delenv("QC_ETL_ROOT_DIRECTORY", raising=False)
+    else:
+        monkeypatch.setenv("QC_ETL_ROOT_DIRECTORY", env)
+    code, out, err = run_count(capsys, [])
+    assert code == 1
+    assert out is None
+    assert "QC_ETL_ROOT_DIRECTORY" in err
+
+
+def test_count_missing_env_directory(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as test_dir:
+        missing = os.path.join(test_dir, "does", "not", "exist")
+        monkeypatch.setenv("QC_ETL_ROOT_DIRECTORY", missing)
+        code, out, err = run_count(capsys, [])
+        assert code == 1
+        assert out is None
+        assert missing in err
+        assert "None" not in err
+
+
+def test_count_missing_directory(monkeypatch, capsys):
+    with tempfile.TemporaryDirectory() as test_dir:
+        build_ius_cache(monkeypatch, test_dir, IUS_RECORDS)
+        missing = os.path.join(test_dir, "does", "not", "exist")
+
+        code, out, err = run_count(capsys, ["-d", test_dir, "-d", missing])
+        assert (code, out) == (0, "4")
+        assert missing in err
+
+        code, out, err = run_count(capsys, ["-d", missing])
+        assert code == 1
+        assert out is None
+        assert missing in err
