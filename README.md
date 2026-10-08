@@ -6,10 +6,10 @@ To parse and store data from QC workflows in a consistent, typed, and versioned 
 ## Usage
 ```
 qc-etl --help
-usage: qc-etl [-h] {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,input} ...
+usage: qc-etl [-h] {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,find,input} ...
 
 positional arguments:
-  {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,input}
+  {list,versions,tables,schema,dump,refill-config,build,build-postgres,count,find,input}
                         sub-command help
     list                List all known formats
     versions            List all known versions for a format
@@ -20,6 +20,9 @@ positional arguments:
     build               Build a cache and store it in a SQLite backend
     build-postgres      Build a cache and store it in a Postgres backend
     count               Count records. Filter by run, lane, and barcode
+    find                Print the single record matching the run, lane, and
+                        barcode filters. Fails if there are zero or multiple
+                        matches.
     input               Information on Shesmu input.
 
 options:
