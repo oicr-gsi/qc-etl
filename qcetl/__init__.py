@@ -1,6 +1,7 @@
 import argparse
 import json
 import logging
+import pandas
 from logging.handlers import RotatingFileHandler
 import shutil
 import sqlalchemy
@@ -441,19 +442,58 @@ def rebuild(args):
     return len(rslt.failed)
 
 
-def count(args):
+def load_filtered_records(args):
+    """
+    Load the requested table from all cache directories and apply the
+    run/lane/barcode filters. Returns None (after reporting why on stderr) if
+    the data could not be loaded.
+    """
     form = args.format
-    etlapi = QCETLCache(args.directory)
+    # With no -d flag, fall back to QC_ETL_ROOT_DIRECTORY, which may hold
+    # several directories separated by os.pathsep
+    env_directories = os.getenv("QC_ETL_ROOT_DIRECTORY")
+    if args.directory:
+        directories = args.directory
+    elif env_directories:
+        directories = [d for d in env_directories.split(os.pathsep) if d]
+    else:
+        directories = []
+    if not directories:
+        print(
+            "No root directory provided. Use the -d flag or the "
+            "QC_ETL_ROOT_DIRECTORY env variable",
+            file=sys.stderr,
+        )
+        return None
     version = form.latest_version() if args.version is None else args.version
-    cache = etlapi.load(
-        form.name,
-        version,
-        # Count all records in cache without any cleaning
-        qcetl.common.CleaningRules(False),
-        lambda x: None,
-    )
-    data = getattr(cache, args.table)
-    cache.close()
+    caches = []
+    for directory in directories:
+        cache = QCETLCache(directory).load(
+            form,
+            version,
+            # Count all records in cache without any cleaning
+            qcetl.common.CleaningRules(False),
+            lambda x: None,
+        )
+        if cache.exists(args.table):
+            caches.append(cache)
+        else:
+            print(
+                "Table {} (version {}) not found in {}".format(
+                    args.table, version, directory
+                ),
+                file=sys.stderr,
+            )
+            cache.close()
+    if not caches:
+        return None
+
+    # Records present in more than one directory are counted once
+    data = qcetl.common.MultiCacheFromVersion(
+        caches, form.primary_key[version]
+    ).unique(args.table)
+    for cache in caches:
+        cache.close()
 
     def check_filter_column(col):
         if col not in data:
@@ -469,11 +509,80 @@ def count(args):
     if args.run is not None and check_filter_column(ColumnNames.Run):
         data = data[data[ColumnNames.Run] == args.run]
     if args.lane is not None and check_filter_column(ColumnNames.Lane):
-        data = data[data[ColumnNames.Lane] == str(args.lane)]
+        data = data[data[ColumnNames.Lane] == args.lane]
     if args.barcode is not None and check_filter_column(ColumnNames.Barcodes):
         data = data[data[ColumnNames.Barcodes] == args.barcode]
 
+    return data
+
+
+def count(args):
+    data = load_filtered_records(args)
+    if data is None:
+        return 1
     print(data.shape[0])
+    return 0
+
+
+def filter_by_external_key(data, key):
+    """
+    Keep rows where the Pinery Lims ID equals the key, or the key is a member
+    of the Merged Pinery Lims ID list. Returns None if the table has neither
+    column.
+    """
+    id_columns = [
+        c
+        for c in (ColumnNames.PineryLimsID, ColumnNames.MergedPineryLimsID)
+        if c in data
+    ]
+    if not id_columns:
+        return None
+    mask = pandas.Series(False, index=data.index)
+    if ColumnNames.PineryLimsID in data:
+        mask |= data[ColumnNames.PineryLimsID] == key
+    if ColumnNames.MergedPineryLimsID in data:
+        mask |= data[ColumnNames.MergedPineryLimsID].apply(
+            lambda ids: isinstance(ids, (list, tuple)) and key in ids
+        )
+    return data[mask]
+
+
+def find(args):
+    if args.external_key is not None and (
+        args.run is not None
+        or args.lane is not None
+        or args.barcode is not None
+    ):
+        print(
+            "-e/--external-key cannot be combined with -r, -l, or -b",
+            file=sys.stderr,
+        )
+        return 1
+    data = load_filtered_records(args)
+    if data is None:
+        return 1
+    if args.external_key is not None:
+        data = filter_by_external_key(data, args.external_key)
+        if data is None:
+            print(
+                "Table {} has no {} or {} column to search by external key".format(
+                    args.table,
+                    ColumnNames.PineryLimsID,
+                    ColumnNames.MergedPineryLimsID,
+                ),
+                file=sys.stderr,
+            )
+            return 1
+    if data.shape[0] != 1:
+        print(
+            "Expected exactly one matching record, but found {}".format(
+                data.shape[0]
+            ),
+            file=sys.stderr,
+        )
+        return 1
+    print(json.dumps(json.loads(data.to_json(orient="records"))[0], indent=2))
+    return 0
 
 
 def shesmu_input(args):
@@ -820,9 +929,51 @@ cat refiller.json | qcetl build bamqc4 -d /save/dir -c cache_file_name
         "-d",
         "--directory",
         dest="directory",
-        help="The root directory of the cache folders",
+        action="append",
+        help="The root directory of the cache folders. Repeat to count across "
+        "multiple directories; records found in more than one are counted once.",
     )
     parser_count.set_defaults(func=count)
+    parser_find = subparsers.add_parser(
+        "find",
+        help="Print the single record matching the run, lane, and barcode "
+        "filters, or the external key. Fails if there are zero or multiple matches.",
+    )
+    parser_find.add_argument("format", help="The format")
+    parser_find.add_argument("table", help="The table")
+    parser_find.add_argument(
+        "-v",
+        "--version",
+        type=int,
+        help="The format version. Defaults to latest.",
+    )
+    parser_find.add_argument(
+        "-r", "--run", type=str, help="Match records for this run only."
+    )
+    parser_find.add_argument(
+        "-l", "--lane", type=int, help="Match records for this lane only."
+    )
+    parser_find.add_argument(
+        "-b", "--barcode", type=str, help="Match records for this barcode only."
+    )
+    parser_find.add_argument(
+        "-e",
+        "--external-key",
+        dest="external_key",
+        type=str,
+        help="Match the record whose Pinery Lims ID is this value, or whose "
+        "Merged Pinery Lims ID list contains it. Cannot be combined with "
+        "-r, -l, or -b.",
+    )
+    parser_find.add_argument(
+        "-d",
+        "--directory",
+        dest="directory",
+        action="append",
+        help="The root directory of the cache folders. Repeat to search across "
+        "multiple directories; records found in more than one are treated as one.",
+    )
+    parser_find.set_defaults(func=find)
     parser_input = subparsers.add_parser(
         "input", help="Information on Shesmu input."
     )

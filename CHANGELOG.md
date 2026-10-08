@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 * ultimamethylcontrol cache
+* `qcetl find` command, which prints the single record matching run, lane, and barcode filters (`-r`, `-l`, `-b`) or an external key (`-e`, matching a `Pinery Lims ID` or a member of `Merged Pinery Lims ID`). Like `count`, but errors unless exactly one record matches
 
 ## [1.48] - 2026-09-02
 ### Added
