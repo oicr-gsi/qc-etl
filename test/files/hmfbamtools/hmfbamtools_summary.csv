@@ -1,0 +1,2 @@
+Donor,File SWID,Group ID,Library Design,Merged Pinery Lims ID,Project,Reference,Tissue Origin,Tissue Type,workflow version,Mean Coverage,Duplicate Percent,Mean Insert Size,Depth Coverage 30x
+COLO829TESTT,SWID,NO,WG,"['ID1', 'ID2']",COLO829TEST,hg38,Sk,M,6.2.0,0.003,0.15101,503.1218765113655,4e-05
