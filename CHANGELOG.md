@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+## [1.49] - 2026-10-15
 ### Changed
 * ultimalibrarymetrics input records now require a `barcode`, and the cache is keyed by run and barcode name
 * Parentheses wrapping certain Ultima metrics (F__@30X) will cause the value to be discarded
