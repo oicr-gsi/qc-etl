@@ -10,7 +10,7 @@ if ! git diff-index --quiet HEAD; then
 	exit 2
 fi
 git fetch origin
-git checkout origin/main
+git checkout main
 git pull --ff-only -q
 OLD_VERSION="$(uv version --short)"
 
@@ -42,7 +42,7 @@ git add pyproject.toml
 git add CHANGELOG.md
 git add uv.lock
 git commit -m "QC-ETL $NEW_VERSION release"
-git tag "v${NEW_VERSION}"
+git tag -a "v${NEW_VERSION}" -m "QC-ETL ${NEW_VERSION} release"
 
 git push origin main --follow-tags
 echo "Release completed. Copy this export into your shell before running the deploy scripts:"
