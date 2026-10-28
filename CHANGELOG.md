@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Added
+* dragencoverageuniformity cache for DRAGEN germline WGS coverage and CNV metrics
 
 ## [1.49] - 2026-10-15
 ### Changed
