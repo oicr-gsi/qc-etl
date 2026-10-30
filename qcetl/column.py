@@ -1001,6 +1001,37 @@ class DnaSeqQCColumn(BamQc4Column):
     pass
 
 
+class GermlineCoverageUniformityCoverageColumn(BaseColumn):
+    UniformityPct02Mean = "Uniformity of coverage (PCT > 0.2*mean) over genome"
+    UniformityPct04Mean = "Uniformity of coverage (PCT > 0.4*mean) over genome"
+    AverageAutosomalCoverage = "Average autosomal coverage over genome"
+    MedianAutosomalCoverage = "Median autosomal coverage over genome"
+    AlignedReads = "Aligned reads"
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+
+
+class GermlineCoverageUniformityCnvColumn(BaseColumn):
+    PMAD = "PMAD"
+    CoverageUniformity = "Coverage uniformity"
+    NumberOfAmplifications = "Number of amplifications"
+    NumberOfDeletions = "Number of deletions"
+    AmplificationDeletionRatio = "Amplification/deletion ratio"
+    CnvFileSWID = "CNV File SWID"
+    Donor = ColumnNames.Donor
+    FileSWID = ColumnNames.FileSWID
+    GroupID = ColumnNames.GroupID
+    LibraryDesign = ColumnNames.LibraryDesign
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+
+
 class EmSeqMethylationColumn(BaseColumn):
     Barcodes = ColumnNames.Barcodes
     FileSWID = ColumnNames.FileSWID
