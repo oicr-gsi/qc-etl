@@ -3,7 +3,6 @@ import pandas as pd
 from qcetl.column import UltimaMergeQcColumn as Column
 from qcetl.common import InvalidRecordError
 
-
 ALN_COLUMNS = [
     Column.Category,
     Column.TotalReads,
@@ -111,7 +110,9 @@ def read_picard_metrics(path):
             if line.startswith("## METRICS CLASS"):
                 break
         else:
-            raise InvalidRecordError(f"No METRICS CLASS section found in {path}")
+            raise InvalidRecordError(
+                f"No METRICS CLASS section found in {path}"
+            )
 
         header = next(f, "").rstrip("\r\n").split("\t")
         rows = []
@@ -172,7 +173,9 @@ def extract_columns(row, columns, schema, path):
     return result
 
 
-def parse_record(alignment_summary_file, duplicate_metrics_file, wgs_metrics_file, schema):
+def parse_record(
+    alignment_summary_file, duplicate_metrics_file, wgs_metrics_file, schema
+):
     """
     (str, str, str, dict) -> pandas dataframe
 
@@ -196,8 +199,16 @@ def parse_record(alignment_summary_file, duplicate_metrics_file, wgs_metrics_fil
     wgs_row = read_picard_metrics(wgs_metrics_file)[0]
 
     record = {}
-    record.update(extract_columns(aln_row, ALN_COLUMNS, schema, alignment_summary_file))
-    record.update(extract_columns(dup_row, DUP_COLUMNS, schema, duplicate_metrics_file))
-    record.update(extract_columns(wgs_row, WGS_COLUMNS, schema, wgs_metrics_file))
+    record.update(
+        extract_columns(aln_row, ALN_COLUMNS, schema, alignment_summary_file)
+    )
+    record.update(
+        extract_columns(dup_row, DUP_COLUMNS, schema, duplicate_metrics_file)
+    )
+    record.update(
+        extract_columns(wgs_row, WGS_COLUMNS, schema, wgs_metrics_file)
+    )
 
-    return pd.DataFrame([record], columns=ALN_COLUMNS + DUP_COLUMNS + WGS_COLUMNS)
+    return pd.DataFrame(
+        [record], columns=ALN_COLUMNS + DUP_COLUMNS + WGS_COLUMNS
+    )
