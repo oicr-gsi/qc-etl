@@ -24,9 +24,9 @@ import qcetl.common
 import qcetl.common.canary
 import qcetl.crosscheckfingerprint_caller
 import qcetl.dnaseqqc
-import qcetl.dragencoverageuniformity
 import qcetl.emseqqc
 import qcetl.fastqc
+import qcetl.germlinecoverageuniformity
 import qcetl.picard.calculatecontamination
 import qcetl.picard.crosscheckfingerprints
 import qcetl.picard.hsmetrics
@@ -82,9 +82,9 @@ formats = (
     qcetl.crosscheckfingerprint_caller.CrosscheckFingerprintCaller(),
     qcetl.crosscheckfingerprint_caller.CrosscheckFingerprintCallerAutoVerification(),
     qcetl.dnaseqqc.DnaSeqQcCache(),
-    qcetl.dragencoverageuniformity.DragenCoverageUniformityCache(),
     qcetl.emseqqc.EmSeqQcCache(),
     qcetl.fastqc.FastQcCache(),
+    qcetl.germlinecoverageuniformity.GermlineCoverageUniformityCache(),
     qcetl.icametrics.ICAMetricsCache(),
     qcetl.ichorcna.IchorCnaCache(),
     qcetl.ichorcna.IchorCnaMergedCache(),

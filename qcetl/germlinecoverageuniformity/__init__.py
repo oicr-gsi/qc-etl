@@ -1,51 +1,20 @@
 import qcetl.common
-from qcetl.column import DragenCoverageUniformityCoverageColumn as CovColumn
-from qcetl.column import DragenCoverageUniformityCnvColumn as CnvColumn
-from qcetl.dragencoverageuniformity.parse import parse_coverage, parse_cnv
+from qcetl.column import GermlineCoverageUniformityCoverageColumn as CovColumn
+from qcetl.column import GermlineCoverageUniformityCnvColumn as CnvColumn
+from qcetl.germlinecoverageuniformity.parse import parse_coverage, parse_cnv
 
 
-class DragenCoverageUniformityCache(qcetl.common.Cache):
+class GermlineCoverageUniformityCache(qcetl.common.Cache):
     def __init__(self):
-        self.name = "dragencoverageuniformity"
+        self.name = "germlinecoverageuniformity"
         self.schema_versions = {
             1: {
                 "coverage_metrics": {
-                    CovColumn.AlignedBases: "qi",
-                    CovColumn.AlignedBasesInGenome: "qi",
-                    CovColumn.AlignedBasesInGenomePct: "qf",
-                    CovColumn.AverageAlignmentCoverage: "qf",
                     CovColumn.UniformityPct02Mean: "f",
                     CovColumn.UniformityPct04Mean: "f",
-                    CovColumn.PctCoverage1500xInf: "qf",
-                    CovColumn.PctCoverage1000xInf: "qf",
-                    CovColumn.PctCoverage500xInf: "qf",
-                    CovColumn.PctCoverage100xInf: "qf",
-                    CovColumn.PctCoverage50xInf: "qf",
-                    CovColumn.PctCoverage20xInf: "qf",
-                    CovColumn.PctCoverage15xInf: "qf",
-                    CovColumn.PctCoverage10xInf: "qf",
-                    CovColumn.PctCoverage3xInf: "qf",
-                    CovColumn.PctCoverage1xInf: "qf",
-                    CovColumn.PctCoverage0xInf: "qf",
-                    CovColumn.PctCoverage1000x1500x: "qf",
-                    CovColumn.PctCoverage500x1000x: "qf",
-                    CovColumn.PctCoverage100x500x: "qf",
-                    CovColumn.PctCoverage50x100x: "qf",
-                    CovColumn.PctCoverage20x50x: "qf",
-                    CovColumn.PctCoverage15x20x: "qf",
-                    CovColumn.PctCoverage10x15x: "qf",
-                    CovColumn.PctCoverage3x10x: "qf",
-                    CovColumn.PctCoverage1x3x: "qf",
-                    CovColumn.PctCoverage0x1x: "qf",
-                    CovColumn.MedianChrXCoverage: "qf",
-                    CovColumn.MedianChrYCoverage: "qf",
-                    CovColumn.AverageMitochondrialCoverage: "qf",
                     CovColumn.AverageAutosomalCoverage: "f",
                     CovColumn.MedianAutosomalCoverage: "f",
-                    CovColumn.MeanMedianAutosomalCoverageRatio: "qf",
                     CovColumn.AlignedReads: "i",
-                    CovColumn.AlignedReadsInGenome: "qi",
-                    CovColumn.AlignedReadsInGenomePct: "qf",
                     CovColumn.Donor: "s",
                     CovColumn.FileSWID: "s",
                     CovColumn.GroupID: "s",
@@ -55,30 +24,10 @@ class DragenCoverageUniformityCache(qcetl.common.Cache):
                     CovColumn.TissueType: "s",
                 },
                 "cnv_metrics": {
-                    CnvColumn.SexGenotyperSample: "qs",
-                    CnvColumn.SexGenotyperKaryotype: "qs",
-                    CnvColumn.SexGenotyperConfidence: "qf",
-                    CnvColumn.BasesInReferenceGenome: "qi",
-                    CnvColumn.AverageAlignmentCoverage: "qf",
-                    CnvColumn.NumberOfAlignmentRecords: "qi",
-                    CnvColumn.FilteredRecordsTotal: "qi",
-                    CnvColumn.FilteredRecordsTotalPct: "qf",
-                    CnvColumn.FilteredRecordsDuplicates: "qi",
-                    CnvColumn.FilteredRecordsDuplicatesPct: "qf",
-                    CnvColumn.FilteredRecordsMAPQ: "qi",
-                    CnvColumn.FilteredRecordsMAPQPct: "qf",
-                    CnvColumn.FilteredRecordsUnmapped: "qi",
-                    CnvColumn.FilteredRecordsUnmappedPct: "qf",
                     CnvColumn.PMAD: "f",
                     CnvColumn.CoverageUniformity: "f",
-                    CnvColumn.NumberOfTargetIntervals: "qi",
-                    CnvColumn.NumberOfSegments: "qi",
                     CnvColumn.NumberOfAmplifications: "i",
                     CnvColumn.NumberOfDeletions: "i",
-                    CnvColumn.NumberOfPassingAmplifications: "qi",
-                    CnvColumn.NumberOfPassingAmplificationsPct: "qf",
-                    CnvColumn.NumberOfPassingDeletions: "qi",
-                    CnvColumn.NumberOfPassingDeletionsPct: "qf",
                     CnvColumn.AmplificationDeletionRatio: "qf",
                     CnvColumn.CnvFileSWID: "qs",
                     CnvColumn.Donor: "s",

@@ -1001,45 +1001,12 @@ class DnaSeqQCColumn(BamQc4Column):
     pass
 
 
-class DragenCoverageUniformityCoverageColumn(BaseColumn):
-    AlignedBases = "Aligned bases"
-    AlignedBasesInGenome = "Aligned bases in genome"
-    AlignedBasesInGenomePct = "Aligned bases in genome PCT"
-    AverageAlignmentCoverage = "Average alignment coverage over genome"
+class GermlineCoverageUniformityCoverageColumn(BaseColumn):
     UniformityPct02Mean = "Uniformity of coverage (PCT > 0.2*mean) over genome"
     UniformityPct04Mean = "Uniformity of coverage (PCT > 0.4*mean) over genome"
-    PctCoverage1500xInf = "PCT of genome with coverage [1500x:inf)"
-    PctCoverage1000xInf = "PCT of genome with coverage [1000x:inf)"
-    PctCoverage500xInf = "PCT of genome with coverage [500x:inf)"
-    PctCoverage100xInf = "PCT of genome with coverage [100x:inf)"
-    PctCoverage50xInf = "PCT of genome with coverage [50x:inf)"
-    PctCoverage20xInf = "PCT of genome with coverage [20x:inf)"
-    PctCoverage15xInf = "PCT of genome with coverage [15x:inf)"
-    PctCoverage10xInf = "PCT of genome with coverage [10x:inf)"
-    PctCoverage3xInf = "PCT of genome with coverage [3x:inf)"
-    PctCoverage1xInf = "PCT of genome with coverage [1x:inf)"
-    PctCoverage0xInf = "PCT of genome with coverage [0x:inf)"
-    PctCoverage1000x1500x = "PCT of genome with coverage [1000x:1500x)"
-    PctCoverage500x1000x = "PCT of genome with coverage [500x:1000x)"
-    PctCoverage100x500x = "PCT of genome with coverage [100x:500x)"
-    PctCoverage50x100x = "PCT of genome with coverage [50x:100x)"
-    PctCoverage20x50x = "PCT of genome with coverage [20x:50x)"
-    PctCoverage15x20x = "PCT of genome with coverage [15x:20x)"
-    PctCoverage10x15x = "PCT of genome with coverage [10x:15x)"
-    PctCoverage3x10x = "PCT of genome with coverage [3x:10x)"
-    PctCoverage1x3x = "PCT of genome with coverage [1x:3x)"
-    PctCoverage0x1x = "PCT of genome with coverage [0x:1x)"
-    MedianChrXCoverage = "Median chr X coverage (ignore 0x regions) over genome"
-    MedianChrYCoverage = "Median chr Y coverage (ignore 0x regions) over genome"
-    AverageMitochondrialCoverage = "Average mitochondrial coverage over genome"
     AverageAutosomalCoverage = "Average autosomal coverage over genome"
     MedianAutosomalCoverage = "Median autosomal coverage over genome"
-    MeanMedianAutosomalCoverageRatio = (
-        "Mean/Median autosomal coverage ratio over genome"
-    )
     AlignedReads = "Aligned reads"
-    AlignedReadsInGenome = "Aligned reads in genome"
-    AlignedReadsInGenomePct = "Aligned reads in genome PCT"
     Donor = ColumnNames.Donor
     FileSWID = ColumnNames.FileSWID
     GroupID = ColumnNames.GroupID
@@ -1049,31 +1016,11 @@ class DragenCoverageUniformityCoverageColumn(BaseColumn):
     TissueType = ColumnNames.TissueType
 
 
-class DragenCoverageUniformityCnvColumn(BaseColumn):
-    SexGenotyperSample = "Sex genotyper sample"
-    SexGenotyperKaryotype = "Sex genotyper karyotype"
-    SexGenotyperConfidence = "Sex genotyper confidence"
-    BasesInReferenceGenome = "Bases in reference genome"
-    AverageAlignmentCoverage = "Average alignment coverage over genome"
-    NumberOfAlignmentRecords = "Number of alignment records"
-    FilteredRecordsTotal = "Number of filtered records (total)"
-    FilteredRecordsTotalPct = "Number of filtered records (total) PCT"
-    FilteredRecordsDuplicates = "Number of filtered records (duplicates)"
-    FilteredRecordsDuplicatesPct = "Number of filtered records (duplicates) PCT"
-    FilteredRecordsMAPQ = "Number of filtered records (MAPQ)"
-    FilteredRecordsMAPQPct = "Number of filtered records (MAPQ) PCT"
-    FilteredRecordsUnmapped = "Number of filtered records (unmapped)"
-    FilteredRecordsUnmappedPct = "Number of filtered records (unmapped) PCT"
+class GermlineCoverageUniformityCnvColumn(BaseColumn):
     PMAD = "PMAD"
     CoverageUniformity = "Coverage uniformity"
-    NumberOfTargetIntervals = "Number of target intervals"
-    NumberOfSegments = "Number of segments"
     NumberOfAmplifications = "Number of amplifications"
     NumberOfDeletions = "Number of deletions"
-    NumberOfPassingAmplifications = "Number of passing amplifications"
-    NumberOfPassingAmplificationsPct = "Number of passing amplifications PCT"
-    NumberOfPassingDeletions = "Number of passing deletions"
-    NumberOfPassingDeletionsPct = "Number of passing deletions PCT"
     AmplificationDeletionRatio = "Amplification/deletion ratio"
     CnvFileSWID = "CNV File SWID"
     Donor = ColumnNames.Donor

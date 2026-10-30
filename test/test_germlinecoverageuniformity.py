@@ -3,11 +3,11 @@ import pytest
 
 import test.cachechecker
 from qcetl.common import InvalidRecordError
-from qcetl.column import DragenCoverageUniformityCnvColumn as CnvColumn
-from qcetl.dragencoverageuniformity import DragenCoverageUniformityCache
-from qcetl.dragencoverageuniformity.parse import parse_cnv, parse_coverage
+from qcetl.column import GermlineCoverageUniformityCnvColumn as CnvColumn
+from qcetl.germlinecoverageuniformity import GermlineCoverageUniformityCache
+from qcetl.germlinecoverageuniformity.parse import parse_cnv, parse_coverage
 
-FILES = "test/files/dragencoverageuniformity"
+FILES = "test/files/germlinecoverageuniformity"
 
 
 def metadata(swid):
@@ -22,9 +22,9 @@ def metadata(swid):
     }
 
 
-def tests_dragencoverageuniformity():
+def tests_germlinecoverageuniformity():
     test.cachechecker.check(
-        DragenCoverageUniformityCache(),
+        GermlineCoverageUniformityCache(),
         [
             {
                 "coverage_path": f"{FILES}/HG008.wgs_coverage_metrics.csv",
@@ -52,7 +52,7 @@ def tests_dragencoverageuniformity():
     )
 
 
-def tests_dragencoverageuniformity_no_deletions(tmp_path):
+def tests_germlinecoverageuniformity_no_deletions(tmp_path):
     path = tmp_path / "zero.cnv_metrics.csv"
     path.write_text(
         "CNV SUMMARY,,PMAD,0.2\n"
@@ -62,10 +62,9 @@ def tests_dragencoverageuniformity_no_deletions(tmp_path):
     )
     df = parse_cnv(str(path))
     assert pandas.isna(df.at[0, CnvColumn.AmplificationDeletionRatio])
-    assert df.at[0, CnvColumn.SexGenotyperSample] is None
 
 
-def tests_dragencoverageuniformity_missing_required(tmp_path):
+def tests_germlinecoverageuniformity_missing_required(tmp_path):
     path = tmp_path / "bad.wgs_coverage_metrics.csv"
     path.write_text("COVERAGE SUMMARY,,Aligned bases,100\n")
     with pytest.raises(InvalidRecordError):
