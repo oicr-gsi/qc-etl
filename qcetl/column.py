@@ -1856,6 +1856,92 @@ class UltimaLibraryMetricsColumn(BaseColumn):
     )
 
 
+class UltimaMergeQcColumn(BaseColumn):
+    Donor = ColumnNames.Donor
+    WorkflowRunSWID = ColumnNames.WorkflowRunSWID
+    GroupID = ColumnNames.GroupID
+    MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    TissueOrigin = ColumnNames.TissueOrigin
+    TissueType = ColumnNames.TissueType
+    # ALN: CollectAlignmentSummaryMetrics
+    Category = "CATEGORY"
+    TotalReads = "TOTAL_READS"
+    PfReads = "PF_READS"
+    PercentPFReads = "PCT_PF_READS"
+    PfNoiseReads = "PF_NOISE_READS"
+    PfReadsAligned = "PF_READS_ALIGNED"
+    PercentPFReadsAligned = "PCT_PF_READS_ALIGNED"
+    PfAlignedBases = "PF_ALIGNED_BASES"
+    PfHqAlignedReads = "PF_HQ_ALIGNED_READS"
+    PfHqAlignedBases = "PF_HQ_ALIGNED_BASES"
+    PfHqAlignedQ20Bases = "PF_HQ_ALIGNED_Q20_BASES"
+    PfHqMedianMismatches = "PF_HQ_MEDIAN_MISMATCHES"
+    PfMismatchRate = "PF_MISMATCH_RATE"
+    PfHqErrorRate = "PF_HQ_ERROR_RATE"
+    PfIndelRate = "PF_INDEL_RATE"
+    MeanReadLength = "MEAN_READ_LENGTH"
+    SdReadLength = "SD_READ_LENGTH"
+    MedianReadLength = "MEDIAN_READ_LENGTH"
+    MadReadLength = "MAD_READ_LENGTH"
+    MinReadLength = "MIN_READ_LENGTH"
+    MaxReadLength = "MAX_READ_LENGTH"
+    MeanAlignedReadLength = "MEAN_ALIGNED_READ_LENGTH"
+    ReadsAlignedInPairs = "READS_ALIGNED_IN_PAIRS"
+    PercentReadsAlignedInPairs = "PCT_READS_ALIGNED_IN_PAIRS"
+    PfReadsImproperPairs = "PF_READS_IMPROPER_PAIRS"
+    PercentPfReadsImproperPairs = "PCT_PF_READS_IMPROPER_PAIRS"
+    BadCycles = "BAD_CYCLES"
+    StrandBalance = "STRAND_BALANCE"
+    PercentChimeras = "PCT_CHIMERAS"
+    PercentAdapter = "PCT_ADAPTER"
+    PercentSoftclip = "PCT_SOFTCLIP"
+    PercentHardclip = "PCT_HARDCLIP"
+    AvgPos3PrimeSoftclipLength = "AVG_POS_3PRIME_SOFTCLIP_LENGTH"
+    # DUP: MarkDuplicates
+    Library = "LIBRARY"
+    UnpairedReadsExamined = "UNPAIRED_READS_EXAMINED"
+    ReadPairsExamined = "READ_PAIRS_EXAMINED"
+    SecondaryOrSupplementaryReads = "SECONDARY_OR_SUPPLEMENTARY_RDS"
+    UnmappedReads = "UNMAPPED_READS"
+    UnpairedReadDuplicates = "UNPAIRED_READ_DUPLICATES"
+    ReadPairDuplicates = "READ_PAIR_DUPLICATES"
+    ReadPairOpticalDuplicates = "READ_PAIR_OPTICAL_DUPLICATES"
+    PercentDuplication = "PERCENT_DUPLICATION"
+    # WGS: CollectWgsMetrics
+    GenomeTerritory = "GENOME_TERRITORY"
+    MeanCoverage = "MEAN_COVERAGE"
+    SdCoverage = "SD_COVERAGE"
+    MedianCoverage = "MEDIAN_COVERAGE"
+    MadCoverage = "MAD_COVERAGE"
+    PercentExcAdapter = "PCT_EXC_ADAPTER"
+    PercentExcMapq = "PCT_EXC_MAPQ"
+    PercentExcDupe = "PCT_EXC_DUPE"
+    PercentExcUnpaired = "PCT_EXC_UNPAIRED"
+    PercentExcBaseq = "PCT_EXC_BASEQ"
+    PercentExcOverlap = "PCT_EXC_OVERLAP"
+    PercentExcCapped = "PCT_EXC_CAPPED"
+    PercentExcTotal = "PCT_EXC_TOTAL"
+    Percent1X = "PCT_1X"
+    Percent5X = "PCT_5X"
+    Percent10X = "PCT_10X"
+    Percent15X = "PCT_15X"
+    Percent20X = "PCT_20X"
+    Percent25X = "PCT_25X"
+    Percent30X = "PCT_30X"
+    Percent40X = "PCT_40X"
+    Percent50X = "PCT_50X"
+    Percent60X = "PCT_60X"
+    Percent70X = "PCT_70X"
+    Percent80X = "PCT_80X"
+    Percent90X = "PCT_90X"
+    Percent100X = "PCT_100X"
+    Fold80BasePenalty = "FOLD_80_BASE_PENALTY"
+    Fold90BasePenalty = "FOLD_90_BASE_PENALTY"
+    Fold95BasePenalty = "FOLD_95_BASE_PENALTY"
+    HetSnpSensitivity = "HET_SNP_SENSITIVITY"
+    HetSnpQ = "HET_SNP_Q"
+
+
 class UmiQcColumn(BaseColumn):
     FileSWID = ColumnNames.FileSWID
     Run = ColumnNames.Run
