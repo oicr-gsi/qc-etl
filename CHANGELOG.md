@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+## [1.50] - 2026-11-09
 ### Added
 * germlinecoverageuniformity cache for germline WGS coverage uniformity and CNV metrics
 
