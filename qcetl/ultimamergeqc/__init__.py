@@ -13,9 +13,11 @@ class UltimaMergeQcCache(qcetl.common.Cache):
                     Column.Donor: "s",
                     Column.GroupID: "s",
                     Column.MergedPineryLimsID: "as",
+                    Column.LibraryDesign: "s",
                     Column.TissueOrigin: "s",
                     Column.TissueType: "s",
                     Column.WorkflowRunSWID: "s",
+                    Column.Reference: "s",
                     # ALN: CollectAlignmentSummaryMetrics
                     Column.Category: "s",
                     Column.TotalReads: "i",
