@@ -108,9 +108,11 @@ class UltimaMergeQcCache(qcetl.common.Cache):
             "donor": "s",
             "group_id": "s",
             "pinery_lims_ids": "as",
+            "library_design": "s",
             "tissue_origin": "s",
             "tissue_type": "s",
             "swid": "s",
+            "reference": "s",
         }
         self.primary_key = {
             1: {
@@ -140,8 +142,10 @@ class UltimaMergeQcCache(qcetl.common.Cache):
                 Column.Donor: single_input["donor"],
                 Column.GroupID: single_input["group_id"],
                 Column.MergedPineryLimsID: single_input["pinery_lims_ids"],
+                Column.LibraryDesign: single_input["library_design"],
                 Column.TissueOrigin: single_input["tissue_origin"],
                 Column.TissueType: single_input["tissue_type"],
                 Column.WorkflowRunSWID: single_input["swid"],
+                Column.Reference: single_input["reference"],
             }
         }

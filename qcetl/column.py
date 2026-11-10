@@ -1892,8 +1892,10 @@ class UltimaMergeQcColumn(BaseColumn):
     WorkflowRunSWID = ColumnNames.WorkflowRunSWID
     GroupID = ColumnNames.GroupID
     MergedPineryLimsID = ColumnNames.MergedPineryLimsID
+    LibraryDesign = ColumnNames.LibraryDesign
     TissueOrigin = ColumnNames.TissueOrigin
     TissueType = ColumnNames.TissueType
+    Reference = ColumnNames.Reference
     # ALN: CollectAlignmentSummaryMetrics
     Category = "CATEGORY"
     TotalReads = "TOTAL_READS"

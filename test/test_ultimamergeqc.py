@@ -13,9 +13,11 @@ def test_ultimamergeqc():
                 "donor": "Test_01",
                 "group_id": "Test_01",
                 "pinery_lims_ids": ["9620_1_LDI153108"],
+                "library_design": "PG",
                 "tissue_origin": "Pl",
                 "tissue_type": "T",
                 "swid": "1bc59158-8210-44c0-950c-a51346092824",
+                "reference": "hg38",
             }
         ],
         {"ultimamergeqc": "test/files/ultimamergeqc/ultimamergeqc_test.csv"},
