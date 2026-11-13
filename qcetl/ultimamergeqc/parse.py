@@ -103,7 +103,7 @@ def read_picard_metrics(path):
     Returns
     -------
     - list of rows, each a dict of {column name: value}
-    - raises InvalidRecordError if there is no METRICS CLASS section or no data rows
+    - raises InvalidRecordError if there is no METRICS CLASS section
     """
     with open(path, "r") as f:
         for line in f:
@@ -114,62 +114,25 @@ def read_picard_metrics(path):
                 f"No METRICS CLASS section found in {path}"
             )
 
-        header = next(f, "").rstrip("\r\n").split("\t")
-        rows = []
-        for line in f:
-            line = line.rstrip("\r\n")
-            if not line.strip() or line.startswith("#"):
-                break
-            rows.append(dict(zip(header, line.split("\t"))))
+        header = next(f, "").rstrip().split("\t")
+        line = next(f).rstrip()
+        rows = [dict(zip(header, line.split("\t")))]
 
-    if not rows:
-        raise InvalidRecordError(f"File {path} contains headers but no metrics")
     return rows
 
 
-def convert_value(value, column, column_type, path):
+def extract_columns(row, columns, path):
     """
-    Converts a value to the type given in the cache schema:
-    "s" = string, "i" = int, "f" = float.
-    A "q" prefix (e.g. "qf") means the value may be missing and is stored as None.
-
-    Raises InvalidRecordError if a required value is missing or can't be converted.
-    """
-    value = value.strip()
-    if value in MISSING_VALUES:
-        if column_type.startswith("q"):
-            return None
-        raise InvalidRecordError(f"Missing value for {column} in {path}")
-
-    base_type = column_type.lstrip("q")
-    try:
-        if base_type == "s":
-            return value
-        if base_type == "i":
-            return int(value)
-        if base_type == "f":
-            return float(value)
-    except ValueError:
-        raise InvalidRecordError(
-            f"Value '{value}' for {column} in {path} is not of type {column_type}"
-        )
-    raise InvalidRecordError(f"Unsupported type '{column_type}' for {column}")
-
-
-def extract_columns(row, columns, schema, path):
-    """
-    Selects the required columns from a metrics row and converts each value
-    to the type given in the schema.
+    Selects the required columns from a metrics row.
 
     Raises InvalidRecordError if a required column is missing.
     """
     result = {}
     for column in columns:
         try:
-            value = row[column]
+            result[column] = row[column]
         except KeyError:
             raise InvalidRecordError(f"Column {column} not found in {path}.")
-        result[column] = convert_value(value, column, schema[column], path)
     return result
 
 
@@ -199,15 +162,9 @@ def parse_record(
     wgs_row = read_picard_metrics(wgs_metrics_file)[0]
 
     record = {}
-    record.update(
-        extract_columns(aln_row, ALN_COLUMNS, schema, alignment_summary_file)
-    )
-    record.update(
-        extract_columns(dup_row, DUP_COLUMNS, schema, duplicate_metrics_file)
-    )
-    record.update(
-        extract_columns(wgs_row, WGS_COLUMNS, schema, wgs_metrics_file)
-    )
+    record.update(extract_columns(aln_row, ALN_COLUMNS, alignment_summary_file))
+    record.update(extract_columns(dup_row, DUP_COLUMNS, duplicate_metrics_file))
+    record.update(extract_columns(wgs_row, WGS_COLUMNS, wgs_metrics_file))
 
     return pd.DataFrame(
         [record], columns=ALN_COLUMNS + DUP_COLUMNS + WGS_COLUMNS
