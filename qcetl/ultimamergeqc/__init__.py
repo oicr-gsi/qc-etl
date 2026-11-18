@@ -130,7 +130,6 @@ class UltimaMergeQcCache(qcetl.common.Cache):
             single_input["alignment_summary_file"],
             single_input["duplicate_metrics_file"],
             single_input["wgs_metrics_file"],
-            self.schema_versions[schema_version]["ultimamergeqc"],
         )
         return {
             1: {

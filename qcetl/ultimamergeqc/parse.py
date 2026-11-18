@@ -92,7 +92,7 @@ MISSING_VALUES = ("", "?")
 
 def read_picard_metrics(path):
     """
-    (str) -> list of dicts
+    (str) -> dict
 
     Reads the METRICS CLASS section of an input metrics file.
 
@@ -116,9 +116,8 @@ def read_picard_metrics(path):
 
         header = next(f, "").rstrip().split("\t")
         line = next(f).rstrip()
-        rows = [dict(zip(header, line.split("\t")))]
 
-    return rows
+    return dict(zip(header, line.split("\t")))
 
 
 def extract_columns(row, columns, path):
@@ -137,10 +136,10 @@ def extract_columns(row, columns, path):
 
 
 def parse_record(
-    alignment_summary_file, duplicate_metrics_file, wgs_metrics_file, schema
+    alignment_summary_file, duplicate_metrics_file, wgs_metrics_file
 ):
     """
-    (str, str, str, dict) -> pandas dataframe
+    (str, str, str) -> pandas dataframe
 
     Selects Ultima merge QC metrics from Picard alignment summary,
     duplicate and WGS metrics files
@@ -150,16 +149,15 @@ def parse_record(
     - alignment_summary_file (str): path to .alignment_summary_metrics
     - duplicate_metrics_file (str): path to .duplicate_metrics
     - wgs_metrics_file (str): path to .wgs_metrics.txt
-    - schema (dict): {column: type code} from the cache's schema_versions
 
     Returns
     -------
     - single-row pandas dataframe with merged sample metrics
     - raises InvalidRecordError if a file is empty, malformed, or missing a required column
     """
-    aln_row = read_picard_metrics(alignment_summary_file)[0]
-    dup_row = read_picard_metrics(duplicate_metrics_file)[0]
-    wgs_row = read_picard_metrics(wgs_metrics_file)[0]
+    aln_row = read_picard_metrics(alignment_summary_file)
+    dup_row = read_picard_metrics(duplicate_metrics_file)
+    wgs_row = read_picard_metrics(wgs_metrics_file)
 
     record = {}
     record.update(extract_columns(aln_row, ALN_COLUMNS, alignment_summary_file))
