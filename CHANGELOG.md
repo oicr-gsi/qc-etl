@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 * ultimamergeqc cache
+* icametrics: `total_input_reads`, `total_clusters`, `pct_duplicate`, `pct_contamination` and `sex_match` columns
+
+### Changed
+* icametrics: `failed_region` split into `failed_region_full` and `failed_region_sub`
+* icametrics: `dup_del_ratio` is NaN (not 0) when undefined
 
 ## [1.50] - 2026-11-09
 ### Added

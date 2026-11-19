@@ -4,9 +4,13 @@ import glob
 import numpy as np
 import pandas as pd
 
+from qcetl.icametrics.constants import sex_to_karyotype
+
 __all__ = [
     "calculate_mean_cov",
     "calculate_dup_del_ratio",
+    "check_sex_match",
+    "to_float",
 ]
 
 
@@ -17,9 +21,10 @@ def calculate_dup_del_ratio(data: dict) -> None:
     This function removes the values associated with
     'Number of amplifications' and 'Number of deletions' from the
     input dictionary, calculates their ratio, and stores the result
-    as a string in the dictionary.
+    in the dictionary.
 
-    If no amplification count is present, the ratio defaults to '0'.
+    If there are no deletions, or either count is missing or not numeric
+    (e.g. no CNV output), the ratio is undefined and set to NaN.
 
     Args:
         data: Dictionary containing copy number variation metrics
@@ -27,12 +32,12 @@ def calculate_dup_del_ratio(data: dict) -> None:
     Returns:
         None. The input dictionary is modified in-place.
     """
+    amps = data.pop("Number of amplifications", None)
+    dels = data.pop("Number of deletions", None)
     try:
-        amps = float(data.pop("Number of amplifications", None))
-        dels = float(data.pop("Number of deletions", None))
-        dupdelratio = round(amps / dels, 2)
+        dupdelratio = round(float(amps) / float(dels), 2)
     except (TypeError, ValueError, ZeroDivisionError):
-        dupdelratio = 0.0
+        dupdelratio = np.nan
     data["dupdelratio"] = dupdelratio
 
 
@@ -87,3 +92,48 @@ def calculate_mean_cov(pp_dir: str, name: str, val_type="sub", fail=False):
         df = pd.read_csv(os.path.join(file_loc), delimiter="\t")
         avg_val = np.mean(df["Depth"])
     return round(avg_val, 2)
+
+
+def to_float(value) -> float:
+    """
+    Convert a metric value to float, returning NaN if it is missing or not
+    numeric.
+    """
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return np.nan
+
+
+def check_sex_match(expected_sex: str, observed_sex: str) -> float:
+    """
+    Compare the donor sex from MISO against the sex karyotype called by the
+    DRAGEN Ploidy Estimator.
+
+    MISO donor sex (DonorSex enum) is MALE, FEMALE, OTHER, UNSPECIFIED or
+    UNKNOWN. MALE expects XY and FEMALE expects XX; the others have no
+    expected karyotype, so no check is done.
+
+    Any karyotype DRAGEN calls other than the expected one is a
+    mismatch, including sex chromosome aneuploidies (e.g. XXY, X0).
+    If DRAGEN did not call a karyotype, the value is empty or NA and 
+    there is nothing to compare.
+
+    The result is a float (qf) so that an undetermined comparison can be NaN 
+    (a boolean column cannot hold missing values).
+
+    Args:
+        expected_sex: Donor sex from MISO (e.g. Male, Female, Unknown)
+        observed_sex: DRAGEN `Ploidy estimation` value (e.g. XX, XY, XXY)
+
+    Returns:
+        1.0 if they match, 0.0 if they do not, NaN if the MISO donor sex
+        has no expected karyotype or DRAGEN called no karyotype
+    """
+    expected = sex_to_karyotype.get(str(expected_sex).strip().lower())
+    if expected is None or pd.isna(observed_sex):
+        return np.nan
+    observed = str(observed_sex).strip().upper()
+    if observed in ("", "NA"):
+        return np.nan
+    return 1.0 if observed == expected else 0.0

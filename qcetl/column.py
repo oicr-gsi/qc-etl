@@ -1240,10 +1240,15 @@ class ICAMetricsColumn(BaseColumn):
     # ploidy_estimation_metrics.csv
     Sex = "sex"  # Ploidy estimation - Epic
     ObsSex = "observed_sex"
+    SexMatch = "sex_match"  # 1.0 match, 0.0 mismatch, NaN unknown
 
     # mapping_metrics.csv
+    TotalReads = "total_input_reads"
+    TotalClusters = "total_clusters"  # Total input reads / 2 (paired-end)
     PctMapped = "pct_mapped"
     PctUnique = "pct_unique"
+    PctDuplicate = "pct_duplicate"  # Number of duplicate marked reads (%)
+    PctContamination = "pct_contamination"  # NaN unless DRAGEN estimates it
     MedInsertLength = "median_insert_length"  # Insert length: median (>450)
     MeanInsertLength = "mean_insert_length"  # Insert length: mean (>150)
 
@@ -1256,9 +1261,10 @@ class ICAMetricsColumn(BaseColumn):
     DupDelRatio = "dup_del_ratio"
 
     # others
-    MeanCovFull = "mean_coverage_full"
+    MeanCovFull = "mean_coverage_full"  # mean of per_base Depth
     MeanCovSub = "mean_coverage_sub"
-    FailedRegion = "failed_region"
+    FailedRegionFull = "failed_region_full"  # failing_intervals % of panel
+    FailedRegionSub = "failed_region_sub"
 
 
 class InsertSizeMetricsColumn(BaseColumn):
