@@ -6,10 +6,16 @@ import pandas as pd
 
 from qcetl.common import InvalidRecordError
 from qcetl.column import ICAMetricsColumn as Column
-from qcetl.icametrics.constants import row_in_csv
+from qcetl.icametrics.constants import (
+    row_in_csv,
+    read_from_val,
+    optional_files,
+)
 from qcetl.icametrics.utility import (
     calculate_mean_cov,
     calculate_dup_del_ratio,
+    check_sex_match,
+    to_float,
 )
 
 
@@ -27,10 +33,15 @@ def parse_csv(filename: str) -> Dict:
 
     For `mapping_metrics` files:
     - rows with a non-empty `sample` column are skipped
-    - values are read from the `val_extra` column
+    - values are read from the `val_extra` (percentage) column, except for
+      the keys in `read_from_val`, which are read from the `val` column
 
     For all other file types:
     - values are read from the `val` column
+
+    DRAGEN writes `NA` for metrics it could not calculate (e.g. sample
+    contamination when contamination estimation is not enabled); these
+    are returned as NaN.
 
     Args:
         filename: Path to the metrics CSV file
@@ -56,9 +67,8 @@ def parse_csv(filename: str) -> Dict:
             if key in row["key"]:
                 if key == "Mapped reads" and row["key"] != "Mapped reads":
                     continue
-                result_dict[row["key"]] = row[
-                    read_val if key != "Insert length: median" else "val"
-                ]
+                value = row[read_val if key not in read_from_val else "val"]
+                result_dict[row["key"]] = np.nan if value == "NA" else value
                 break
 
     return result_dict
@@ -79,15 +89,27 @@ def load_sample_data(run: str, de_id: str, ica_dir: str) -> Dict:
     Returns:
         Dictionary containing raw metric values extracted from all
     matching CSV files for the sample.
+
+    Raises:
+        InvalidRecordError: if a required metrics CSV file is missing except CNV metrics
     """
     result_dict = {
         Column.MeanCovFull: calculate_mean_cov(ica_dir, de_id, "full"),
         Column.MeanCovSub: calculate_mean_cov(ica_dir, de_id),
-        Column.FailedRegion: calculate_mean_cov(ica_dir, de_id, fail=True),
+        Column.FailedRegionFull: calculate_mean_cov(
+            ica_dir, de_id, "full", fail=True
+        ),
+        Column.FailedRegionSub: calculate_mean_cov(ica_dir, de_id, fail=True),
     }
     for filetype in row_in_csv:
         filename = "{}.{}.csv".format(de_id, filetype)
         filepath = os.path.join(ica_dir, filename)
+        if not os.path.isfile(filepath):
+            if filetype in optional_files:
+                continue
+            raise InvalidRecordError(
+                "Missing {} file: {}".format(filetype, filepath)
+            )
         result_dict |= parse_csv(filepath)
     return result_dict
 
@@ -119,6 +141,8 @@ def process_sample_data(data: Dict, de_id: str, sex: str) -> pd.DataFrame:
         of processed metrics and QC results.
     """
     calculate_dup_del_ratio(data)
+    total_reads = to_float(data.get("Total input reads"))
+    observed_sex = data.get("Ploidy estimation", "Unknown")
     result = {
         # Column.PineryLimsID: pinery_lims_id,
         # Column.Run: run,
@@ -128,18 +152,30 @@ def process_sample_data(data: Dict, de_id: str, sex: str) -> pd.DataFrame:
         ),
         Column.MeanCovFull: data.get(Column.MeanCovFull, np.nan),
         Column.MeanCovSub: data.get(Column.MeanCovSub, np.nan),
-        Column.FailedRegion: data.get(Column.FailedRegion, np.nan),
+        Column.FailedRegionFull: data.get(Column.FailedRegionFull, np.nan),
+        Column.FailedRegionSub: data.get(Column.FailedRegionSub, np.nan),
         Column.PctGenome: data.get(
             "PCT of genome with coverage [  20x: inf)", np.nan
         ),
         Column.UniCov: data.get(
             "Uniformity of coverage (PCT > 0.2*mean) over genome", np.nan
         ),
-        Column.ObsSex: data.get("Ploidy estimation", "Unknown"),
+        Column.ObsSex: observed_sex,
         Column.Sex: sex,
+        Column.SexMatch: check_sex_match(
+            sex, data.get("Ploidy estimation", np.nan)
+        ),
+        Column.TotalReads: total_reads,
+        Column.TotalClusters: total_reads / 2, # paired-end
         Column.PctMapped: data.get("Mapped reads", np.nan),
         Column.PctUnique: data.get(
             "Number of unique reads (excl. duplicate marked reads)", np.nan
+        ),
+        Column.PctDuplicate: data.get(
+            "Number of duplicate marked reads", np.nan
+        ),
+        Column.PctContamination: data.get(
+            "Estimated sample contamination", np.nan
         ),
         Column.MeanInsertLength: data.get("Insert length: mean", np.nan),
         Column.MedInsertLength: data.get("Insert length: median", np.nan),
