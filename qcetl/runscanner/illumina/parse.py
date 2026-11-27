@@ -504,7 +504,7 @@ def split_off_uncertainty_column(master_df: DataFrame) -> DataFrame:
 
     # Split any uncertainty values into their own columns
     # NaN is produced if the value is not a string. Converted to False
-    uncrt_pos = df[LongColumn.Value].str.contains("\u00b1").fillna(False)
+    uncrt_pos = df[LongColumn.Value].str.contains("\u00b1", na=False)
     # Create a DataFrame with Column 0 the value and Column 1 the uncertainty
     val_split = df.loc[uncrt_pos, LongColumn.Value].str.split(
         "\u00b1", expand=True
@@ -513,6 +513,8 @@ def split_off_uncertainty_column(master_df: DataFrame) -> DataFrame:
 
     if not val_split.empty:
         df.loc[uncrt_pos, LongColumn.Value] = val_split[0]
+        # Must be object type to hold strings and NaN
+        df[LongColumn.Uncertainty] = df[LongColumn.Uncertainty].astype(object)
         df.loc[uncrt_pos, LongColumn.Uncertainty] = val_split[1]
 
     return df

@@ -256,6 +256,14 @@ class RunScannerIlluminaCache(qcetl.common.Cache):
         return {"flowcell": {}, "lane": {}}
 
 
+def _to_numeric_if_possible(column: pandas.Series) -> pandas.Series:
+    """Replaces deprecated `pandas.to_numeric(errors="ignore")`."""
+    try:
+        return pandas.to_numeric(column)
+    except (ValueError, TypeError):
+        return column
+
+
 def get_wide_flow_cell(long_master_df: DataFrame) -> DataFrame:
     """
     Extract flow cell metrics as a wide DataFrame from the master DataFrame
@@ -318,7 +326,7 @@ def get_wide_flow_cell(long_master_df: DataFrame) -> DataFrame:
     wide_flow_cell = wide_flow_cell.reset_index(drop=True)
 
     # `unstack` does not correctly infer numeric types (bug?)
-    wide_flow_cell = wide_flow_cell.apply(pandas.to_numeric, errors="ignore")
+    wide_flow_cell = wide_flow_cell.apply(_to_numeric_if_possible)
     wide_flow_cell = wide_flow_cell.astype(FLOW_CELL_TYPES)
 
     # The date type from Shesmu doesn't have a timezone, so strip if from here
@@ -350,7 +358,7 @@ def get_wide_index(long_master_df: DataFrame) -> DataFrame:
     )
 
     # `unstack` does not correctly infer numeric types (bug?)
-    wide_index = wide_index.apply(pandas.to_numeric, errors="ignore")
+    wide_index = wide_index.apply(_to_numeric_if_possible)
 
     return wide_index
 
@@ -394,7 +402,7 @@ def get_wide_lane(long_master_df: DataFrame) -> DataFrame:
     )
 
     # `unstack` does not correctly infer numeric types (bug?)
-    wide_lane = wide_lane.apply(pandas.to_numeric, errors="ignore")
+    wide_lane = wide_lane.apply(_to_numeric_if_possible)
     rename_columns(wide_lane, {"run_alias": LaneColumn.Run})
     return wide_lane
 
@@ -415,6 +423,6 @@ def get_wide_read(long_master_df: DataFrame) -> DataFrame:
         LongIndex.Key, fill_value=numpy.nan
     )
     # `unstack` does not correctly infer numeric types (bug?)
-    wide_read = wide_read.apply(pandas.to_numeric, errors="ignore")
+    wide_read = wide_read.apply(_to_numeric_if_possible)
 
     return wide_read
