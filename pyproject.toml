@@ -26,6 +26,14 @@ exclude = ["test"]
 
 [tool.uv]
 package = true
+# Only resolve package versions uploaded at least 7 days ago (applies to
+# `uv sync --upgrade` / `uv lock --upgrade`)
+exclude-newer = "7 days"
+# To bypass the 7-day cool-off for one package (e.g. urgent security fix),
+# uncomment and edit the line below, then run:
+#   uv lock --upgrade-package <package> && uv sync --frozen && uv run pytest
+# Remove it (and run `uv lock`) once the release is older than 7 days.
+# exclude-newer-package = { sqlalchemy = false }  # TEMPORARY: CVE-XXXX-YYYY
 
 [project]
 # PEP 621 project metadata

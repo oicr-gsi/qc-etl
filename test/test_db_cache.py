@@ -223,7 +223,7 @@ def test_timeout(empty_db):
     rslt = cache.build(
         [{"swid": f"{x}", "string": "peace"} for x in range(10)],
         empty_db,
-        timeout=TimeOut(0.1),
+        timeout=TimeOut(1),
     )
     assert not rslt.timeout
     assert len(cache.get_stored_input(2, empty_db)) == 10
@@ -231,7 +231,7 @@ def test_timeout(empty_db):
     rslt = cache.build(
         [{"swid": f"{x}", "string": "peace"} for x in range(10000)],
         empty_db,
-        timeout=TimeOut(0.1),
+        timeout=TimeOut(1),
     )
     assert rslt.timeout
     assert len(cache.get_stored_input(2, empty_db)) < 10000

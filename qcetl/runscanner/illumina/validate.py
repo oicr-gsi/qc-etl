@@ -100,12 +100,13 @@ def is_invalid_heathtype(flowcell: DataFrame) -> Series:
     days_running = since_started.dt.days
     running_too_long = running[days_running > 30]
 
-    runs_to_fail = pandas.concat(
-        [never_started, strange_completion, running_too_long]
+    # Concat indices only, as concatenating DataFrames warns with NumPy >= 2.5
+    runs_to_fail = never_started.index.append(
+        [strange_completion.index, running_too_long.index]
     )
 
     # The order of the result will be the same as input DataFrame
     result = Series(False, index=flowcell.index)
-    result[runs_to_fail.index] = True
+    result[runs_to_fail] = True
 
     return result
