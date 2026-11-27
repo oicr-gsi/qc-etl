@@ -114,7 +114,8 @@ uv sync --frozen
 # Required for git hook, see .pre-commit-config.yaml
 uv run pre-commit install
 
-# To update all dependencies:
+# To update all dependencies (only versions uploaded 7+ days ago are accepted,
+# see `exclude-newer` in pyproject.toml):
 uv sync --upgrade && uv run pytest
 ```
 
